@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import { BookOpenText, FileText } from 'lucide-react';
 
@@ -84,9 +83,9 @@ const Index = () => {
     if (!matrix) return null;
 
     return (
-      <div className="dot-matrix mx-2">
+      <div className="dot-matrix mx-1 sm:mx-2">
         {matrix.map((row, rowIndex) => (
-          <div key={rowIndex} className="flex gap-2">
+          <div key={rowIndex} className="flex gap-0.5 sm:gap-2">
             {row.map((dot, dotIndex) => (
               <div 
                 key={`${rowIndex}-${dotIndex}`} 
@@ -104,17 +103,17 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background text-foreground flex flex-col p-4">
+    <div className="min-h-screen bg-background text-foreground flex flex-col p-4 sm:p-6 lg:p-8">
       {/* Menu */}
       <div className="w-full flex justify-center mb-8 mt-4">
-        <div className="flex gap-6">
+        <div className="flex flex-col sm:flex-row sm:gap-6 gap-2 items-center">
           <a href="#" className="flex items-center gap-2 text-foreground hover:text-primary transition-colors">
             <BookOpenText size={18} />
-            <span>Documentation</span>
+            <span className="text-xs sm:text-base">Documentation</span>
           </a>
           <a href="#" className="flex items-center gap-2 text-foreground hover:text-primary transition-colors">
             <FileText size={18} />
-            <span>llms.txt</span>
+            <span className="text-xs sm:text-base">llms.txt</span>
           </a>
         </div>
       </div>
