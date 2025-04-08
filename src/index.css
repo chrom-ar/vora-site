@@ -30,7 +30,7 @@
 
 @layer components {
   .dot {
-    @apply w-3 h-3 rounded-full bg-foreground opacity-80;
+    @apply rounded-full bg-foreground opacity-80;
   }
   
   .dot-container {
