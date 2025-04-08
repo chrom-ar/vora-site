@@ -15,7 +15,7 @@ const ProjectCard = ({ title, description, category, image, index }: {
       style={{ animationDelay: `${index * 100}ms` }}
     >
       <div className="aspect-video bg-muted/30 relative overflow-hidden">
-        <div className={`absolute inset-0 bg-gradient-to-br from-accent/20 to-transparent opacity-80`}></div>
+        <div className={`absolute inset-0 bg-linear-to-br from-accent/20 to-transparent opacity-80`}></div>
         <div className="absolute inset-0 flex items-center justify-center text-2xl font-bold">{title[0]}</div>
       </div>
       <div className="p-6">

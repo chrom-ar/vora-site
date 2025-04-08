@@ -41,7 +41,7 @@ const Hero = () => {
           </div>
           
           <div className="relative">
-            <div className="aspect-square rounded-lg bg-gradient-to-br from-accent/20 via-accent/10 to-transparent animate-pulse-glow relative">
+            <div className="aspect-square rounded-lg bg-linear-to-br from-accent/20 via-accent/10 to-transparent animate-pulse-glow relative">
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="text-5xl font-bold text-white">AR</div>
               </div>
