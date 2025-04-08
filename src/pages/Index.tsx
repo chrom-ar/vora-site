@@ -1,5 +1,6 @@
 
 import React, { useEffect, useState } from 'react';
+import { BookOpenText, FileText } from 'lucide-react';
 
 const matrixData = {
   'C': [
@@ -103,13 +104,30 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background text-foreground flex items-center justify-center p-4">
-      <div className="flex flex-wrap justify-center items-center">
-        {['C', 'H', 'R', 'O', 'M', '.', 'A', 'R'].map((letter, index) => (
-          <React.Fragment key={index}>
-            {renderDotMatrix(letter)}
-          </React.Fragment>
-        ))}
+    <div className="min-h-screen bg-background text-foreground flex flex-col p-4">
+      {/* Menu */}
+      <div className="w-full flex justify-center mb-8 mt-4">
+        <div className="flex gap-6">
+          <a href="#" className="flex items-center gap-2 text-foreground hover:text-primary transition-colors">
+            <BookOpenText size={18} />
+            <span>Documentation</span>
+          </a>
+          <a href="#" className="flex items-center gap-2 text-foreground hover:text-primary transition-colors">
+            <FileText size={18} />
+            <span>llms.txt</span>
+          </a>
+        </div>
+      </div>
+
+      {/* CHROM.AR matrix display */}
+      <div className="flex-1 flex items-center justify-center">
+        <div className="flex flex-wrap justify-center items-center">
+          {['C', 'H', 'R', 'O', 'M', '.', 'A', 'R'].map((letter, index) => (
+            <React.Fragment key={index}>
+              {renderDotMatrix(letter)}
+            </React.Fragment>
+          ))}
+        </div>
       </div>
     </div>
   );
