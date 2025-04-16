@@ -4,12 +4,12 @@ import tseslint from "typescript-eslint";
 
 export default tseslint.config(
   {
-    ignores: ["dist"]
+    ignores: ["dist"],
   },
   {
     extends: [
       js.configs.recommended,
-      ...tseslint.configs.recommended
+      ...tseslint.configs.recommended,
     ],
     files: ["**/*.{ts,tsx}"],
     languageOptions: {
@@ -19,6 +19,13 @@ export default tseslint.config(
     plugins: {
     },
     rules: {
+      "comma-dangle": ["error", "always-multiline"],
+      "eol-last": ["error", "always"],
+      "key-spacing": ["error", { beforeColon: false, afterColon: true }],
+      "no-multiple-empty-lines": ["error", { max: 1, maxEOF: 1 }],
+      "quotes": ["error", "double"],
+      "semi": ["error", "always"],
+      "indent": ["error", 2],
     },
-  }
+  },
 );

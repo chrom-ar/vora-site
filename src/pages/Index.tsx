@@ -1,72 +1,72 @@
-import React, { useEffect, useState } from 'react';
-import { BookOpenText, FileText, Moon, Sun } from 'lucide-react';
+import React, { useEffect, useState } from "react";
+import { BookOpenText, FileText, Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 import { Button } from "../components/ui/button"; // Assuming Button component exists
 
 const matrixData = {
-  'C': [
+  "C": [
     [1, 1, 1, 1],
     [1, 0, 0, 0],
     [1, 0, 0, 0],
     [1, 0, 0, 0],
     [1, 0, 0, 0],
     [1, 0, 0, 0],
-    [1, 1, 1, 1]
+    [1, 1, 1, 1],
   ],
-  'H': [
+  "H": [
     [1, 0, 0, 1],
     [1, 0, 0, 1],
     [1, 0, 0, 1],
     [1, 1, 1, 1],
     [1, 0, 0, 1],
     [1, 0, 0, 1],
-    [1, 0, 0, 1]
+    [1, 0, 0, 1],
   ],
-  'R': [
+  "R": [
     [1, 1, 1, 1],
     [1, 0, 0, 1],
     [1, 0, 0, 1],
     [1, 1, 1, 1],
     [1, 0, 1, 0],
     [1, 0, 0, 1],
-    [1, 0, 0, 1]
+    [1, 0, 0, 1],
   ],
-  'O': [
+  "O": [
     [1, 1, 1, 1],
     [1, 0, 0, 1],
     [1, 0, 0, 1],
     [1, 0, 0, 1],
     [1, 0, 0, 1],
     [1, 0, 0, 1],
-    [1, 1, 1, 1]
+    [1, 1, 1, 1],
   ],
-  'M': [
+  "M": [
     [1, 0, 0, 0, 1],
     [1, 1, 0, 1, 1],
     [1, 0, 1, 0, 1],
     [1, 0, 0, 0, 1],
     [1, 0, 0, 0, 1],
     [1, 0, 0, 0, 1],
-    [1, 0, 0, 0, 1]
+    [1, 0, 0, 0, 1],
   ],
-  'A': [
+  "A": [
     [0, 1, 1, 0],
     [1, 0, 0, 1],
     [1, 0, 0, 1],
     [1, 1, 1, 1],
     [1, 0, 0, 1],
     [1, 0, 0, 1],
-    [1, 0, 0, 1]
+    [1, 0, 0, 1],
   ],
-  '.': [
+  ".": [
     [0],
     [0],
     [0],
     [0],
     [0],
     [0],
-    [1]
-  ]
+    [1],
+  ],
 };
 
 // Theme Toggle Component
@@ -110,10 +110,10 @@ const Index = () => {
             {row.map((dot, dotIndex) => (
               <div 
                 key={`${rowIndex}-${dotIndex}`} 
-                className={`dot transition-opacity duration-700 ${visible ? 'opacity-80' : 'opacity-0'}`}
+                className={`dot transition-opacity duration-700 ${visible ? "opacity-80" : "opacity-0"}`}
                 style={{
-                  visibility: dot ? 'visible' : 'hidden',
-                  transitionDelay: `${(rowIndex + dotIndex) * 50}ms`
+                  visibility: dot ? "visible" : "hidden",
+                  transitionDelay: `${(rowIndex + dotIndex) * 50}ms`,
                 }}
               />
             ))}
@@ -143,7 +143,7 @@ const Index = () => {
       {/* CHROM.AR matrix display */}
       <div className="flex-1 flex items-center justify-center">
         <div className="flex flex-wrap justify-center items-center">
-          {['C', 'H', 'R', 'O', 'M', '.', 'A', 'R'].map((letter, index) => (
+          {["C", "H", "R", "O", "M", ".", "A", "R"].map((letter, index) => (
             <React.Fragment key={index}>
               {renderDotMatrix(letter)}
             </React.Fragment>
