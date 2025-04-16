@@ -74,7 +74,7 @@ const ThemeToggle = () => {
   const { setTheme, theme } = useTheme();
 
   return (
-    <Button 
+    <Button
       variant="ghost"
       size="icon"
       onClick={() => setTheme(theme === "light" ? "dark" : "light")}
@@ -108,8 +108,8 @@ const Index = () => {
         {matrix.map((row, rowIndex) => (
           <div key={rowIndex} className="flex gap-0.5 sm:gap-2">
             {row.map((dot, dotIndex) => (
-              <div 
-                key={`${rowIndex}-${dotIndex}`} 
+              <div
+                key={`${rowIndex}-${dotIndex}`}
                 className={`dot transition-opacity duration-700 ${visible ? "opacity-80" : "opacity-0"}`}
                 style={{
                   visibility: dot ? "visible" : "hidden",

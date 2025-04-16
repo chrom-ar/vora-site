@@ -155,7 +155,7 @@
 
     --primary: 252 59% 48%;
     --primary-foreground: 0 0% 98%;
-    
+
     --radius: 0.75rem;
 
     /* Add other light theme variables based on shadcn/ui if needed */
@@ -204,7 +204,7 @@
   * {
     @apply border-border selection:bg-accent/20 selection:text-accent;
   }
-  
+
   body {
     @apply bg-background text-foreground antialiased overflow-x-hidden;
     font-feature-settings: "ss01", "ss02", "cv01", "cv02", "cv03";
