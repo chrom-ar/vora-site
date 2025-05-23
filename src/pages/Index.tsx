@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { BookOpenText, FileText, Moon, Sun } from "lucide-react";
+import { BookOpenText, FileText, Moon, Sun, Newspaper } from "lucide-react";
 import { useTheme } from "next-themes";
 import { Button } from "../components/ui/button"; // Assuming Button component exists
 
@@ -135,6 +135,10 @@ const Index = () => {
           <a href="#" className="flex items-center gap-2 text-foreground hover:text-primary transition-colors">
             <FileText size={18} />
             <span className="text-xs sm:text-base">llms.txt</span>
+          </a>
+          <a href="https://chromar.substack.com/" className="flex items-center gap-2 text-foreground hover:text-primary transition-colors" target="_blank" rel="noopener noreferrer">
+            <Newspaper size={18} />
+            <span className="text-xs sm:text-base">Blog</span>
           </a>
           <ThemeToggle />
         </div>
