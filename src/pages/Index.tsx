@@ -101,7 +101,10 @@ const Index = () => {
 
   const renderDotMatrix = (letter: string) => {
     const matrix = matrixData[letter as keyof typeof matrixData];
-    if (!matrix) return null;
+
+    if (!matrix) {
+      return null;
+    }
 
     return (
       <div className="dot-matrix mx-1 sm:mx-2">
