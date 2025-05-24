@@ -1,6 +1,6 @@
 # Chroma website
 
-This is the website for Chroma, an agentic settlement layer.
+This is the website for Chroma, an agentic orchestration layer.
 
 ## Getting Started
 
