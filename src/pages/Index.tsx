@@ -135,7 +135,7 @@ const Index = () => {
             <BookOpenText size={18} />
             <span className="text-xs sm:text-base">Documentation</span>
           </a>
-          <a href="https://raw.githubusercontent.com/chrom-ar/solver-sdk/refs/heads/master/llms.txt" className="flex items-center gap-2 text-foreground hover:text-primary transition-colors">
+          <a href="https://raw.githubusercontent.com/chrom-ar/solver-sdk/refs/heads/master/llms.txt" className="flex items-center gap-2 text-foreground hover:text-primary transition-colors" target="_blank" rel="noopener noreferrer">
             <FileText size={18} />
             <span className="text-xs sm:text-base">llms.txt</span>
           </a>
