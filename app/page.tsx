@@ -37,7 +37,7 @@ export default function Page() {
             CONTRACTS.
           </h1>
 
-          <div className="mt-24 flex justify-between">
+          <div className="mt-24 flex flex-col lg:flex-row lg:justify-between gap-8">
             <div className="max-w-md">
               <Button variant="outline" className="rounded-full border-2 px-8">
                 <span className="relative">
@@ -50,7 +50,7 @@ export default function Page() {
               </p>
             </div>
 
-            <div className="flex items-end mx-0">
+            <div className="flex lg:items-end">
               <div className="flex items-center space-x-2">
                 <span className="text-sm">ON-CHAIN WORKFLOW AUTOMATION PROTOCOL</span>
                 <span className="h-px w-12 bg-black"></span>
@@ -58,7 +58,7 @@ export default function Page() {
             </div>
           </div>
 
-          <p className="mt-24 max-w-xl text-sm leading-relaxed text-gray-600">
+          <p className="mt-12 lg:mt-24 max-w-xl text-sm leading-relaxed text-gray-600">
             UNIVERSAL MCP ROUTER CONNECTS ANY BLOCKCHAIN, ANY PROTOCOL, ANY AGENT.
             <br />
             <br />
