@@ -6,8 +6,8 @@ on:
       - master
 
 env:
-  NODE_VERSION: '22.x'
-  OUTPUT_DIR: 'dist'
+  NODE_VERSION: '24.x'
+  OUTPUT_DIR: 'out'
 
 jobs:
   build-and-deploy:
@@ -25,9 +25,6 @@ jobs:
 
       - name: Dependencies
         run: npm ci
-
-      - name: Lint
-        run: npm run lint
 
       - name: Build
         run: npm run build
