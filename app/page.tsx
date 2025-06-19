@@ -10,8 +10,10 @@ export default function Page() {
           <div className="h-2 w-2 rounded-full bg-black"></div>
         </div>
         <div className="flex items-center space-x-6">
-          <button className="text-sm">DOCS</button>
-          <Link href="/blog" className="text-sm hover:underline">
+          <Link href="https://deepwiki.com/chrom-ar/swap-example-mcp" className="text-sm hover:underline" target="_blank" rel="noopener noreferrer">
+            DOCS
+          </Link>
+          <Link href="#" className="text-sm hover:underline">
             BLOG
           </Link>
           <button className="flex flex-col space-y-1">
