@@ -27,6 +27,10 @@ export default function RootLayout({
         <meta name="twitter:title" content="Chrom.ar" />
         <meta name="twitter:description" content="Chrom.ar, on-chain workflows automation protocol." />
         <meta name="twitter:image" content="https://chrom.ar/chroma.png" />
+
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="icon" href="/favicon.png" type="image/png" />
+        <link rel="apple-touch-icon" href="/favicon.png" />
       </head>
       <body>{children}</body>
     </html>
