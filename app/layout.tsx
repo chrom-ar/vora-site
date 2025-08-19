@@ -1,11 +1,11 @@
-import type { Metadata } from 'next'
-import './globals.css'
+import type { Metadata } from "next";
+import "./globals.css";
 
 export const metadata: Metadata = {
-  title: 'Chrom.ar',
-  description: 'Chrom.ar, on-chain workflows automation protocol',
-  generator: 'Chrom.ar',
-}
+  title: "Chrom.ar",
+  description: "Chrom.ar, on-chain workflows automation protocol",
+  generator: "Chrom.ar",
+};
 
 export default function RootLayout({
   children,
@@ -34,5 +34,5 @@ export default function RootLayout({
       </head>
       <body>{children}</body>
     </html>
-  )
+  );
 }
