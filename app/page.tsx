@@ -1,7 +1,19 @@
-import { redirect } from "next/navigation";
+"use client";
+
+import { usePathname, useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 const Page = () => {
-  redirect("/spark-a1");
+  const pathname = usePathname();
+  const router = useRouter();
+
+  useEffect(() => {
+    if (pathname === "/") {
+      router.push("/spark-a1");
+    }
+  }, [pathname, router]);
+
+  return null;
 };
 
 export default Page;
