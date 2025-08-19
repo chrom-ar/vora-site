@@ -7,11 +7,11 @@ export const metadata: Metadata = {
   generator: "Chrom.ar",
 };
 
-export default function RootLayout({
+const RootLayout = ({
   children,
 }: Readonly<{
   children: React.ReactNode
-}>) {
+}>) => {
   return (
     <html lang="en">
       <head>
@@ -35,4 +35,6 @@ export default function RootLayout({
       <body>{children}</body>
     </html>
   );
-}
+};
+
+export default RootLayout;

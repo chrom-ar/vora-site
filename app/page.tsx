@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function Page() {
+const Page = () => {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center gap-8">
       <h1 className="text-4xl font-bold">Chromar</h1>
@@ -12,4 +12,6 @@ export default function Page() {
       </Link>
     </div>
   );
-}
+};
+
+export default Page;
