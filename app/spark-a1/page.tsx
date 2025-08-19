@@ -5,7 +5,7 @@ import { HeroContent } from "@/components/hero-content";
 import { PulsingCircle } from "@/components/pulsing-circle";
 import { ShaderBackground } from "@/components/shader-background";
 
-const Page = () => {
+const SparkA1Page = () => {
   return (
     <ShaderBackground>
       <Header />
@@ -15,4 +15,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default SparkA1Page;
