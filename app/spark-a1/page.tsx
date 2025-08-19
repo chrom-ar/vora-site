@@ -1,5 +1,3 @@
-"use client";
-
 import { Header } from "@/components/header";
 import { HeroContent } from "@/components/hero-content";
 import { PulsingCircle } from "@/components/pulsing-circle";
