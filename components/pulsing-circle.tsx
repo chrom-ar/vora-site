@@ -8,7 +8,7 @@ export const PulsingCircle = () => {
     <div className="absolute bottom-8 right-8 z-30">
       <div className="relative w-20 h-20 flex items-center justify-center">
         <PulsingBorder
-          colors={["#BEECFF", "#E77EDC", "#FF4C3E", "#00FF88", "#FFD700", "#FF6B35", "#8A2BE2"]}
+          colors={["#fb730c", "#0483db", "#ff9a3d", "#1a9dff", "#d65a0b", "#0066bb", "#ffb366"]}
           colorBack="#00000000"
           speed={1.5}
           roundness={1}
