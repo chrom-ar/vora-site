@@ -1,8 +1,12 @@
 "use client";
 
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 export const Header = () => {
+  const pathname = usePathname();
+  const isGetStartedPage = pathname === "/get-started";
+
   return (
     <header className="relative z-20 p-6">
       {/* Desktop layout */}
@@ -26,16 +30,25 @@ export const Header = () => {
           </a>
         </nav>
 
-        <div id="gooey-btn" className="relative flex items-center group" style={{ filter: "url(#gooey-filter)" }}>
-          <button className="absolute right-0 px-2.5 py-2 rounded-full bg-white text-black font-normal text-xs transition-all duration-300 hover:bg-white/90 cursor-pointer h-8 flex items-center justify-center -translate-x-10 group-hover:-translate-x-19 z-0">
-            <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 17L17 7M17 7H7M17 7V17" />
+        {isGetStartedPage ? (
+          <a href="/spark-a1" className="px-6 py-2 rounded-full bg-white/10 border border-white/20 text-white font-normal text-xs transition-all duration-300 hover:bg-white/20 cursor-pointer h-8 flex items-center">
+            <svg className="w-3 h-3 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
-          </button>
-          <button className="px-6 py-2 rounded-full bg-white text-black font-normal text-xs transition-all duration-300 hover:bg-white/90 cursor-pointer h-8 flex items-center z-10">
-            Get Started
-          </button>
-        </div>
+            Back to SPARK-A1
+          </a>
+        ) : (
+          <div id="gooey-btn" className="relative flex items-center group" style={{ filter: "url(#gooey-filter)" }}>
+            <a href="/get-started" className="absolute right-0 px-2.5 py-2 rounded-full bg-white text-black font-normal text-xs transition-all duration-300 hover:bg-white/90 cursor-pointer h-8 flex items-center justify-center -translate-x-10 group-hover:-translate-x-19 z-0">
+              <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 17L17 7M17 7H7M17 7V17" />
+              </svg>
+            </a>
+            <a href="/get-started" className="px-6 py-2 rounded-full bg-white text-black font-normal text-xs transition-all duration-300 hover:bg-white/90 cursor-pointer h-8 flex items-center z-10">
+              Get Started
+            </a>
+          </div>
+        )}
       </div>
 
       {/* Mobile layout */}
@@ -60,16 +73,25 @@ export const Header = () => {
             </a>
           </nav>
 
-          <div id="gooey-btn-mobile" className="relative flex items-center group" style={{ filter: "url(#gooey-filter)" }}>
-            <button className="absolute right-0 px-2.5 py-2 rounded-full bg-white text-black font-normal text-xs transition-all duration-300 hover:bg-white/90 cursor-pointer h-8 flex items-center justify-center -translate-x-10 group-hover:-translate-x-19 z-0">
-              <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 17L17 7M17 7H7M17 7V17" />
+          {isGetStartedPage ? (
+            <a href="/spark-a1" className="px-6 py-2 rounded-full bg-white/10 border border-white/20 text-white font-normal text-xs transition-all duration-300 hover:bg-white/20 cursor-pointer h-8 flex items-center">
+              <svg className="w-3 h-3 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
               </svg>
-            </button>
-            <button className="px-6 py-2 rounded-full bg-white text-black font-normal text-xs transition-all duration-300 hover:bg-white/90 cursor-pointer h-8 flex items-center z-10">
-              Get Started
-            </button>
-          </div>
+              Back to SPARK-A1
+            </a>
+          ) : (
+            <div id="gooey-btn-mobile" className="relative flex items-center group" style={{ filter: "url(#gooey-filter)" }}>
+              <a href="/get-started" className="absolute right-0 px-2.5 py-2 rounded-full bg-white text-black font-normal text-xs transition-all duration-300 hover:bg-white/90 cursor-pointer h-8 flex items-center justify-center -translate-x-10 group-hover:-translate-x-19 z-0">
+                <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 17L17 7M17 7H7M17 7V17" />
+                </svg>
+              </a>
+              <a href="/get-started" className="px-6 py-2 rounded-full bg-white text-black font-normal text-xs transition-all duration-300 hover:bg-white/90 cursor-pointer h-8 flex items-center z-10">
+                Get Started
+              </a>
+            </div>
+          )}
         </div>
       </div>
     </header>

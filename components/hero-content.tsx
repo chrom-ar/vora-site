@@ -16,9 +16,9 @@ export const HeroContent = () => {
         </p>
 
         <div className="flex items-center gap-4 flex-wrap">
-          <button className="px-8 py-3 rounded-full bg-white text-black font-normal text-xs transition-all duration-200 hover:bg-white/90 cursor-pointer">
+          <a href="/get-started" className="inline-block px-8 py-3 rounded-full bg-white text-black font-normal text-xs transition-all duration-200 hover:bg-white/90 cursor-pointer">
             Get Started
-          </button>
+          </a>
         </div>
       </div>
     </main>
