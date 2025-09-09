@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 export const Header = () => {
   const pathname = usePathname();
   const isGetStartedPage = pathname === "/get-started";
+  const isIndexedProtocolsPage = pathname === "/indexed-protocols";
 
   return (
     <header className="relative z-20 p-6">
@@ -23,6 +24,14 @@ export const Header = () => {
 
         <nav className="flex items-center space-x-2">
           <a
+            href="/indexed-protocols"
+            className={`text-white/80 hover:text-white text-xs font-light px-3 py-2 rounded-full hover:bg-white/10 transition-all duration-200 ${
+              isIndexedProtocolsPage ? "bg-white/10 text-white" : ""
+            }`}
+          >
+            Indexed Protocols
+          </a>
+          <a
             href="#"
             className="text-white/80 hover:text-white text-xs font-light px-3 py-2 rounded-full hover:bg-white/10 transition-all duration-200"
           >
@@ -30,7 +39,7 @@ export const Header = () => {
           </a>
         </nav>
 
-        {isGetStartedPage ? (
+        {isGetStartedPage || isIndexedProtocolsPage ? (
           <a href="/spark-a1" className="px-6 py-2 rounded-full bg-white/10 border border-white/20 text-white font-normal text-xs transition-all duration-300 hover:bg-white/20 cursor-pointer h-8 flex items-center">
             <svg className="w-3 h-3 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -64,7 +73,15 @@ export const Header = () => {
         </div>
 
         <div className="flex items-center space-x-4">
-          <nav className="flex items-center">
+          <nav className="flex items-center space-x-2">
+            <a
+              href="/indexed-protocols"
+              className={`text-white/80 hover:text-white text-xs font-light px-3 py-2 rounded-full hover:bg-white/10 transition-all duration-200 ${
+                isIndexedProtocolsPage ? "bg-white/10 text-white" : ""
+              }`}
+            >
+              Protocols
+            </a>
             <a
               href="#"
               className="text-white/80 hover:text-white text-xs font-light px-3 py-2 rounded-full hover:bg-white/10 transition-all duration-200"
@@ -73,12 +90,12 @@ export const Header = () => {
             </a>
           </nav>
 
-          {isGetStartedPage ? (
-            <a href="/spark-a1" className="px-6 py-2 rounded-full bg-white/10 border border-white/20 text-white font-normal text-xs transition-all duration-300 hover:bg-white/20 cursor-pointer h-8 flex items-center">
-              <svg className="w-3 h-3 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          {isGetStartedPage || isIndexedProtocolsPage ? (
+            <a href="/spark-a1" className="px-4 py-2 rounded-full bg-white/10 border border-white/20 text-white font-normal text-xs transition-all duration-300 hover:bg-white/20 cursor-pointer h-8 flex items-center">
+              <svg className="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
               </svg>
-              Back to SPARK-A1
+              Back
             </a>
           ) : (
             <div id="gooey-btn-mobile" className="relative flex items-center group" style={{ filter: "url(#gooey-filter)" }}>
