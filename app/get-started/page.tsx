@@ -9,6 +9,7 @@ const GetStartedPage = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [message, setMessage] = useState<{ type: "success" | "error"; text: string } | null>(null);
   const [copied, setCopied] = useState(false);
+  const [copiedCommand, setCopiedCommand] = useState(false);
 
   const mcpConfig = {
     mcpServers: {
@@ -16,7 +17,7 @@ const GetStartedPage = () => {
         transport: "http",
         url: "https://mcp-router.chrom.ar/mcp",
         headers: {
-          Authorization: "Bearer <YOUR_API_KEY>"
+          Authorization: "Bearer <API_KEY>"
         }
       }
     }
@@ -29,6 +30,16 @@ const GetStartedPage = () => {
       setTimeout(() => setCopied(false), 2000);
     } catch (err) {
       console.error("Failed to copy:", err);
+    }
+  };
+
+  const handleCopyCommand = async () => {
+    try {
+      await navigator.clipboard.writeText('claude mcp add --transport http chromar-spark https://mcp-router.chrom.ar/mcp --header "Authorization: Bearer <API_KEY>"');
+      setCopiedCommand(true);
+      setTimeout(() => setCopiedCommand(false), 2000);
+    } catch (err) {
+      console.error("Failed to copy command:", err);
     }
   };
 
@@ -147,7 +158,7 @@ const GetStartedPage = () => {
             </div>
 
             <p className="text-sm text-white/60 font-light mb-4">
-              Add this configuration to your MCP settings in Cursor or Claude Desktop:
+              Configure your favorite editor / tool with the following MCP settings:
             </p>
 
             <div className="relative">
@@ -179,7 +190,7 @@ const GetStartedPage = () => {
                   {"\n        "}
                   <span className="text-blue-400">"Authorization"</span>
                   <span className="text-white/60">: </span>
-                  <span className="text-orange-400">"Bearer &lt;YOUR_API_KEY&gt;"</span>
+                  <span className="text-orange-400">"Bearer &lt;API_KEY&gt;"</span>
                   {"\n      "}
                   <span className="text-purple-400">{"}"}</span>
                   {"\n    "}
@@ -192,9 +203,44 @@ const GetStartedPage = () => {
               </pre>
             </div>
 
+            <div className="mt-6">
+              <p className="text-sm text-white/60 font-light mb-3">
+                Or use Claude Code with this command:
+              </p>
+              <div className="relative group">
+                <div className="bg-black/40 rounded-xl p-4 pr-12 overflow-x-auto border border-white/10">
+                  <code className="text-sm text-white/90 font-mono">
+                    <span className="text-green-400">claude</span>{" "}
+                    <span className="text-blue-400">mcp add</span>{" "}
+                    <span className="text-white/60">--transport</span>{" "}
+                    <span className="text-orange-400">http</span>{" "}
+                    <span className="text-yellow-400">chromar-spark</span>{" "}
+                    <span className="text-cyan-400">https://mcp-router.chrom.ar/mcp</span>{" "}
+                    <span className="text-white/60">--header</span>{" "}
+                    <span className="text-orange-400">"Authorization: Bearer &lt;API_KEY&gt;"</span>
+                  </code>
+                </div>
+                <button
+                  onClick={handleCopyCommand}
+                  className="absolute right-3 top-1/2 -translate-y-1/2 p-2 rounded-lg bg-white/5 border border-white/10 text-white/60 hover:bg-white/10 hover:text-white transition-all opacity-0 group-hover:opacity-100"
+                  title="Copy command"
+                >
+                  {copiedCommand ? (
+                    <svg className="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                  ) : (
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                    </svg>
+                  )}
+                </button>
+              </div>
+            </div>
+
             <div className="mt-4 p-3 bg-yellow-500/10 border border-yellow-500/30 rounded-lg">
               <p className="text-xs text-yellow-300 font-light">
-                ⚠️ Remember to replace <code className="bg-black/30 px-1 rounded">&lt;YOUR_API_KEY&gt;</code> with your actual API key after registration.
+                ⚠️ Remember to replace <code className="bg-black/30 px-1 rounded">&lt;API_KEY&gt;</code> with your actual API key after registration.
               </p>
             </div>
           </div>
