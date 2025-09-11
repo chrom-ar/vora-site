@@ -18,50 +18,64 @@ const protocols: Protocol[] = [
     description: "Privacy-focused L2 solution with native zero-knowledge proofs for confidential smart contracts",
     docs: "https://docs.aztec.network/",
     github: "https://github.com/AztecProtocol",
-    category: "Privacy & ZK"
+    category: "Privacy & ZK",
   },
   {
     name: "OpenZeppelin",
     description: "Battle-tested library of secure, reusable smart contracts and security auditing tools",
     docs: "https://docs.openzeppelin.com/",
     github: "https://github.com/OpenZeppelin/openzeppelin-contracts",
-    category: "Security & Standards"
+    category: "Security & Standards",
   },
   {
     name: "EigenLayer",
     description: "Restaking protocol enabling decentralized services to leverage Ethereum's security",
     docs: "https://docs.eigenlayer.xyz/",
     github: "https://github.com/Layr-Labs/eigencloud-docs",
-    category: "Infrastructure"
+    category: "Infrastructure",
   },
   {
     name: "Equalizer Exchange",
     description: "Decentralized exchange with customizable liquidity pools and advanced trading features",
     docs: "https://docs.equalizer.exchange/",
     github: "https://github.com/Equalizer-Exchange",
-    category: "DeFi"
+    category: "DeFi",
   },
   {
     name: "Foundry",
     description: "Fast, portable and modular toolkit for Ethereum application development written in Rust",
     docs: "https://getfoundry.sh/",
     github: "https://github.com/foundry-rs/foundry",
-    category: "Development Tools"
+    category: "Development Tools",
   },
   {
     name: "Hardhat",
     description: "Development environment to compile, deploy, test, and debug Ethereum software",
     docs: "https://hardhat.org/docs",
     github: "https://github.com/NomicFoundation/hardhat",
-    category: "Development Tools"
+    category: "Development Tools",
   },
   {
     name: "Noir",
     description: "Domain-specific language for zero-knowledge proofs with a simple and expressive syntax",
     docs: "https://noir-lang.org/docs",
     github: "https://github.com/noir-lang/noir",
-    category: "Privacy & ZK"
-  }
+    category: "Privacy & ZK",
+  },
+  {
+    name: "Solidity",
+    description: "Object-oriented, high-level language for implementing smart contracts on Ethereum and other EVM chains",
+    docs: "https://docs.soliditylang.org/",
+    github: "https://github.com/argotorg/solidity",
+    category: "Development Tools",
+  },
+  // {
+  //   name: "CDP (Coinbase)",
+  //   description: "Coinbase Developer Platform for building onchain applications with enterprise-grade infrastructure",
+  //   docs: "https://docs.cdp.coinbase.com/",
+  //   github: "https://github.com/coinbase/coinbase-sdk-nodejs",
+  //   category: "Infrastructure"
+  // }
 ];
 
 const IndexedProtocolsPage = () => {
@@ -90,7 +104,7 @@ const IndexedProtocolsPage = () => {
 
         {/* Category Filter */}
         <div className="flex flex-wrap gap-2 justify-center mb-12">
-          {categories.map((category) => (
+          {categories.map(category => (
             <button
               key={category}
               onClick={() => setSelectedCategory(category)}
@@ -129,7 +143,7 @@ const IndexedProtocolsPage = () => {
                       aria-label={`${protocol.name} Documentation`}
                     >
                       <svg
-                        className="w-4 h-4 text-white/60 group-hover/link:text-white transition-colors" 
+                        className="w-4 h-4 text-white/60 group-hover/link:text-white transition-colors"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -138,7 +152,7 @@ const IndexedProtocolsPage = () => {
                           strokeLinecap="round"
                           strokeLinejoin="round"
                           strokeWidth={2}
-                          d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" 
+                          d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
                         />
                       </svg>
                     </a>
@@ -150,7 +164,7 @@ const IndexedProtocolsPage = () => {
                       aria-label={`${protocol.name} GitHub`}
                     >
                       <svg
-                        className="w-4 h-4 text-white/60 group-hover/link:text-white transition-colors" 
+                        className="w-4 h-4 text-white/60 group-hover/link:text-white transition-colors"
                         fill="currentColor"
                         viewBox="0 0 24 24"
                       >
@@ -173,10 +187,10 @@ const IndexedProtocolsPage = () => {
                 {/* Hover Indicator */}
                 <div
                   className={`absolute inset-0 rounded-2xl pointer-events-none transition-opacity duration-300 ${
-                    hoveredCard === index ? 'opacity-100' : 'opacity-0'
+                    hoveredCard === index ? "opacity-100" : "opacity-0"
                   }`}
                   style={{
-                    background: 'radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255,255,255,0.06), transparent 40%)',
+                    background: "radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255,255,255,0.06), transparent 40%)",
                   }}
                 />
               </div>
