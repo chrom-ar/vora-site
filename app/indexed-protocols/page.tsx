@@ -69,6 +69,13 @@ const protocols: Protocol[] = [
     github: "https://github.com/argotorg/solidity",
     category: "Development Tools",
   },
+  {
+    name: "Uniswap v4",
+    description: "Next generation automated market maker with customizable pools through hooks and improved capital efficiency",
+    docs: "https://docs.uniswap.org/contracts/v4/overview",
+    github: "https://github.com/Uniswap/v4-core",
+    category: "DeFi",
+  },
   // {
   //   name: "CDP (Coinbase)",
   //   description: "Coinbase Developer Platform for building onchain applications with enterprise-grade infrastructure",
