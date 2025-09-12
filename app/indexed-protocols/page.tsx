@@ -76,6 +76,13 @@ const protocols: Protocol[] = [
     github: "https://github.com/Uniswap/v4-core",
     category: "DeFi",
   },
+  {
+    name: "Aave v3",
+    description: "Leading decentralized liquidity protocol for borrowing and lending with cross-chain functionality and risk management",
+    docs: "https://docs.aave.com/developers/",
+    github: "https://github.com/aave/aave-v3-core",
+    category: "DeFi",
+  },
   // {
   //   name: "CDP (Coinbase)",
   //   description: "Coinbase Developer Platform for building onchain applications with enterprise-grade infrastructure",
