@@ -4,10 +4,8 @@ export const HeroContent = () => {
   return (
     <main className="absolute bottom-8 left-8 z-20 max-w-lg">
       <div className="text-left">
-        <h1 className="text-5xl md:text-6xl md:leading-16 tracking-tight text-white mb-4 font-semibold">
-          <span className="font-medium italic instrument">Instant</span> Onchain
-          <br />
-          <span className="tracking-tight text-white font-semibold">Productivity for Devs</span>
+        <h1 className="text-3xl md:text-4xl md:leading-16 tracking-tight text-white mb-4 font-normal">
+          Your <span className="font-bold">Web3 Copilot</span>: Instant onchain productivity for devs
         </h1>
 
         {/* Description */}
