@@ -28,6 +28,13 @@ const protocols: Protocol[] = [
     category: "Privacy & ZK",
   },
   {
+    name: "Chainlink",
+    description: "Industry-standard oracle platform connecting blockchains to real-world data and enabling cross-chain communication",
+    docs: "https://docs.chain.link/",
+    github: "https://github.com/smartcontractkit",
+    category: "Infrastructure",
+  },
+  {
     name: "EigenLayer",
     description: "Restaking protocol enabling decentralized services to leverage Ethereum's security",
     docs: "https://docs.eigenlayer.xyz/",
@@ -54,6 +61,13 @@ const protocols: Protocol[] = [
     docs: "https://hardhat.org/docs",
     github: "https://github.com/NomicFoundation/hardhat",
     category: "Development Tools",
+  },
+  {
+    name: "JustLend",
+    description: "Decentralized lending and borrowing protocol on TRON blockchain with staked TRX and energy rental features",
+    docs: "https://docs.justlend.org/developers/contracts_overview/",
+    github: "https://github.com/justlend",
+    category: "DeFi",
   },
   {
     name: "Noir",
