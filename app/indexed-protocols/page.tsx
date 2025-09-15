@@ -14,18 +14,18 @@ interface Protocol {
 
 const protocols: Protocol[] = [
   {
+    name: "Aave v3",
+    description: "Leading decentralized liquidity protocol for borrowing and lending with cross-chain functionality and risk management",
+    docs: "https://docs.aave.com/developers/",
+    github: "https://github.com/aave/aave-v3-core",
+    category: "DeFi",
+  },
+  {
     name: "Aztec",
     description: "Privacy-focused L2 solution with native zero-knowledge proofs for confidential smart contracts",
     docs: "https://docs.aztec.network/",
     github: "https://github.com/AztecProtocol",
     category: "Privacy & ZK",
-  },
-  {
-    name: "OpenZeppelin",
-    description: "Battle-tested library of secure, reusable smart contracts and security auditing tools",
-    docs: "https://docs.openzeppelin.com/",
-    github: "https://github.com/OpenZeppelin/openzeppelin-contracts",
-    category: "Security & Standards",
   },
   {
     name: "EigenLayer",
@@ -63,6 +63,13 @@ const protocols: Protocol[] = [
     category: "Privacy & ZK",
   },
   {
+    name: "OpenZeppelin",
+    description: "Battle-tested library of secure, reusable smart contracts and security auditing tools",
+    docs: "https://docs.openzeppelin.com/",
+    github: "https://github.com/OpenZeppelin/openzeppelin-contracts",
+    category: "Security & Standards",
+  },
+  {
     name: "Solidity",
     description: "Object-oriented, high-level language for implementing smart contracts on Ethereum and other EVM chains",
     docs: "https://docs.soliditylang.org/",
@@ -74,13 +81,6 @@ const protocols: Protocol[] = [
     description: "Next generation automated market maker with customizable pools through hooks and improved capital efficiency",
     docs: "https://docs.uniswap.org/contracts/v4/overview",
     github: "https://github.com/Uniswap/v4-core",
-    category: "DeFi",
-  },
-  {
-    name: "Aave v3",
-    description: "Leading decentralized liquidity protocol for borrowing and lending with cross-chain functionality and risk management",
-    docs: "https://docs.aave.com/developers/",
-    github: "https://github.com/aave/aave-v3-core",
     category: "DeFi",
   },
   // {
