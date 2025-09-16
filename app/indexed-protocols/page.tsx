@@ -70,6 +70,13 @@ const protocols: Protocol[] = [
     category: "DeFi",
   },
   {
+    name: "Morpho",
+    description: "Open decentralized lending network connecting lenders and borrowers with optimized rates and capital efficiency",
+    docs: "https://docs.morpho.org/",
+    github: "https://github.com/morpho-org",
+    category: "DeFi",
+  },
+  {
     name: "Noir",
     description: "Domain-specific language for zero-knowledge proofs with a simple and expressive syntax",
     docs: "https://noir-lang.org/docs",
@@ -84,11 +91,25 @@ const protocols: Protocol[] = [
     category: "Security & Standards",
   },
   {
+    name: "Pendle Finance",
+    description: "Yield trading protocol enabling users to trade, hedge, and leverage yields with capital efficiency",
+    docs: "https://docs.pendle.finance/",
+    github: "https://github.com/pendle-finance",
+    category: "DeFi",
+  },
+  {
     name: "Solidity",
     description: "Object-oriented, high-level language for implementing smart contracts on Ethereum and other EVM chains",
     docs: "https://docs.soliditylang.org/",
     github: "https://github.com/argotorg/solidity",
     category: "Development Tools",
+  },
+  {
+    name: "The Graph",
+    description: "Decentralized protocol for indexing and querying blockchain data with GraphQL",
+    docs: "https://thegraph.com/docs/",
+    github: "https://github.com/graphprotocol",
+    category: "Infrastructure",
   },
   {
     name: "Uniswap v4",
