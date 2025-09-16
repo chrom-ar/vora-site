@@ -35,6 +35,20 @@ const protocols: Protocol[] = [
     category: "Infrastructure",
   },
   {
+    name: "Coinbase CDP",
+    description: "Developer platform providing APIs and SDKs for building onchain applications with wallet, payment, and trading services",
+    docs: "https://docs.cdp.coinbase.com/",
+    github: "https://github.com/coinbase/coinbase-sdk-nodejs",
+    category: "Infrastructure",
+  },
+  {
+    name: "Compound Finance",
+    description: "EVM-compatible lending protocol enabling collateralized borrowing and interest-earning on supplied crypto assets",
+    docs: "https://docs.compound.finance/",
+    github: "https://github.com/compound-finance",
+    category: "DeFi",
+  },
+  {
     name: "EigenLayer",
     description: "Restaking protocol enabling decentralized services to leverage Ethereum's security",
     docs: "https://docs.eigenlayer.xyz/",
@@ -118,13 +132,6 @@ const protocols: Protocol[] = [
     github: "https://github.com/Uniswap/v4-core",
     category: "DeFi",
   },
-  // {
-  //   name: "CDP (Coinbase)",
-  //   description: "Coinbase Developer Platform for building onchain applications with enterprise-grade infrastructure",
-  //   docs: "https://docs.cdp.coinbase.com/",
-  //   github: "https://github.com/coinbase/coinbase-sdk-nodejs",
-  //   category: "Infrastructure"
-  // }
 ];
 
 const IndexedProtocolsPage = () => {
