@@ -112,6 +112,13 @@ const protocols: Protocol[] = [
     category: "DeFi",
   },
   {
+    name: "Ponder",
+    description: "Open-source framework for building blockchain application backends with fast EVM indexing and GraphQL APIs",
+    docs: "https://ponder.sh/docs/get-started",
+    github: "https://github.com/ponder-sh/ponder",
+    category: "Infrastructure",
+  },
+  {
     name: "Solidity",
     description: "Object-oriented, high-level language for implementing smart contracts on Ethereum and other EVM chains",
     docs: "https://docs.soliditylang.org/",
