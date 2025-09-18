@@ -77,6 +77,13 @@ const protocols: Protocol[] = [
     category: "DeFi",
   },
   {
+    name: "EtherFi",
+    description: "Liquid restaking protocol enabling non-custodial ETH staking with eETH tokens and native restaking capabilities",
+    docs: "https://etherfi.gitbook.io/etherfi/",
+    github: "https://github.com/etherfi-protocol",
+    category: "DeFi",
+  },
+  {
     name: "Foundry",
     description: "Fast, portable and modular toolkit for Ethereum application development written in Rust",
     docs: "https://getfoundry.sh/",
@@ -138,6 +145,13 @@ const protocols: Protocol[] = [
     docs: "https://docs.soliditylang.org/",
     github: "https://github.com/argotorg/solidity",
     category: "Development Tools",
+  },
+  {
+    name: "Spark Protocol",
+    description: "DAI-centered lending and borrowing platform from Sky Ecosystem with capital-efficient liquidity features",
+    docs: "https://docs.spark.fi/",
+    github: "https://github.com/sparkdotfi",
+    category: "DeFi",
   },
   {
     name: "The Graph",
