@@ -167,6 +167,13 @@ const protocols: Protocol[] = [
     github: "https://github.com/Uniswap/v4-core",
     category: "DeFi",
   },
+  {
+    name: "Veda",
+    description: "Native yield layer providing vault primitives for automated capital deployment and cross-chain DeFi optimization",
+    docs: "https://docs.veda.tech/",
+    github: "https://github.com/Veda-Labs",
+    category: "DeFi",
+  },
 ];
 
 const IndexedProtocolsPage = () => {
