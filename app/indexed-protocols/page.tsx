@@ -49,6 +49,13 @@ const protocols: Protocol[] = [
     category: "DeFi",
   },
   {
+    name: "Curve Finance",
+    description: "Leading AMM optimized for stablecoin swaps and low-slippage trading with innovative liquidity provision mechanisms",
+    docs: "https://docs.curve.fi/",
+    github: "https://github.com/curvefi",
+    category: "DeFi",
+  },
+  {
     name: "EigenLayer",
     description: "Restaking protocol enabling decentralized services to leverage Ethereum's security",
     docs: "https://docs.eigenlayer.xyz/",
@@ -60,6 +67,13 @@ const protocols: Protocol[] = [
     description: "Decentralized exchange with customizable liquidity pools and advanced trading features",
     docs: "https://docs.equalizer.exchange/",
     github: "https://github.com/Equalizer-Exchange",
+    category: "DeFi",
+  },
+  {
+    name: "Ethena",
+    description: "Synthetic dollar protocol providing crypto-native stable assets backed by staked ETH and delta-hedging strategies",
+    docs: "https://docs.ethena.fi/",
+    github: "https://github.com/ethena-labs",
     category: "DeFi",
   },
   {
