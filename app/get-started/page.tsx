@@ -17,10 +17,10 @@ const GetStartedPage = () => {
         transport: "http",
         url: "https://mcp-router.chrom.ar/mcp",
         headers: {
-          Authorization: "Bearer <API_KEY>"
-        }
-      }
-    }
+          Authorization: "Bearer <API_KEY>",
+        },
+      },
+    },
   };
 
   const handleCopy = async () => {
@@ -35,7 +35,7 @@ const GetStartedPage = () => {
 
   const handleCopyCommand = async () => {
     try {
-      await navigator.clipboard.writeText('claude mcp add --transport http chromar-spark https://mcp-router.chrom.ar/mcp --header "Authorization: Bearer <API_KEY>"');
+      await navigator.clipboard.writeText("claude mcp add --transport http chromar-spark https://mcp-router.chrom.ar/mcp --header \"Authorization: Bearer <API_KEY>\"");
       setCopiedCommand(true);
       setTimeout(() => setCopiedCommand(false), 2000);
     } catch (err) {
@@ -101,7 +101,7 @@ const GetStartedPage = () => {
                   type="email"
                   id="email"
                   value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  onChange={e => setEmail(e.target.value)}
                   required
                   disabled={isLoading}
                   className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder-white/40 focus:outline-none focus:border-white/40 transition-colors"
@@ -166,31 +166,31 @@ const GetStartedPage = () => {
                 <code className="text-sm text-white/90 font-mono">
                   <span className="text-purple-400">{"{"}</span>
                   {"\n  "}
-                  <span className="text-blue-400">"mcpServers"</span>
+                  <span className="text-blue-400">{"\"mcpServers\""}</span>
                   <span className="text-white/60">: </span>
                   <span className="text-purple-400">{"{"}</span>
                   {"\n    "}
-                  <span className="text-green-400">"chromar-spark"</span>
+                  <span className="text-green-400">{"\"chromar-spark\""}</span>
                   <span className="text-white/60">: </span>
                   <span className="text-purple-400">{"{"}</span>
                   {"\n      "}
-                  <span className="text-blue-400">"transport"</span>
+                  <span className="text-blue-400">{"\"transport\""}</span>
                   <span className="text-white/60">: </span>
-                  <span className="text-orange-400">"http"</span>
+                  <span className="text-orange-400">{"\"http\""}</span>
                   <span className="text-white/60">,</span>
                   {"\n      "}
-                  <span className="text-blue-400">"url"</span>
+                  <span className="text-blue-400">{"\"url\""}</span>
                   <span className="text-white/60">: </span>
-                  <span className="text-orange-400">"https://mcp-router.chrom.ar/mcp"</span>
+                  <span className="text-orange-400">{"\"https://mcp-router.chrom.ar/mcp\""}</span>
                   <span className="text-white/60">,</span>
                   {"\n      "}
-                  <span className="text-blue-400">"headers"</span>
+                  <span className="text-blue-400">{"\"headers\""}</span>
                   <span className="text-white/60">: </span>
                   <span className="text-purple-400">{"{"}</span>
                   {"\n        "}
-                  <span className="text-blue-400">"Authorization"</span>
+                  <span className="text-blue-400">{"\"Authorization\""}</span>
                   <span className="text-white/60">: </span>
-                  <span className="text-orange-400">"Bearer &lt;API_KEY&gt;"</span>
+                  <span className="text-orange-400">{"\"Bearer <API_KEY>\""}</span>
                   {"\n      "}
                   <span className="text-purple-400">{"}"}</span>
                   {"\n    "}
@@ -217,7 +217,7 @@ const GetStartedPage = () => {
                     <span className="text-yellow-400">chromar-spark</span>{" "}
                     <span className="text-cyan-400">https://mcp-router.chrom.ar/mcp</span>{" "}
                     <span className="text-white/60">--header</span>{" "}
-                    <span className="text-orange-400">"Authorization: Bearer &lt;API_KEY&gt;"</span>
+                    <span className="text-orange-400">{"\"Authorization: Bearer <API_KEY>\""}</span>
                   </code>
                 </div>
                 <button
@@ -247,7 +247,7 @@ const GetStartedPage = () => {
 
           {/* Features Grid */}
           <div className="mt-16">
-            <h2 className="text-2xl font-semibold text-white mb-8 text-center">What You'll Get</h2>
+            <h2 className="text-2xl font-semibold text-white mb-8 text-center">What You&apos;ll Get</h2>
             <div className="grid md:grid-cols-3 gap-6">
               <div className="text-center">
                 <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-4">

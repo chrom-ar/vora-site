@@ -11,8 +11,8 @@ const compat = new FlatCompat({
   baseDirectory: __dirname,
 });
 
-export default [{
-  ignores: ["node_modules/**", ".next/**", "out/**", "build/**", "next-env.d.ts"]
+const eslintConfig = [{
+  ignores: ["node_modules/**", ".next/**", "out/**", "build/**", "next-env.d.ts"],
 }, ...compat.extends("next/core-web-vitals"), {
   files: ["**/*.ts", "**/*.tsx"],
   plugins: {
@@ -36,7 +36,9 @@ export default [{
     "curly": "error",
     "eqeqeq": "error",
     "func-style": ["error", "expression"],
-    "indent": ["error", 2],
+    "indent": ["error", 2, {
+      "ignoredNodes": ["JSXElement *"]
+    }],
     "key-spacing": ["error", { beforeColon: false, afterColon: true }],
     "no-multiple-empty-lines": ["error", { max: 1 }],
     "no-tabs": "error",
@@ -46,3 +48,5 @@ export default [{
     "semi": "error",
   },
 }];
+
+export default eslintConfig;
