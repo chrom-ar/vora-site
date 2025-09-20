@@ -84,6 +84,13 @@ const protocols: Protocol[] = [
     category: "DeFi",
   },
   {
+    name: "Flaunch",
+    description: "Permissionless tokenization protocol with fair launch mechanics and builder-focused revenue sharing",
+    docs: "https://docs.flaunch.gg/",
+    github: "https://github.com/flayerlabs/flaunchgg-contracts",
+    category: "DeFi",
+  },
+  {
     name: "Foundry",
     description: "Fast, portable and modular toolkit for Ethereum application development written in Rust",
     docs: "https://getfoundry.sh/",
