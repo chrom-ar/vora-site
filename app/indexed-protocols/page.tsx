@@ -112,6 +112,13 @@ const protocols: Protocol[] = [
     category: "DeFi",
   },
   {
+    name: "Lido",
+    description: "Leading liquid staking protocol enabling users to earn staking rewards without locking assets or maintaining infrastructure",
+    docs: "https://docs.lido.fi/",
+    github: "https://github.com/lidofinance/core",
+    category: "DeFi",
+  },
+  {
     name: "Morpho",
     description: "Open decentralized lending network connecting lenders and borrowers with optimized rates and capital efficiency",
     docs: "https://docs.morpho.org/",
