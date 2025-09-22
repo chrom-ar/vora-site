@@ -28,6 +28,13 @@ const protocols: Protocol[] = [
     category: "Privacy & ZK",
   },
   {
+    name: "Balancer v3",
+    description: "Flexible automated market maker with customizable liquidity pools, weighted pools, and boosted pool technology",
+    docs: "https://docs.balancer.fi/",
+    github: "https://github.com/balancer/balancer-v3-monorepo",
+    category: "DeFi",
+  },
+  {
     name: "Chainlink",
     description: "Industry-standard oracle platform connecting blockchains to real-world data and enabling cross-chain communication",
     docs: "https://docs.chain.link/",
