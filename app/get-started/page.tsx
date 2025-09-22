@@ -14,7 +14,6 @@ const GetStartedPage = () => {
   const mcpConfig = {
     mcpServers: {
       "chromar-spark": {
-        transport: "http",
         url: "https://mcp-router.chrom.ar/mcp",
         headers: {
           Authorization: "Bearer <API_KEY>",
@@ -173,11 +172,6 @@ const GetStartedPage = () => {
                   <span className="text-green-400">{"\"chromar-spark\""}</span>
                   <span className="text-white/60">: </span>
                   <span className="text-purple-400">{"{"}</span>
-                  {"\n      "}
-                  <span className="text-blue-400">{"\"transport\""}</span>
-                  <span className="text-white/60">: </span>
-                  <span className="text-orange-400">{"\"http\""}</span>
-                  <span className="text-white/60">,</span>
                   {"\n      "}
                   <span className="text-blue-400">{"\"url\""}</span>
                   <span className="text-white/60">: </span>
