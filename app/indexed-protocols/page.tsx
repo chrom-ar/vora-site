@@ -56,6 +56,13 @@ const protocols: Protocol[] = [
     category: "DeFi",
   },
   {
+    name: "Convex",
+    description: "Yield optimization platform built on top of Curve Finance, allowing liquidity providers to earn boosted rewards without locking CRV",
+    docs: "https://docs.convexfinance.com/",
+    github: "https://github.com/convex-eth",
+    category: "DeFi",
+  },
+  {
     name: "Curve Finance",
     description: "Leading AMM optimized for stablecoin swaps and low-slippage trading with innovative liquidity provision mechanisms",
     docs: "https://docs.curve.fi/",
