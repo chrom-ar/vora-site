@@ -91,6 +91,13 @@ const protocols: Protocol[] = [
     category: "DeFi",
   },
   {
+    name: "Euler",
+    description: "Modular lending protocol with permissionless market creation and customizable risk parameters for diverse crypto assets",
+    docs: "https://docs.euler.finance/",
+    github: "https://github.com/euler-xyz",
+    category: "DeFi",
+  },
+  {
     name: "EtherFi",
     description: "Liquid restaking protocol enabling non-custodial ETH staking with eETH tokens and native restaking capabilities",
     docs: "https://etherfi.gitbook.io/etherfi/",
