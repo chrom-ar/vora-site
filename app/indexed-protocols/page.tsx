@@ -112,6 +112,13 @@ const protocols: Protocol[] = [
     category: "DeFi",
   },
   {
+    name: "Fluid",
+    description: "Advanced lending protocol with liquidity consolidation, automated limits, and integrated DEX for efficient capital utilization across DeFi",
+    docs: "https://docs.fluid.instadapp.io/",
+    github: "https://github.com/Instadapp/fluid-contracts-public",
+    category: "DeFi",
+  },
+  {
     name: "Foundry",
     description: "Fast, portable and modular toolkit for Ethereum application development written in Rust",
     docs: "https://getfoundry.sh/",
