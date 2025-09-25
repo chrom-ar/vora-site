@@ -1,14 +1,16 @@
+import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { HeroContent } from "@/components/hero-content";
-import { PulsingCircle } from "@/components/pulsing-circle";
 import { ShaderBackground } from "@/components/shader-background";
 
 const SparkA1Page = () => {
   return (
     <ShaderBackground>
-      <Header />
-      <HeroContent />
-      <PulsingCircle />
+      <div className="min-h-screen flex flex-col">
+        <Header />
+        <HeroContent />
+        <Footer />
+      </div>
     </ShaderBackground>
   );
 };

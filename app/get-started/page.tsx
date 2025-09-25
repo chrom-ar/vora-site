@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { ShaderBackground } from "@/components/shader-background";
 
@@ -73,9 +74,10 @@ const GetStartedPage = () => {
 
   return (
     <ShaderBackground>
-      <Header />
+      <div className="min-h-screen flex flex-col">
+        <Header />
 
-      <main className="relative z-20 max-w-4xl mx-auto px-8 py-16">
+        <main className="relative z-20 max-w-4xl mx-auto px-8 py-16 flex-1">
         <div className="text-center mb-12">
           <h1 className="text-5xl md:text-6xl tracking-tight text-white mb-4 font-semibold">
             Get Started with{" "}
@@ -282,6 +284,8 @@ const GetStartedPage = () => {
           </div>
         </div>
       </main>
+      <Footer />
+      </div>
     </ShaderBackground>
   );
 };
