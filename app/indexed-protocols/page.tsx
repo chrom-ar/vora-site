@@ -141,6 +141,13 @@ const protocols: Protocol[] = [
     category: "DeFi",
   },
   {
+    name: "KernelDAO",
+    description: "Restaking infrastructure ecosystem with BNB restaking, ETH liquid restaking (rsETH), and curated reward vaults across DeFi",
+    docs: "https://kerneldao.gitbook.io/kernel",
+    github: "https://github.com/Kelp-DAO",
+    category: "DeFi",
+  },
+  {
     name: "Lido",
     description: "Leading liquid staking protocol enabling users to earn staking rewards without locking assets or maintaining infrastructure",
     docs: "https://docs.lido.fi/",
