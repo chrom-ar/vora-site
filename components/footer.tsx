@@ -8,7 +8,7 @@ export const Footer = () => {
     <footer className="relative z-10 px-8 py-6">
       <div className="w-full flex items-center justify-between">
         <div className="text-white/40 text-xs font-light">
-          © 2025 Chrom.ar
+          © 2025 Chroma Labs
         </div>
 
         <div className="flex items-center space-x-6">
