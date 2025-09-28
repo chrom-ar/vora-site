@@ -155,6 +155,13 @@ const protocols: Protocol[] = [
     category: "DeFi",
   },
   {
+    name: "Liquid Collective",
+    description: "Enterprise-grade liquid staking protocol providing institutional access to staking with built-in compliance and slashing coverage",
+    docs: "https://docs.liquidcollective.io/",
+    github: "https://github.com/liquid-collective",
+    category: "DeFi",
+  },
+  {
     name: "Morpho",
     description: "Open decentralized lending network connecting lenders and borrowers with optimized rates and capital efficiency",
     docs: "https://docs.morpho.org/",
