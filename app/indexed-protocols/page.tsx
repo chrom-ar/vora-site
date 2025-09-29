@@ -162,6 +162,13 @@ const protocols: Protocol[] = [
     category: "DeFi",
   },
   {
+    name: "Liquity",
+    description: "Immutable borrowing protocol with user-set interest rates, ETH/LST collateral, and BOLD stablecoin minting",
+    docs: "https://docs.liquity.org/",
+    github: "https://github.com/liquity",
+    category: "DeFi",
+  },
+  {
     name: "Morpho",
     description: "Open decentralized lending network connecting lenders and borrowers with optimized rates and capital efficiency",
     docs: "https://docs.morpho.org/",
