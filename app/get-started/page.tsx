@@ -1,6 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import Image from "next/image";
+
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { ShaderBackground } from "@/components/shader-background";
@@ -11,6 +13,7 @@ const GetStartedPage = () => {
   const [message, setMessage] = useState<{ type: "success" | "error"; text: string } | null>(null);
   const [copied, setCopied] = useState(false);
   const [copiedCommand, setCopiedCommand] = useState(false);
+  const [cursorDeeplink, setCursorDeeplink] = useState("");
 
   const mcpConfig = {
     mcpServers: {
@@ -22,6 +25,19 @@ const GetStartedPage = () => {
       },
     },
   };
+
+  useEffect(() => {
+    const cursorServerConfig = {
+      url: "https://mcp-router.chrom.ar/mcp",
+      headers: {
+        Authorization: "Bearer <API_KEY>",
+      },
+    };
+
+    const encodedConfig = btoa(JSON.stringify(cursorServerConfig));
+
+    setCursorDeeplink(`cursor://anysphere.cursor-deeplink/mcp/install?name=chromar-spark&config=${encodedConfig}`);
+  }, []);
 
   const handleCopy = async () => {
     try {
@@ -232,6 +248,14 @@ const GetStartedPage = () => {
                   )}
                 </button>
               </div>
+            </div>
+            <div className="mt-6">
+              <p className="text-sm text-white/60 font-light mb-3">
+                Or use Cursor with one click:
+              </p>
+              <a href={cursorDeeplink}>
+                <Image src="https://cursor.com/deeplink/mcp-install-dark.svg" alt="Add  MCP server to Cursor" height="28" width="126" />
+              </a>
             </div>
 
             <div className="mt-4 p-3 bg-yellow-500/10 border border-yellow-500/30 rounded-lg">
