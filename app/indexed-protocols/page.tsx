@@ -169,6 +169,13 @@ const protocols: Protocol[] = [
     category: "DeFi",
   },
   {
+    name: "Maple",
+    description: "Institutional lending platform providing fixed-rate, overcollateralized loans with high yield through Syrup DeFi integration",
+    docs: "https://docs.maple.finance/",
+    github: "https://github.com/maple-labs",
+    category: "DeFi",
+  },
+  {
     name: "Morpho",
     description: "Open decentralized lending network connecting lenders and borrowers with optimized rates and capital efficiency",
     docs: "https://docs.morpho.org/",
