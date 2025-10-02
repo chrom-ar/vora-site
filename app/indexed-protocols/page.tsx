@@ -204,6 +204,13 @@ const protocols: Protocol[] = [
     category: "DeFi",
   },
   {
+    name: "Polymarket",
+    description: "Decentralized information markets platform enabling users to trade on the outcomes of real-world events",
+    docs: "https://docs.polymarket.com/",
+    github: "https://github.com/Polymarket",
+    category: "DeFi",
+  },
+  {
     name: "Ponder",
     description: "Open-source framework for building blockchain application backends with fast EVM indexing and GraphQL APIs",
     docs: "https://ponder.sh/docs/get-started",
