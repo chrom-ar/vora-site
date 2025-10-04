@@ -218,6 +218,13 @@ const protocols: Protocol[] = [
     category: "Infrastructure",
   },
   {
+    name: "Rocket Pool",
+    description: "Decentralized Ethereum staking protocol with permissionless node operation and liquid staking tokens",
+    docs: "https://docs.rocketpool.net/",
+    github: "https://github.com/rocket-pool/rocketpool",
+    category: "DeFi",
+  },
+  {
     name: "Solidity",
     description: "Object-oriented, high-level language for implementing smart contracts on Ethereum and other EVM chains",
     docs: "https://docs.soliditylang.org/",
