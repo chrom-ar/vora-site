@@ -225,6 +225,13 @@ const protocols: Protocol[] = [
     category: "DeFi",
   },
   {
+    name: "Sky",
+    description: "Decentralized finance ecosystem providing stablecoins, savings, and governance infrastructure, formerly known as MakerDAO",
+    docs: "https://sky.money/",
+    github: "https://github.com/sky-ecosystem",
+    category: "DeFi",
+  },
+  {
     name: "Solidity",
     description: "Object-oriented, high-level language for implementing smart contracts on Ethereum and other EVM chains",
     docs: "https://docs.soliditylang.org/",
