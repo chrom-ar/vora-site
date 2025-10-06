@@ -246,6 +246,13 @@ const protocols: Protocol[] = [
     category: "DeFi",
   },
   {
+    name: "StakeWise",
+    description: "Modular liquid staking protocol enabling permissionless vault creation with flexible staking strategies and composable yield",
+    docs: "https://docs.stakewise.io/",
+    github: "https://github.com/stakewise",
+    category: "DeFi",
+  },
+  {
     name: "The Graph",
     description: "Decentralized protocol for indexing and querying blockchain data with GraphQL",
     docs: "https://thegraph.com/docs/",
