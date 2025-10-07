@@ -176,6 +176,13 @@ const protocols: Protocol[] = [
     category: "DeFi",
   },
   {
+    name: "mETH Protocol",
+    description: "Permissionless, vertically integrated protocol for ETH liquid staking and liquid restaking with enhanced yield opportunities",
+    docs: "https://docs.mantle.xyz/meth",
+    github: "https://github.com/mantle-lsp",
+    category: "DeFi",
+  },
+  {
     name: "Morpho",
     description: "Open decentralized lending network connecting lenders and borrowers with optimized rates and capital efficiency",
     docs: "https://docs.morpho.org/",
