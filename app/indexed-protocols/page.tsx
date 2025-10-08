@@ -280,6 +280,13 @@ const protocols: Protocol[] = [
     github: "https://github.com/Veda-Labs",
     category: "DeFi",
   },
+  {
+    name: "x402",
+    description: "Open payment protocol enabling frictionless crypto payments over HTTP using the 402 status code, with zero fees and instant settlement",
+    docs: "https://docs.cdp.coinbase.com/x402/welcome",
+    github: "https://github.com/coinbase/x402",
+    category: "Infrastructure",
+  },
 ];
 
 const IndexedProtocolsPage = () => {
