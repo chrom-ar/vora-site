@@ -85,6 +85,13 @@ const protocols: Protocol[] = [
     category: "DeFi",
   },
   {
+    name: "Ethereum ERCs",
+    description: "Standardized smart contract interfaces including token standards and common patterns for Ethereum interoperability",
+    docs: "https://eips.ethereum.org/erc",
+    github: "https://github.com/ethereum/ercs",
+    category: "Security & Standards",
+  },
+  {
     name: "Ethena",
     description: "Synthetic dollar protocol providing crypto-native stable assets backed by staked ETH and delta-hedging strategies",
     docs: "https://docs.ethena.fi/",
