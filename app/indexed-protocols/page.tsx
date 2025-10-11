@@ -36,6 +36,13 @@ const protocols: Protocol[] = [
     category: "DeFi",
   },
   {
+    name: "Beefy",
+    description: "Multi-chain yield optimizer automating compound farming strategies with vault-based yield aggregation",
+    docs: "https://docs.beefy.finance/",
+    github: "https://github.com/beefyfinance",
+    category: "DeFi",
+  },
+  {
     name: "Chainlink",
     description: "Industry-standard oracle platform connecting blockchains to real-world data and enabling cross-chain communication",
     docs: "https://docs.chain.link/",
