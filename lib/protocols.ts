@@ -4,6 +4,7 @@ export interface Protocol {
   docs: string;
   github: string;
   category: string;
+  groupId: string;
 }
 
 export const protocols: Protocol[] = [
@@ -13,13 +14,15 @@ export const protocols: Protocol[] = [
     docs: "https://docs.aave.com/developers/",
     github: "https://github.com/aave/aave-v3-core",
     category: "DeFi",
+    groupId: "Aave",
   },
   {
     name: "Aztec",
     description: "Privacy-focused L2 solution with native zero-knowledge proofs for confidential smart contracts",
     docs: "https://docs.aztec.network/",
     github: "https://github.com/AztecProtocol",
-    category: "Privacy & ZK",
+    category: "Privacy",
+    groupId: "Aztec",
   },
   {
     name: "Balancer v3",
@@ -27,6 +30,7 @@ export const protocols: Protocol[] = [
     docs: "https://docs.balancer.fi/",
     github: "https://github.com/balancer/balancer-v3-monorepo",
     category: "DeFi",
+    groupId: "Balancer-V3",
   },
   {
     name: "Beefy",
@@ -34,6 +38,7 @@ export const protocols: Protocol[] = [
     docs: "https://docs.beefy.finance/",
     github: "https://github.com/beefyfinance",
     category: "DeFi",
+    groupId: "Beefy",
   },
   {
     name: "Chainlink",
@@ -41,6 +46,7 @@ export const protocols: Protocol[] = [
     docs: "https://docs.chain.link/",
     github: "https://github.com/smartcontractkit",
     category: "Infrastructure",
+    groupId: "ChainLink",
   },
   {
     name: "Coinbase CDP",
@@ -48,6 +54,7 @@ export const protocols: Protocol[] = [
     docs: "https://docs.cdp.coinbase.com/",
     github: "https://github.com/coinbase/coinbase-sdk-nodejs",
     category: "Infrastructure",
+    groupId: "Coinbase-CDP",
   },
   {
     name: "Compound Finance",
@@ -55,6 +62,7 @@ export const protocols: Protocol[] = [
     docs: "https://docs.compound.finance/",
     github: "https://github.com/compound-finance",
     category: "DeFi",
+    groupId: "Compound-Finance",
   },
   {
     name: "Convex",
@@ -62,6 +70,7 @@ export const protocols: Protocol[] = [
     docs: "https://docs.convexfinance.com/",
     github: "https://github.com/convex-eth",
     category: "DeFi",
+    groupId: "Convex",
   },
   {
     name: "Curve Finance",
@@ -69,6 +78,7 @@ export const protocols: Protocol[] = [
     docs: "https://docs.curve.fi/",
     github: "https://github.com/curvefi",
     category: "DeFi",
+    groupId: "Curve-Finance",
   },
   {
     name: "EigenLayer",
@@ -76,6 +86,7 @@ export const protocols: Protocol[] = [
     docs: "https://docs.eigenlayer.xyz/",
     github: "https://github.com/Layr-Labs/eigencloud-docs",
     category: "Infrastructure",
+    groupId: "EigenLayer",
   },
   {
     name: "Equalizer Exchange",
@@ -83,13 +94,15 @@ export const protocols: Protocol[] = [
     docs: "https://docs.equalizer.exchange/",
     github: "https://github.com/Equalizer-Exchange",
     category: "DeFi",
+    groupId: "Equalizer-Exchange",
   },
   {
     name: "Ethereum ERCs",
     description: "Standardized smart contract interfaces including token standards and common patterns for Ethereum interoperability",
     docs: "https://eips.ethereum.org/erc",
     github: "https://github.com/ethereum/ercs",
-    category: "Security & Standards",
+    category: "Standards",
+    groupId: "ERCs",
   },
   {
     name: "Ethena",
@@ -97,6 +110,7 @@ export const protocols: Protocol[] = [
     docs: "https://docs.ethena.fi/",
     github: "https://github.com/ethena-labs",
     category: "DeFi",
+    groupId: "Ethena",
   },
   {
     name: "Euler",
@@ -104,6 +118,7 @@ export const protocols: Protocol[] = [
     docs: "https://docs.euler.finance/",
     github: "https://github.com/euler-xyz",
     category: "DeFi",
+    groupId: "Euler",
   },
   {
     name: "EtherFi",
@@ -111,6 +126,7 @@ export const protocols: Protocol[] = [
     docs: "https://etherfi.gitbook.io/etherfi/",
     github: "https://github.com/etherfi-protocol",
     category: "DeFi",
+    groupId: "Etherfi",
   },
   {
     name: "Flaunch",
@@ -118,6 +134,7 @@ export const protocols: Protocol[] = [
     docs: "https://docs.flaunch.gg/",
     github: "https://github.com/flayerlabs/flaunchgg-contracts",
     category: "DeFi",
+    groupId: "flaunch",
   },
   {
     name: "Fluid",
@@ -125,20 +142,23 @@ export const protocols: Protocol[] = [
     docs: "https://docs.fluid.instadapp.io/",
     github: "https://github.com/Instadapp/fluid-contracts-public",
     category: "DeFi",
+    groupId: "Fluid",
   },
   {
     name: "Foundry",
     description: "Fast, portable and modular toolkit for Ethereum application development written in Rust",
     docs: "https://getfoundry.sh/",
     github: "https://github.com/foundry-rs/foundry",
-    category: "Development Tools",
+    category: "Tools",
+    groupId: "foundry",
   },
   {
     name: "Hardhat",
     description: "Development environment to compile, deploy, test, and debug Ethereum software",
     docs: "https://hardhat.org/docs",
     github: "https://github.com/NomicFoundation/hardhat",
-    category: "Development Tools",
+    category: "Tools",
+    groupId: "hardhat",
   },
   {
     name: "JustLend",
@@ -146,6 +166,7 @@ export const protocols: Protocol[] = [
     docs: "https://docs.justlend.org/developers/contracts_overview/",
     github: "https://github.com/justlend",
     category: "DeFi",
+    groupId: "JustLend",
   },
   {
     name: "KernelDAO",
@@ -153,6 +174,7 @@ export const protocols: Protocol[] = [
     docs: "https://kerneldao.gitbook.io/kernel",
     github: "https://github.com/Kelp-DAO",
     category: "DeFi",
+    groupId: "KernelDAO",
   },
   {
     name: "Lido",
@@ -160,6 +182,7 @@ export const protocols: Protocol[] = [
     docs: "https://docs.lido.fi/",
     github: "https://github.com/lidofinance/core",
     category: "DeFi",
+    groupId: "Lido",
   },
   {
     name: "Liquid Collective",
@@ -167,6 +190,7 @@ export const protocols: Protocol[] = [
     docs: "https://docs.liquidcollective.io/",
     github: "https://github.com/liquid-collective",
     category: "DeFi",
+    groupId: "Liquid-Collective",
   },
   {
     name: "Liquity",
@@ -174,6 +198,7 @@ export const protocols: Protocol[] = [
     docs: "https://docs.liquity.org/",
     github: "https://github.com/liquity",
     category: "DeFi",
+    groupId: "Liquity",
   },
   {
     name: "Maple",
@@ -181,6 +206,7 @@ export const protocols: Protocol[] = [
     docs: "https://docs.maple.finance/",
     github: "https://github.com/maple-labs",
     category: "DeFi",
+    groupId: "Maple",
   },
   {
     name: "mETH Protocol",
@@ -188,6 +214,7 @@ export const protocols: Protocol[] = [
     docs: "https://docs.mantle.xyz/meth",
     github: "https://github.com/mantle-lsp",
     category: "DeFi",
+    groupId: "mETH",
   },
   {
     name: "Morpho",
@@ -195,20 +222,23 @@ export const protocols: Protocol[] = [
     docs: "https://docs.morpho.org/",
     github: "https://github.com/morpho-org",
     category: "DeFi",
+    groupId: "Morpho",
   },
   {
     name: "Noir",
     description: "Domain-specific language for zero-knowledge proofs with a simple and expressive syntax",
     docs: "https://noir-lang.org/docs",
     github: "https://github.com/noir-lang/noir",
-    category: "Privacy & ZK",
+    category: "Privacy",
+    groupId: "noir",
   },
   {
     name: "OpenZeppelin",
     description: "Battle-tested library of secure, reusable smart contracts and security auditing tools",
     docs: "https://docs.openzeppelin.com/",
     github: "https://github.com/OpenZeppelin/openzeppelin-contracts",
-    category: "Security & Standards",
+    category: "Security",
+    groupId: "",
   },
   {
     name: "Pendle Finance",
@@ -216,6 +246,7 @@ export const protocols: Protocol[] = [
     docs: "https://docs.pendle.finance/",
     github: "https://github.com/pendle-finance",
     category: "DeFi",
+    groupId: "Pendle-Finance",
   },
   {
     name: "Polymarket",
@@ -223,6 +254,7 @@ export const protocols: Protocol[] = [
     docs: "https://docs.polymarket.com/",
     github: "https://github.com/Polymarket",
     category: "DeFi",
+    groupId: "Polymarket",
   },
   {
     name: "Ponder",
@@ -230,6 +262,7 @@ export const protocols: Protocol[] = [
     docs: "https://ponder.sh/docs/get-started",
     github: "https://github.com/ponder-sh/ponder",
     category: "Infrastructure",
+    groupId: "Pounder",
   },
   {
     name: "Rocket Pool",
@@ -237,6 +270,7 @@ export const protocols: Protocol[] = [
     docs: "https://docs.rocketpool.net/",
     github: "https://github.com/rocket-pool/rocketpool",
     category: "DeFi",
+    groupId: "RocketPool",
   },
   {
     name: "Sky",
@@ -244,13 +278,15 @@ export const protocols: Protocol[] = [
     docs: "https://sky.money/",
     github: "https://github.com/sky-ecosystem",
     category: "DeFi",
+    groupId: "Sky",
   },
   {
     name: "Solidity",
     description: "Object-oriented, high-level language for implementing smart contracts on Ethereum and other EVM chains",
     docs: "https://docs.soliditylang.org/",
     github: "https://github.com/argotorg/solidity",
-    category: "Development Tools",
+    category: "Tools",
+    groupId: "Solidity",
   },
   {
     name: "Spark Protocol",
@@ -258,6 +294,7 @@ export const protocols: Protocol[] = [
     docs: "https://docs.spark.fi/",
     github: "https://github.com/sparkdotfi",
     category: "DeFi",
+    groupId: "Spark",
   },
   {
     name: "StakeWise",
@@ -265,6 +302,7 @@ export const protocols: Protocol[] = [
     docs: "https://docs.stakewise.io/",
     github: "https://github.com/stakewise",
     category: "DeFi",
+    groupId: "StakeWise",
   },
   {
     name: "The Graph",
@@ -272,6 +310,7 @@ export const protocols: Protocol[] = [
     docs: "https://thegraph.com/docs/",
     github: "https://github.com/graphprotocol",
     category: "Infrastructure",
+    groupId: "TheGraph",
   },
   {
     name: "Uniswap v4",
@@ -279,6 +318,7 @@ export const protocols: Protocol[] = [
     docs: "https://docs.uniswap.org/contracts/v4/overview",
     github: "https://github.com/Uniswap/v4-core",
     category: "DeFi",
+    groupId: "uniswap",
   },
   {
     name: "Veda",
@@ -286,6 +326,7 @@ export const protocols: Protocol[] = [
     docs: "https://docs.veda.tech/",
     github: "https://github.com/Veda-Labs",
     category: "DeFi",
+    groupId: "Veda",
   },
   {
     name: "x402",
@@ -293,5 +334,6 @@ export const protocols: Protocol[] = [
     docs: "https://docs.cdp.coinbase.com/x402/welcome",
     github: "https://github.com/coinbase/x402",
     category: "Infrastructure",
+    groupId: "x402",
   },
 ];
