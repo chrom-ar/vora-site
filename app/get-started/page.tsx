@@ -26,18 +26,14 @@ const VerificationDialog = ({
   message,
 }: VerificationDialogProps) => (
   <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 p-4">
-    <div className="bg-white rounded-2xl p-8 border border-gray-200 shadow-xl max-w-md w-full">
-      <h3 className="text-2xl font-semibold text-gray-900 mb-4">Verify Your Email</h3>
-      <p className="text-sm text-gray-600 font-light mb-6">
-        We&apos;ve sent a 6-digit verification code to <span className="text-gray-900 font-medium">{email}</span>.
-        Please enter it below to complete your registration.
+    <div className="bg-white p-8 border-2 border-black shadow-xl max-w-md w-full">
+      <h3 className="text-xl font-mono font-bold text-gray-900 mb-4"># Verify Email</h3>
+      <p className="text-sm text-gray-600 font-mono mb-6">
+        Code sent to <span className="text-gray-900 font-bold">{email}</span>
       </p>
 
       <form onSubmit={onSubmit} className="space-y-4">
         <div>
-          <label htmlFor="code" className="block text-sm font-light text-gray-700 mb-2">
-            Verification Code
-          </label>
           <input
             type="text"
             id="code"
@@ -47,17 +43,17 @@ const VerificationDialog = ({
             disabled={isLoading}
             maxLength={6}
             pattern="[0-9]{6}"
-            className="w-full px-4 py-3 rounded-xl bg-white border border-gray-300 text-gray-900 text-center text-2xl tracking-widest placeholder-gray-400 focus:outline-none focus:border-black focus:ring-2 focus:ring-black transition-colors font-mono"
+            className="w-full px-4 py-3 bg-gray-50 border-2 border-gray-300 text-gray-900 text-center text-2xl tracking-widest placeholder-gray-400 focus:outline-none focus:border-black transition-colors font-mono"
             placeholder="000000"
           />
         </div>
 
         {message && (
           <div
-            className={`px-4 py-3 rounded-lg text-sm ${
+            className={`px-4 py-2 text-sm font-mono ${
               message.type === "success"
-                ? "bg-green-500/20 text-green-300 border border-green-500/30"
-                : "bg-red-500/20 text-red-300 border border-red-500/30"
+                ? "bg-green-50 text-green-700 border-l-4 border-green-500"
+                : "bg-red-50 text-red-700 border-l-4 border-red-500"
             }`}
           >
             {message.text}
@@ -69,16 +65,16 @@ const VerificationDialog = ({
             type="button"
             onClick={onCancel}
             disabled={isLoading}
-            className="flex-1 px-6 py-3 rounded-full bg-gray-100 border border-gray-300 text-gray-900 font-normal text-sm transition-all duration-200 hover:bg-gray-200 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="flex-1 px-6 py-2 bg-gray-100 border-2 border-gray-300 text-gray-900 font-mono text-sm hover:bg-gray-200 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
           >
-            Cancel
+            cancel
           </button>
           <button
             type="submit"
             disabled={isLoading}
-            className="flex-1 px-6 py-3 rounded-full bg-black text-white font-normal text-sm transition-all duration-200 hover:bg-gray-800 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="flex-1 px-6 py-2 bg-black text-white font-mono text-sm hover:bg-gray-800 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
           >
-            {isLoading ? "Verifying..." : "Verify"}
+            {isLoading ? "verifying..." : "verify"}
           </button>
         </div>
       </form>
@@ -93,19 +89,19 @@ interface ApiKeyDisplayProps {
 }
 
 const ApiKeyDisplay = ({ apiKey, copied, onCopy }: ApiKeyDisplayProps) => (
-  <div className="bg-white rounded-2xl p-8 border border-gray-200 shadow-sm">
-    <h2 className="text-2xl font-semibold text-gray-900 mb-4">Your API Key</h2>
-    <div className="mb-4 p-3 bg-yellow-50 border border-yellow-300 rounded-lg">
-      <p className="text-sm text-yellow-800 font-light">
-        ⚠️ <strong>Important:</strong> Don&apos;t leave this page without copying your key. It will only be displayed once for security reasons.
+  <div className="border-l-4 border-black pl-6 py-4">
+    <h2 className="text-xl font-mono font-bold text-gray-900 mb-4"># Your API Key</h2>
+    <div className="mb-4 px-4 py-2 bg-yellow-50 border-l-4 border-yellow-500">
+      <p className="text-sm text-yellow-800 font-mono">
+        ! Save this key - it won&apos;t be shown again
       </p>
     </div>
     <div className="relative">
-      <div className="bg-gray-900 rounded-xl p-4 pr-16 border border-gray-700 flex items-center justify-between">
-        <code className="text-sm text-white font-mono break-all">{apiKey}</code>
+      <div className="bg-gray-900 p-4 pr-16 flex items-center justify-between">
+        <code className="text-sm text-green-400 font-mono break-all">{apiKey}</code>
         <button
           onClick={onCopy}
-          className="absolute right-3 p-2 rounded-lg bg-gray-700 border border-gray-600 text-gray-300 hover:bg-gray-600 hover:text-white transition-all"
+          className="absolute right-3 p-2 bg-gray-800 text-gray-300 hover:bg-gray-700 hover:text-white transition-all"
           title="Copy API key"
         >
           {copied ? (
@@ -120,9 +116,6 @@ const ApiKeyDisplay = ({ apiKey, copied, onCopy }: ApiKeyDisplayProps) => (
         </button>
       </div>
     </div>
-    <p className="text-xs text-gray-600 font-light mt-3">
-      Keep this key secure. You&apos;ll need it to authenticate with the MCP server.
-    </p>
   </div>
 );
 
@@ -255,36 +248,31 @@ const GetStartedPage = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-gray-50">
+    <div className="min-h-screen flex flex-col bg-white">
       <Header />
 
         <main className="relative z-20 max-w-4xl mx-auto px-8 py-16 flex-1">
-        <div className="text-center mb-12">
-          <h1 className="text-5xl md:text-6xl tracking-tight text-gray-900 mb-4 font-semibold">
-            Get Started with{" "}
-            <span className="font-medium italic">SPARK-A1</span>
+        <div className="mb-12">
+          <h1 className="text-4xl md:text-5xl text-gray-900 mb-3 font-mono font-bold">
+            $ spark-a1 --setup
           </h1>
-          <p className="text-lg text-gray-600 font-light">
-            Request your API key and integrate with your favorite IDE
+          <p className="text-base text-gray-600 font-mono">
+            Get your API key and start integrating
           </p>
         </div>
 
         <div className="space-y-8">
           {/* API Key Request Form - Only show if no API key yet */}
           {!apiKey && (
-            <div className="bg-white rounded-2xl p-8 border border-gray-200 shadow-sm">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4">Request Your API Key</h2>
+            <div className="border-l-4 border-black pl-6 py-4">
+              <h2 className="text-xl font-mono font-bold text-gray-900 mb-4"># Step 1: Request API Key</h2>
 
-              <p className="text-sm text-gray-600 font-light mb-6">
-                Enter your email address below to get started. We&apos;ll send you a verification code to confirm your identity.
-                Once verified, you&apos;ll receive your API key and can start integrating SPARK-A1 with your favorite IDE.
+              <p className="text-sm text-gray-600 mb-6 font-mono">
+                Enter your email to receive a verification code
               </p>
 
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
-                  <label htmlFor="email" className="block text-sm font-light text-gray-700 mb-2">
-                    Email Address
-                  </label>
                   <input
                     type="email"
                     id="email"
@@ -292,17 +280,17 @@ const GetStartedPage = () => {
                     onChange={e => setEmail(e.target.value)}
                     required
                     disabled={isLoading}
-                    className="w-full px-4 py-3 rounded-xl bg-white border border-gray-300 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-black focus:ring-2 focus:ring-black transition-colors"
-                    placeholder="developer@example.com"
+                    className="w-full px-4 py-2 bg-gray-50 border-2 border-gray-300 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-black transition-colors font-mono text-sm"
+                    placeholder="your@email.com"
                   />
                 </div>
 
                 {message && (
                   <div
-                    className={`px-4 py-3 rounded-lg text-sm ${
+                    className={`px-4 py-2 text-sm font-mono ${
                       message.type === "success"
-                        ? "bg-green-500/20 text-green-300 border border-green-500/30"
-                        : "bg-red-500/20 text-red-300 border border-red-500/30"
+                        ? "bg-green-50 text-green-700 border-l-4 border-green-500"
+                        : "bg-red-50 text-red-700 border-l-4 border-red-500"
                     }`}
                   >
                     {message.text}
@@ -312,9 +300,9 @@ const GetStartedPage = () => {
                 <button
                   type="submit"
                   disabled={isLoading}
-                  className="w-full px-8 py-3 rounded-full bg-black text-white font-normal text-sm transition-all duration-200 hover:bg-gray-800 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="px-6 py-2 bg-black text-white font-mono text-sm hover:bg-gray-800 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
                 >
-                  {isLoading ? "Requesting..." : "Request API Key"}
+                  {isLoading ? "requesting..." : "request-key"}
                 </button>
               </form>
             </div>
@@ -348,17 +336,17 @@ const GetStartedPage = () => {
 
           {/* MCP Configuration - Only show after API key is obtained */}
           {apiKey && (
-            <div className="bg-white rounded-2xl p-8 border border-gray-200 shadow-sm">
+            <div className="border-l-4 border-black pl-6 py-4">
             <div className="mb-6">
-              <h2 className="text-2xl font-semibold text-gray-900">MCP Server Configuration</h2>
+              <h2 className="text-xl font-mono font-bold text-gray-900"># Step 2: Configure MCP Server</h2>
             </div>
 
-            <p className="text-sm text-gray-600 font-light mb-4">
-              Configure your favorite editor / tool with the following MCP settings:
+            <p className="text-sm text-gray-600 font-mono mb-4">
+              Add to your editor&apos;s MCP config:
             </p>
 
             <div className="relative group">
-              <pre className="bg-gray-900 rounded-xl p-4 pr-12 overflow-x-auto border border-gray-700">
+              <pre className="bg-gray-900 p-4 pr-12 overflow-x-auto">
                 <code className="text-sm text-white/90 font-mono">
                   <span className="text-purple-400">{"{"}</span>
                   {"\n  "}
@@ -394,7 +382,7 @@ const GetStartedPage = () => {
               </pre>
               <button
                 onClick={handleCopy}
-                className="absolute right-3 top-3 p-2 rounded-lg bg-gray-700 border border-gray-600 text-gray-300 hover:bg-gray-600 hover:text-white transition-all opacity-0 group-hover:opacity-100"
+                className="absolute right-3 top-3 p-2 bg-gray-800 text-gray-300 hover:bg-gray-700 hover:text-white transition-all opacity-0 group-hover:opacity-100"
                 title="Copy configuration"
               >
                 {copied ? (
@@ -410,11 +398,11 @@ const GetStartedPage = () => {
             </div>
 
             <div className="mt-6">
-              <p className="text-sm text-gray-600 font-light mb-3">
-                Or use Claude Code with this command:
+              <p className="text-sm text-gray-600 font-mono mb-3">
+                Or run this command:
               </p>
               <div className="relative group">
-                <div className="bg-gray-900 rounded-xl p-4 pr-12 overflow-x-auto border border-gray-700">
+                <div className="bg-gray-900 p-4 pr-12 overflow-x-auto">
                   <code className="text-sm text-white/90 font-mono">
                     <span className="text-green-400">claude</span>{" "}
                     <span className="text-blue-400">mcp add</span>{" "}
@@ -428,7 +416,7 @@ const GetStartedPage = () => {
                 </div>
                 <button
                   onClick={handleCopyCommand}
-                  className="absolute right-3 top-3 p-2 rounded-lg bg-gray-700 border border-gray-600 text-gray-300 hover:bg-gray-600 hover:text-white transition-all opacity-0 group-hover:opacity-100"
+                  className="absolute right-3 top-3 p-2 bg-gray-800 text-gray-300 hover:bg-gray-700 hover:text-white transition-all opacity-0 group-hover:opacity-100"
                   title="Copy command"
                 >
                   {copiedCommand ? (
@@ -444,63 +432,21 @@ const GetStartedPage = () => {
               </div>
             </div>
             <div className="mt-6">
-              <p className="text-sm text-gray-600 font-light mb-3">
-                Or use Cursor with one click:
+              <p className="text-sm text-gray-600 font-mono mb-3">
+                Cursor users:
               </p>
               <a href={cursorDeeplink}>
                 <Image src="https://cursor.com/deeplink/mcp-install-dark.svg" alt="Add  MCP server to Cursor" height="28" width="126" />
               </a>
             </div>
 
-            <div className="mt-4 p-3 bg-green-100 border border-green-300 rounded-lg">
-              <p className="text-xs text-green-800 font-light">
-                ✓ Your API key has been automatically inserted in the configuration above. Ready to use!
+            <div className="mt-6 px-4 py-2 bg-green-50 border-l-4 border-green-500">
+              <p className="text-sm text-green-700 font-mono">
+                ✓ API key inserted - ready to use
               </p>
             </div>
           </div>
           )}
-
-          {/* Features Grid */}
-          <div className="mt-16">
-            <h2 className="text-2xl font-semibold text-gray-900 mb-8 text-center">What You&apos;ll Get</h2>
-            <div className="grid md:grid-cols-3 gap-6">
-              <div className="text-center">
-                <div className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-6 h-6 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                  </svg>
-                </div>
-                <h3 className="text-lg font-medium text-gray-900 mb-2">Instant Feedback</h3>
-                <p className="text-sm text-gray-600 font-light">
-                  Real-time validation and suggestions as you code
-                </p>
-              </div>
-
-              <div className="text-center">
-                <div className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-6 h-6 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                  </svg>
-                </div>
-                <h3 className="text-lg font-medium text-gray-900 mb-2">Security First</h3>
-                <p className="text-sm text-gray-600 font-light">
-                  Automated vulnerability scanning and auditing
-                </p>
-              </div>
-
-              <div className="text-center">
-                <div className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-6 h-6 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-                  </svg>
-                </div>
-                <h3 className="text-lg font-medium text-gray-900 mb-2">AI Generation</h3>
-                <p className="text-sm text-gray-600 font-light">
-                  Generate audited, production-ready contracts
-                </p>
-              </div>
-            </div>
-          </div>
         </div>
       </main>
       <Footer />
