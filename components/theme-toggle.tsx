@@ -14,7 +14,7 @@ export const ThemeToggle = () => {
       onClick={toggleTheme}
       className="inline-flex items-center gap-2 px-3 py-1.5 text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors font-mono"
       title={`Switch to ${theme === "light" ? "dark" : "light"} mode`}
-    >
+      >
       {theme === "light" ? (
         <>
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
