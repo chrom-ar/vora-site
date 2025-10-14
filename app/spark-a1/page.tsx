@@ -78,9 +78,6 @@ const SparkA1Page = () => {
           <h2 className="text-lg sm:text-xl md:text-2xl text-gray-700 dark:text-gray-300 mb-2">
             IDE integration, knowledge base, debugging and onchain simulation.
           </h2>
-          <p className="text-sm sm:text-base text-gray-500 dark:text-gray-400">
-            AI contract generation with audited code. Automated vulnerability scanning and transaction simulation.
-          </p>
         </div>
 
         <div className="mb-6">
