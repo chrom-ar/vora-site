@@ -26,10 +26,10 @@ const VerificationDialog = ({
   message,
 }: VerificationDialogProps) => (
   <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 p-4">
-    <div className="bg-white p-8 border-2 border-black shadow-xl max-w-md w-full">
-      <h3 className="text-xl font-mono font-bold text-gray-900 mb-4"># Verify Email</h3>
-      <p className="text-sm text-gray-600 font-mono mb-6">
-        Code sent to <span className="text-gray-900 font-bold">{email}</span>
+    <div className="bg-white dark:bg-gray-950 p-8 border-2 border-black dark:border-white shadow-xl max-w-md w-full">
+      <h3 className="text-xl font-mono font-bold text-gray-900 dark:text-gray-100 mb-4"># Verify Email</h3>
+      <p className="text-sm text-gray-600 dark:text-gray-400 font-mono mb-6">
+        Code sent to <span className="text-gray-900 dark:text-gray-100 font-bold">{email}</span>
       </p>
 
       <form onSubmit={onSubmit} className="space-y-4">
@@ -43,7 +43,7 @@ const VerificationDialog = ({
             disabled={isLoading}
             maxLength={6}
             pattern="[0-9]{6}"
-            className="w-full px-4 py-3 bg-gray-50 border-2 border-gray-300 text-gray-900 text-center text-2xl tracking-widest placeholder-gray-400 focus:outline-none focus:border-black transition-colors font-mono"
+            className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-900 border-2 border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 text-center text-2xl tracking-widest placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:border-black dark:focus:border-white transition-colors font-mono"
             placeholder="000000"
           />
         </div>
@@ -52,8 +52,8 @@ const VerificationDialog = ({
           <div
             className={`px-4 py-2 text-sm font-mono ${
               message.type === "success"
-                ? "bg-green-50 text-green-700 border-l-4 border-green-500"
-                : "bg-red-50 text-red-700 border-l-4 border-red-500"
+                ? "bg-green-50 dark:bg-green-950 text-green-700 dark:text-green-400 border-l-4 border-green-500"
+                : "bg-red-50 dark:bg-red-950 text-red-700 dark:text-red-400 border-l-4 border-red-500"
             }`}
           >
             {message.text}
@@ -65,14 +65,14 @@ const VerificationDialog = ({
             type="button"
             onClick={onCancel}
             disabled={isLoading}
-            className="flex-1 px-6 py-2 bg-gray-100 border-2 border-gray-300 text-gray-900 font-mono text-sm hover:bg-gray-200 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+            className="flex-1 px-6 py-2 bg-gray-100 dark:bg-gray-800 border-2 border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 font-mono text-sm hover:bg-gray-200 dark:hover:bg-gray-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
           >
             cancel
           </button>
           <button
             type="submit"
             disabled={isLoading}
-            className="flex-1 px-6 py-2 bg-black text-white font-mono text-sm hover:bg-gray-800 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+            className="flex-1 px-6 py-2 bg-black dark:bg-white text-white dark:text-black font-mono text-sm hover:bg-gray-800 dark:hover:bg-gray-200 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
           >
             {isLoading ? "verifying..." : "verify"}
           </button>
@@ -89,19 +89,19 @@ interface ApiKeyDisplayProps {
 }
 
 const ApiKeyDisplay = ({ apiKey, copied, onCopy }: ApiKeyDisplayProps) => (
-  <div className="border-l-4 border-black pl-6 py-4">
-    <h2 className="text-xl font-mono font-bold text-gray-900 mb-4"># Your API Key</h2>
-    <div className="mb-4 px-4 py-2 bg-yellow-50 border-l-4 border-yellow-500">
-      <p className="text-sm text-yellow-800 font-mono">
+  <div className="border-l-4 border-black dark:border-white pl-6 py-4">
+    <h2 className="text-xl font-mono font-bold text-gray-900 dark:text-gray-100 mb-4"># Your API Key</h2>
+    <div className="mb-4 px-4 py-2 bg-yellow-50 dark:bg-yellow-950 border-l-4 border-yellow-500">
+      <p className="text-sm text-yellow-800 dark:text-yellow-400 font-mono">
         ! Save this key - it won&apos;t be shown again
       </p>
     </div>
     <div className="relative">
-      <div className="bg-gray-900 p-4 pr-16 flex items-center justify-between">
+      <div className="bg-gray-900 dark:bg-gray-950 p-4 pr-16 flex items-center justify-between border border-gray-800">
         <code className="text-sm text-green-400 font-mono break-all">{apiKey}</code>
         <button
           onClick={onCopy}
-          className="absolute right-3 p-2 bg-gray-800 text-gray-300 hover:bg-gray-700 hover:text-white transition-all"
+          className="absolute right-3 p-2 bg-gray-800 dark:bg-gray-900 text-gray-300 hover:bg-gray-700 hover:text-white transition-all"
           title="Copy API key"
         >
           {copied ? (
@@ -248,15 +248,15 @@ const GetStartedPage = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-white">
+    <div className="min-h-screen flex flex-col bg-white dark:bg-gray-950">
       <Header />
 
         <main className="relative z-20 max-w-4xl mx-auto px-8 py-16 flex-1">
         <div className="mb-12">
-          <h1 className="text-4xl md:text-5xl text-gray-900 mb-3 font-mono font-bold">
+          <h1 className="text-4xl md:text-5xl text-gray-900 dark:text-gray-100 mb-3 font-mono font-bold">
             $ spark-a1 --setup
           </h1>
-          <p className="text-base text-gray-600 font-mono">
+          <p className="text-base text-gray-600 dark:text-gray-400 font-mono">
             Get your API key and start integrating
           </p>
         </div>
@@ -264,10 +264,10 @@ const GetStartedPage = () => {
         <div className="space-y-8">
           {/* API Key Request Form - Only show if no API key yet */}
           {!apiKey && (
-            <div className="border-l-4 border-black pl-6 py-4">
-              <h2 className="text-xl font-mono font-bold text-gray-900 mb-4"># Step 1: Request API Key</h2>
+            <div className="border-l-4 border-black dark:border-white pl-6 py-4">
+              <h2 className="text-xl font-mono font-bold text-gray-900 dark:text-gray-100 mb-4"># Step 1: Request API Key</h2>
 
-              <p className="text-sm text-gray-600 mb-6 font-mono">
+              <p className="text-sm text-gray-600 dark:text-gray-400 mb-6 font-mono">
                 Enter your email to receive a verification code
               </p>
 
@@ -280,7 +280,7 @@ const GetStartedPage = () => {
                     onChange={e => setEmail(e.target.value)}
                     required
                     disabled={isLoading}
-                    className="w-full px-4 py-2 bg-gray-50 border-2 border-gray-300 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-black transition-colors font-mono text-sm"
+                    className="w-full px-4 py-2 bg-gray-50 dark:bg-gray-900 border-2 border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:border-black dark:focus:border-white transition-colors font-mono text-sm"
                     placeholder="your@email.com"
                   />
                 </div>
@@ -289,8 +289,8 @@ const GetStartedPage = () => {
                   <div
                     className={`px-4 py-2 text-sm font-mono ${
                       message.type === "success"
-                        ? "bg-green-50 text-green-700 border-l-4 border-green-500"
-                        : "bg-red-50 text-red-700 border-l-4 border-red-500"
+                        ? "bg-green-50 dark:bg-green-950 text-green-700 dark:text-green-400 border-l-4 border-green-500"
+                        : "bg-red-50 dark:bg-red-950 text-red-700 dark:text-red-400 border-l-4 border-red-500"
                     }`}
                   >
                     {message.text}
@@ -300,7 +300,7 @@ const GetStartedPage = () => {
                 <button
                   type="submit"
                   disabled={isLoading}
-                  className="px-6 py-2 bg-black text-white font-mono text-sm hover:bg-gray-800 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                  className="px-6 py-2 bg-black dark:bg-white text-white dark:text-black font-mono text-sm hover:bg-gray-800 dark:hover:bg-gray-200 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
                 >
                   {isLoading ? "requesting..." : "request-key"}
                 </button>
@@ -336,17 +336,17 @@ const GetStartedPage = () => {
 
           {/* MCP Configuration - Only show after API key is obtained */}
           {apiKey && (
-            <div className="border-l-4 border-black pl-6 py-4">
+            <div className="border-l-4 border-black dark:border-white pl-6 py-4">
             <div className="mb-6">
-              <h2 className="text-xl font-mono font-bold text-gray-900"># Step 2: Configure MCP Server</h2>
+              <h2 className="text-xl font-mono font-bold text-gray-900 dark:text-gray-100"># Step 2: Configure MCP Server</h2>
             </div>
 
-            <p className="text-sm text-gray-600 font-mono mb-4">
+            <p className="text-sm text-gray-600 dark:text-gray-400 font-mono mb-4">
               Add to your editor&apos;s MCP config:
             </p>
 
             <div className="relative group">
-              <pre className="bg-gray-900 p-4 pr-12 overflow-x-auto">
+              <pre className="bg-gray-900 dark:bg-gray-950 p-4 pr-12 overflow-x-auto border border-gray-800">
                 <code className="text-sm text-white/90 font-mono">
                   <span className="text-purple-400">{"{"}</span>
                   {"\n  "}
@@ -398,11 +398,11 @@ const GetStartedPage = () => {
             </div>
 
             <div className="mt-6">
-              <p className="text-sm text-gray-600 font-mono mb-3">
+              <p className="text-sm text-gray-600 dark:text-gray-400 font-mono mb-3">
                 Or run this command:
               </p>
               <div className="relative group">
-                <div className="bg-gray-900 p-4 pr-12 overflow-x-auto">
+                <div className="bg-gray-900 dark:bg-gray-950 p-4 pr-12 overflow-x-auto border border-gray-800">
                   <code className="text-sm text-white/90 font-mono">
                     <span className="text-green-400">claude</span>{" "}
                     <span className="text-blue-400">mcp add</span>{" "}
@@ -432,7 +432,7 @@ const GetStartedPage = () => {
               </div>
             </div>
             <div className="mt-6">
-              <p className="text-sm text-gray-600 font-mono mb-3">
+              <p className="text-sm text-gray-600 dark:text-gray-400 font-mono mb-3">
                 Cursor users:
               </p>
               <a href={cursorDeeplink}>
@@ -440,8 +440,8 @@ const GetStartedPage = () => {
               </a>
             </div>
 
-            <div className="mt-6 px-4 py-2 bg-green-50 border-l-4 border-green-500">
-              <p className="text-sm text-green-700 font-mono">
+            <div className="mt-6 px-4 py-2 bg-green-50 dark:bg-green-950 border-l-4 border-green-500">
+              <p className="text-sm text-green-700 dark:text-green-400 font-mono">
                 ✓ API key inserted - ready to use
               </p>
             </div>

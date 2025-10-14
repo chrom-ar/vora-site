@@ -1,20 +1,23 @@
 "use client";
 
+import { ThemeToggle } from "./theme-toggle";
+
 export const Footer = () => {
   return (
-    <footer className="border-t border-gray-200 bg-white mt-auto">
+    <footer className="border-t border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950 mt-auto">
       <div className="max-w-7xl mx-auto px-6 py-8">
         <div className="flex items-center justify-between">
-          <div className="text-gray-500 text-sm">
+          <div className="text-gray-500 dark:text-gray-400 text-sm">
             © 2025 Chroma Labs
           </div>
 
-          <div className="flex items-center gap-8">
+          <div className="flex items-center gap-6">
+            <ThemeToggle />
             <a
               href="https://x.com/chromar_spark"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-500 hover:text-gray-900 transition-colors"
+              className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors"
               aria-label="Follow us on X (Twitter)"
             >
               <svg
