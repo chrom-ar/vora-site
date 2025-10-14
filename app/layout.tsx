@@ -6,7 +6,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Chrom.ar",
-  description: "Chrom.ar, web3 dev tools",
+  description: "Chrom.ar, Web3 MCP Server",
   generator: "Chrom.ar",
 };
 
@@ -21,14 +21,14 @@ const RootLayout = ({
         <meta property="og:url" content="https://chrom.ar/" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Chrom.ar" />
-        <meta property="og:description" content="Chrom.ar, web3 dev tools." />
+        <meta property="og:description" content="Chrom.ar, Web3 MCP Server" />
         <meta property="og:image" content="https://chrom.ar/images/logo.png" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta property="twitter:domain" content="chrom.ar" />
         <meta property="twitter:url" content="https://chrom.ar/" />
         <meta name="twitter:title" content="Chrom.ar" />
-        <meta name="twitter:description" content="Chrom.ar, web3 dev tools." />
+        <meta name="twitter:description" content="Chrom.ar, Web3 MCP Server" />
         <meta name="twitter:image" content="https://chrom.ar/images/logo.png" />
 
         <link rel="icon" href="/images/favicon.svg" type="image/svg+xml" />
