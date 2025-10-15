@@ -134,7 +134,7 @@ export const protocols: Protocol[] = [
     docs: "https://docs.flaunch.gg/",
     github: "https://github.com/flayerlabs/flaunchgg-contracts",
     category: "DeFi",
-    groupId: "flaunch",
+    groupId: "Flaunch",
   },
   {
     name: "Fluid",
@@ -150,7 +150,7 @@ export const protocols: Protocol[] = [
     docs: "https://getfoundry.sh/",
     github: "https://github.com/foundry-rs/foundry",
     category: "Tools",
-    groupId: "foundry",
+    groupId: "Foundry",
   },
   {
     name: "Hardhat",
@@ -158,7 +158,7 @@ export const protocols: Protocol[] = [
     docs: "https://hardhat.org/docs",
     github: "https://github.com/NomicFoundation/hardhat",
     category: "Tools",
-    groupId: "hardhat",
+    groupId: "Hardhat",
   },
   {
     name: "JustLend",
@@ -230,7 +230,7 @@ export const protocols: Protocol[] = [
     docs: "https://noir-lang.org/docs",
     github: "https://github.com/noir-lang/noir",
     category: "Privacy",
-    groupId: "noir",
+    groupId: "Noir",
   },
   {
     name: "OpenZeppelin",
@@ -238,7 +238,7 @@ export const protocols: Protocol[] = [
     docs: "https://docs.openzeppelin.com/",
     github: "https://github.com/OpenZeppelin/openzeppelin-contracts",
     category: "Security",
-    groupId: "",
+    groupId: "OpenZeppelin",
   },
   {
     name: "Pendle Finance",
@@ -318,7 +318,7 @@ export const protocols: Protocol[] = [
     docs: "https://docs.uniswap.org/contracts/v4/overview",
     github: "https://github.com/Uniswap/v4-core",
     category: "DeFi",
-    groupId: "uniswap",
+    groupId: "Uniswap",
   },
   {
     name: "Veda",
