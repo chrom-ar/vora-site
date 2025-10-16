@@ -153,6 +153,14 @@ export const protocols: Protocol[] = [
     groupId: "Foundry",
   },
   {
+    name: "Gelato",
+    description: "Web3 cloud platform for smart contract automation, account abstraction, and rollup-as-a-service infrastructure",
+    docs: "https://docs.gelato.network/",
+    github: "https://github.com/gelatodigital",
+    category: "Infrastructure",
+    groupId: "Gelato",
+  },
+  {
     name: "Hardhat",
     description: "Development environment to compile, deploy, test, and debug Ethereum software",
     docs: "https://hardhat.org/docs",
