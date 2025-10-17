@@ -137,6 +137,14 @@ export const protocols: Protocol[] = [
     groupId: "Flaunch",
   },
   {
+    name: "Flashbots",
+    description: "Research and development organization mitigating negative externalities of MEV through transparent and permissionless infrastructure",
+    docs: "https://docs.flashbots.net/",
+    github: "https://github.com/flashbots",
+    category: "Infrastructure",
+    groupId: "Flashbots",
+  },
+  {
     name: "Fluid",
     description: "Advanced lending protocol with liquidity consolidation, automated limits, and integrated DEX for efficient capital utilization across DeFi",
     docs: "https://docs.fluid.instadapp.io/",
