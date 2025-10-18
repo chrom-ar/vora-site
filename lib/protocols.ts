@@ -345,6 +345,14 @@ export const protocols: Protocol[] = [
     groupId: "Veda",
   },
   {
+    name: "Viem",
+    description: "TypeScript interface for Ethereum with composable APIs for JSON-RPC, wallet integration, and smart contract interaction",
+    docs: "https://viem.sh/docs/getting-started",
+    github: "https://github.com/wevm/viem",
+    category: "Tools",
+    groupId: "Viem",
+  },
+  {
     name: "x402",
     description: "Payment protocol for crypto payments over HTTP using the 402 status code with zero fees and instant settlement",
     docs: "https://docs.cdp.coinbase.com/x402/welcome",
