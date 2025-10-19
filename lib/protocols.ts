@@ -113,6 +113,14 @@ export const protocols: Protocol[] = [
     groupId: "Ethena",
   },
   {
+    name: "Ethers.js",
+    description: "Ethereum library for JavaScript and TypeScript with wallet management, providers, and contract interaction",
+    docs: "https://docs.ethers.org/",
+    github: "https://github.com/ethers-io/ethers.js",
+    category: "Tools",
+    groupId: "Ethers",
+  },
+  {
     name: "Euler",
     description: "Modular lending protocol with permissionless market creation and customizable risk parameters for diverse crypto assets",
     docs: "https://docs.euler.finance/",
