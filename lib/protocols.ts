@@ -201,6 +201,14 @@ export const protocols: Protocol[] = [
     groupId: "KernelDAO",
   },
   {
+    name: "Kinetiq",
+    description: "Liquid staking protocol for Hyperliquid with kHYPE tokens and dynamic validator delegation",
+    docs: "https://kinetiq.xyz/docs",
+    github: "https://github.com/kinetiq-research",
+    category: "DeFi",
+    groupId: "Kinetiq",
+  },
+  {
     name: "Lido",
     description: "Leading liquid staking protocol enabling users to earn staking rewards without locking assets or maintaining infrastructure",
     docs: "https://docs.lido.fi/",
