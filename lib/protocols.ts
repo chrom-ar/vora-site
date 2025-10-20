@@ -345,6 +345,14 @@ export const protocols: Protocol[] = [
     groupId: "Uniswap",
   },
   {
+    name: "USDai",
+    description: "Synthetic dollar stablecoin backed by T-Bills and tokenized infrastructure loans, offering yield-bearing sUSDai vault tokens",
+    docs: "https://docs.usd.ai/",
+    github: "https://github.com/metastreet-labs",
+    category: "DeFi",
+    groupId: "USDai",
+  },
+  {
     name: "Veda",
     description: "Native yield layer providing vault primitives for automated capital deployment and cross-chain DeFi optimization",
     docs: "https://docs.veda.tech/",
