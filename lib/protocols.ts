@@ -41,6 +41,14 @@ export const protocols: Protocol[] = [
     groupId: "Beefy",
   },
   {
+    name: "BENQI",
+    description: "Leading DeFi suite on Avalanche with liquid staking, lending and borrowing markets, and validator deployment solutions",
+    docs: "https://docs.benqi.fi/",
+    github: "https://github.com/Benqi-fi",
+    category: "DeFi",
+    groupId: "Benqi",
+  },
+  {
     name: "Chainlink",
     description: "Industry-standard oracle platform connecting blockchains to real-world data and enabling cross-chain communication",
     docs: "https://docs.chain.link/",
