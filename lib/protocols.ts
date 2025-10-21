@@ -305,6 +305,14 @@ export const protocols: Protocol[] = [
     groupId: "Pounder",
   },
   {
+    name: "Quickswap",
+    description: "Multi-chain decentralized exchange offering token swaps, liquidity provision, yield farming, and perpetual trading with low fees",
+    docs: "https://docs.quickswap.exchange/",
+    github: "https://github.com/QuickSwap",
+    category: "DeFi",
+    groupId: "Quickswap",
+  },
+  {
     name: "Rocket Pool",
     description: "Decentralized Ethereum staking protocol with permissionless node operation and liquid staking tokens",
     docs: "https://docs.rocketpool.net/",
