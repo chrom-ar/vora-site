@@ -49,6 +49,14 @@ export const protocols: Protocol[] = [
     groupId: "Benqi",
   },
   {
+    name: "Centrifuge",
+    description: "Pioneering platform for real-world asset tokenization enabling access to structured credit, real estate, and treasuries onchain",
+    docs: "https://docs.centrifuge.io/",
+    github: "https://github.com/centrifuge/",
+    category: "DeFi",
+    groupId: "Centrifuge",
+  },
+  {
     name: "Chainlink",
     description: "Industry-standard oracle platform connecting blockchains to real-world data and enabling cross-chain communication",
     docs: "https://docs.chain.link/",
