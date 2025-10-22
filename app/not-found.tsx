@@ -1,11 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { useTheme } from "@/components/theme-provider";
 
 const NotFound = () => {
-  const { } = useTheme();
-
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-white dark:bg-gray-950 px-6 text-center">
       <h1 className="text-6xl font-bold text-gray-900 dark:text-gray-100 mb-4">404</h1>

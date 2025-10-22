@@ -24,20 +24,25 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
   const [theme, setThemeState] = useState<Theme>("light");
   const [resolvedTheme, setResolvedTheme] = useState<"light" | "dark">("light");
 
+  // Initialize theme from localStorage or system preference
   useEffect(() => {
     const stored = localStorage.getItem("theme") as Theme | null;
+    /* eslint-disable react-hooks/set-state-in-effect */
     if (stored) {
       setThemeState(stored);
     } else {
       const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
       setThemeState(prefersDark ? "dark" : "light");
     }
+    /* eslint-enable react-hooks/set-state-in-effect */
   }, []);
 
   useEffect(() => {
     const root = document.documentElement;
     const isDark = theme === "dark";
+    /* eslint-disable react-hooks/set-state-in-effect */
     setResolvedTheme(isDark ? "dark" : "light");
+    /* eslint-enable react-hooks/set-state-in-effect */
 
     if (isDark) {
       root.classList.add("dark");

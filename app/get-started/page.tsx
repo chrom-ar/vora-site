@@ -209,7 +209,7 @@ const GetStartedPage = () => {
       } else {
         setMessage({ type: "error", text: data.error || "Something went wrong. Please try again." });
       }
-    } catch (error) {
+    } catch {
       setMessage({ type: "error", text: "Failed to connect. Please try again later." });
     } finally {
       setIsLoading(false);
@@ -240,7 +240,7 @@ const GetStartedPage = () => {
       } else {
         setMessage({ type: "error", text: data.error || "Invalid verification code. Please try again." });
       }
-    } catch (error) {
+    } catch {
       setMessage({ type: "error", text: "Failed to verify. Please try again later." });
     } finally {
       setIsLoading(false);
@@ -369,7 +369,7 @@ const GetStartedPage = () => {
                   {"\n        "}
                   <span className="text-blue-400">{"\"Authorization\""}</span>
                   <span className="text-white/60">: </span>
-                  <span className="text-orange-400">{`\"Bearer ${apiKey}\"`}</span>
+                  <span className="text-orange-400">{`"Bearer ${apiKey}"`}</span>
                   {"\n      "}
                   <span className="text-purple-400">{"}"}</span>
                   {"\n    "}
@@ -411,7 +411,7 @@ const GetStartedPage = () => {
                     <span className="text-yellow-400">chromar-spark</span>{" "}
                     <span className="text-cyan-400">https://mcp-router.chrom.ar/mcp</span>{" "}
                     <span className="text-white/60">--header</span>{" "}
-                    <span className="text-orange-400">{`\"Authorization: Bearer ${apiKey}\"`}</span>
+                    <span className="text-orange-400">{`"Authorization: Bearer ${apiKey}"`}</span>
                   </code>
                 </div>
                 <button
