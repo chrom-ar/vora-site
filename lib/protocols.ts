@@ -361,6 +361,14 @@ export const protocols: Protocol[] = [
     groupId: "StakeWise",
   },
   {
+    name: "Symbiotic",
+    description: "Shared security marketplace enabling flexible restaking across multiple networks",
+    docs: "https://docs.symbiotic.fi/",
+    github: "https://github.com/symbioticfi",
+    category: "Infrastructure",
+    groupId: "Symbiotic",
+  },
+  {
     name: "The Graph",
     description: "Decentralized protocol for indexing and querying blockchain data with GraphQL",
     docs: "https://thegraph.com/docs/",
