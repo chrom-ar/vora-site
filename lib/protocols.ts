@@ -321,6 +321,14 @@ export const protocols: Protocol[] = [
     groupId: "Quickswap",
   },
   {
+    name: "Renzo",
+    description: "Liquid restaking protocol simplifying AVS strategies across EigenLayer, Symbiotic, and Jito networks",
+    docs: "https://docs.renzoprotocol.com/docs/",
+    github: "https://github.com/Renzo-Protocol",
+    category: "DeFi",
+    groupId: "Renzo",
+  },
+  {
     name: "Rocket Pool",
     description: "Decentralized Ethereum staking protocol with permissionless node operation and liquid staking tokens",
     docs: "https://docs.rocketpool.net/",
