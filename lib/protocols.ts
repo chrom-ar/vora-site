@@ -17,6 +17,14 @@ export const protocols: Protocol[] = [
     groupId: "Aave",
   },
   {
+    name: "Aster",
+    description: "Decentralized perpetual exchange combining high-leverage trading with yield products and stablecoin offerings",
+    docs: "https://docs.asterdex.com/",
+    github: "https://github.com/asterdex/",
+    category: "DeFi",
+    groupId: "Aster",
+  },
+  {
     name: "Aztec",
     description: "Privacy-focused L2 solution with native zero-knowledge proofs for confidential smart contracts",
     docs: "https://docs.aztec.network/",
