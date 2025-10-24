@@ -369,6 +369,14 @@ export const protocols: Protocol[] = [
     groupId: "Spark",
   },
   {
+    name: "Stader",
+    description: "Multi-chain liquid staking platform providing staking solutions across Ethereum, Polygon, BNB Chain, and other networks",
+    docs: "https://www.staderlabs.com/docs/",
+    github: "https://github.com/stader-labs",
+    category: "DeFi",
+    groupId: "Stader",
+  },
+  {
     name: "StakeWise",
     description: "Modular liquid staking protocol enabling permissionless vault creation with flexible staking strategies and composable yield",
     docs: "https://docs.stakewise.io/",
