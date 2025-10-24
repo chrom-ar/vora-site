@@ -73,6 +73,14 @@ export const protocols: Protocol[] = [
     groupId: "ChainLink",
   },
   {
+    name: "CIAN",
+    description: "DeFi automation protocol with yield optimization strategies, bond management, and yield redistribution infrastructure",
+    docs: "https://docs.cian.app/",
+    github: "https://github.com/cian-ai/cian-protocol",
+    category: "DeFi",
+    groupId: "CIAN",
+  },
+  {
     name: "Coinbase CDP",
     description: "Developer platform providing APIs and SDKs for building onchain applications with wallet, payment, and trading services",
     docs: "https://docs.cdp.coinbase.com/",
