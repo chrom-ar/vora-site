@@ -217,6 +217,14 @@ export const protocols: Protocol[] = [
     groupId: "Hardhat",
   },
   {
+    name: "HyperLend",
+    description: "High-performance lending protocol on Hyperliquid with real-time leverage, dynamic rates, and capital-efficient liquidity",
+    docs: "https://docs.hyperlend.finance/",
+    github: "https://github.com/hyperlendx",
+    category: "DeFi",
+    groupId: "HyperLend",
+  },
+  {
     name: "JustLend",
     description: "Decentralized lending and borrowing protocol on TRON blockchain with staked TRX and energy rental features",
     docs: "https://docs.justlend.org/developers/contracts_overview/",
