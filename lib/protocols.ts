@@ -305,6 +305,14 @@ export const protocols: Protocol[] = [
     groupId: "OpenZeppelin",
   },
   {
+    name: "PancakeSwap",
+    description: "Multi-chain decentralized exchange with automated market maker, liquidity pools, and gas-efficient trading infrastructure",
+    docs: "https://developer.pancakeswap.finance/",
+    github: "https://github.com/pancakeswap/",
+    category: "DeFi",
+    groupId: "PancakeSwap",
+  },
+  {
     name: "Pendle Finance",
     description: "Yield trading protocol enabling users to trade, hedge, and leverage yields with capital efficiency",
     docs: "https://docs.pendle.finance/",
