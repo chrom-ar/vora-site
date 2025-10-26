@@ -113,6 +113,14 @@ export const protocols: Protocol[] = [
     groupId: "Curve-Finance",
   },
   {
+    name: "Dinari",
+    description: "Tokenized stock platform enabling fractional equity ownership through dShares™ with institutional-grade compliance",
+    docs: "https://docs.dinari.com/",
+    github: "https://github.com/dinaricrypto",
+    category: "DeFi",
+    groupId: "Dinari",
+  },
+  {
     name: "EigenLayer",
     description: "Restaking protocol enabling decentralized services to leverage Ethereum's security",
     docs: "https://docs.eigenlayer.xyz/",
