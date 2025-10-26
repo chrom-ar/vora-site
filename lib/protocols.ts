@@ -417,6 +417,14 @@ export const protocols: Protocol[] = [
     groupId: "StakeWise",
   },
   {
+    name: "Stream",
+    description: "Yield-bearing vault protocol with cross-chain token wrapping and staking infrastructure powered by LayerZero",
+    docs: "https://docs.streamprotocol.money/",
+    github: "https://github.com/StreamDefi",
+    category: "DeFi",
+    groupId: "StreamProtocol",
+  },
+  {
     name: "Symbiotic",
     description: "Shared security marketplace enabling flexible restaking across multiple networks",
     docs: "https://docs.symbiotic.fi/",
