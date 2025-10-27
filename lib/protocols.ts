@@ -465,6 +465,14 @@ export const protocols: Protocol[] = [
     groupId: "Veda",
   },
   {
+    name: "Venus",
+    description: "Decentralized lending and borrowing platform on BNB Chain combining algorithmic money markets with stablecoin minting and risk management",
+    docs: "https://docs-v4.venus.io/",
+    github: "https://github.com/VenusProtocol/venus-protocol",
+    category: "DeFi",
+    groupId: "Venus",
+  },
+  {
     name: "Viem",
     description: "TypeScript interface for Ethereum with composable APIs for JSON-RPC, wallet integration, and smart contract interaction",
     docs: "https://viem.sh/docs/getting-started",
