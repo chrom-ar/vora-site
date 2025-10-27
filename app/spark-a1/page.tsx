@@ -43,6 +43,16 @@ const SparkA1Page = () => {
     fetchStats();
   }, []);
 
+  const totalTokens = useMemo(() => {
+    const listedGroupIds = new Set(protocols.map(p => p.groupId));
+    return Object.values(stats).reduce((sum, protocolStats) => {
+      if (listedGroupIds.has(protocolStats.group_id)) {
+        return sum + protocolStats.approximate_tokens;
+      }
+      return sum;
+    }, 0);
+  }, [stats]);
+
   const filteredProtocols = useMemo(() => {
     if (!searchQuery) {
       return protocols;
@@ -72,12 +82,32 @@ const SparkA1Page = () => {
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12 flex-1 w-full">
         <div className="mb-6 sm:mb-8">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-black dark:text-white mb-2 sm:mb-3">
-            Web3 MCP Server
-          </h1>
-          <h2 className="text-lg sm:text-xl md:text-2xl text-gray-700 dark:text-gray-300 mb-2">
-            IDE integration, knowledge base, debugging and onchain simulation.
-          </h2>
+          <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4 lg:gap-6">
+            <div className="flex-1">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-black dark:text-white mb-2 sm:mb-3">
+                Web3 MCP Server
+              </h1>
+              <h2 className="text-lg sm:text-xl md:text-2xl text-gray-700 dark:text-gray-300">
+                IDE integration, knowledge base, debugging and onchain simulation.
+              </h2>
+            </div>
+            <div className="flex justify-start lg:justify-end lg:flex-shrink-0">
+              {loadingStats ? (
+                <div className="inline-flex flex-col items-center lg:items-end px-5 py-3 lg:px-6 lg:py-4 border border-gray-200 dark:border-gray-800 rounded-lg bg-gray-50 dark:bg-gray-900">
+                  <span className="text-xs uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">Total Indexed</span>
+                  <div className="h-7 lg:h-8 w-20 lg:w-24 bg-gray-200 dark:bg-gray-800 rounded animate-pulse"></div>
+                </div>
+              ) : (
+                <div className="inline-flex flex-col items-center lg:items-end px-5 py-3 lg:px-6 lg:py-4 border border-gray-200 dark:border-gray-800 rounded-lg bg-gray-50 dark:bg-gray-900">
+                  <span className="text-xs uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-1">Total Indexed</span>
+                  <span className="text-2xl lg:text-3xl font-bold text-black dark:text-white">
+                    {humanizeTokens(totalTokens)}
+                  </span>
+                  <span className="text-xs text-gray-500 dark:text-gray-400 mt-1">tokens</span>
+                </div>
+              )}
+            </div>
+          </div>
         </div>
 
         <div className="mb-6">
