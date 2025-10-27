@@ -29,7 +29,7 @@ const RootLayout = ({
         <meta property="twitter:url" content="https://chrom.ar/" />
         <meta name="twitter:title" content="Chrom.ar" />
         <meta name="twitter:description" content="Chrom.ar, Web3 MCP Server" />
-        <meta name="twitter:image" content="https://chrom.ar/images/logo.png" />
+        <meta name="twitter:image" content="https://chrom.ar/images/logo_square.png" />
 
         <link rel="icon" href="/images/favicon.svg" type="image/svg+xml" />
         <link rel="icon" href="/images/favicon.png" type="image/png" />
