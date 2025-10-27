@@ -81,6 +81,14 @@ export const protocols: Protocol[] = [
     groupId: "CIAN",
   },
   {
+    name: "Circle",
+    description: "Blockchain platform providing stablecoin infrastructure, programmable wallets, and cross-chain transfers",
+    docs: "https://developers.circle.com/",
+    github: "https://github.com/circlefin",
+    category: "Infrastructure",
+    groupId: "Circle",
+  },
+  {
     name: "Coinbase CDP",
     description: "Developer platform providing APIs and SDKs for building onchain applications with wallet, payment, and trading services",
     docs: "https://docs.cdp.coinbase.com/",
