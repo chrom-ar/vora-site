@@ -289,6 +289,14 @@ export const protocols: Protocol[] = [
     groupId: "Liquity",
   },
   {
+    name: "ListaDAO",
+    description: "Liquid staking solution for BNB with collateralized debt position protocol for borrowing lisUSD stablecoin against various assets",
+    docs: "https://docs.bsc.lista.org/",
+    github: "https://github.com/lista-dao",
+    category: "DeFi",
+    groupId: "ListaDAO",
+  },
+  {
     name: "Maple",
     description: "Institutional lending platform providing fixed-rate, overcollateralized loans with high yield through Syrup DeFi integration",
     docs: "https://docs.maple.finance/",
