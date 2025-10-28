@@ -481,6 +481,14 @@ export const protocols: Protocol[] = [
     groupId: "USDai",
   },
   {
+    name: "USDX",
+    description: "Crypto-native stablecoin using delta-neutral portfolio strategies and multicoin arbitrage, offering yield through sUSDX staking tokens",
+    docs: "https://docs.usdx.money/",
+    github: "https://github.com/USDXProject",
+    category: "DeFi",
+    groupId: "USDX",
+  },
+  {
     name: "Veda",
     description: "Native yield layer providing vault primitives for automated capital deployment and cross-chain DeFi optimization",
     docs: "https://docs.veda.tech/",
