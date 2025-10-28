@@ -385,6 +385,14 @@ export const protocols: Protocol[] = [
     groupId: "Renzo",
   },
   {
+    name: "Resolv",
+    description: "Decentralized stablecoin protocol issuing USR backed by Ethereum and Bitcoin with perpetual futures hedging and insurance mechanisms",
+    docs: "https://docs.resolv.xyz/",
+    github: "https://github.com/resolv-im",
+    category: "DeFi",
+    groupId: "Resolv",
+  },
+  {
     name: "Rocket Pool",
     description: "Decentralized Ethereum staking protocol with permissionless node operation and liquid staking tokens",
     docs: "https://docs.rocketpool.net/",
