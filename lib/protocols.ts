@@ -528,4 +528,12 @@ export const protocols: Protocol[] = [
     category: "DeFi",
     groupId: "YieldBasis",
   },
+  {
+    name: "ZeroDev",
+    description: "Smart account platform supporting ERC-4337 and EIP-7702 with passkey authentication, gas sponsorship, and cross-chain functionality",
+    docs: "https://docs.zerodev.app/",
+    github: "https://github.com/zerodevapp",
+    category: "Infrastructure",
+    groupId: "ZeroDev",
+  },
 ];
