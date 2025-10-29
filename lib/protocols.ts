@@ -520,4 +520,12 @@ export const protocols: Protocol[] = [
     category: "Infrastructure",
     groupId: "x402",
   },
+  {
+    name: "Yield Basis",
+    description: "Autoleverage automated market maker protocol providing leveraged liquidity tokens with capital-efficient yield strategies",
+    docs: "https://docs.yieldbasis.com/",
+    github: "https://github.com/yield-basis",
+    category: "DeFi",
+    groupId: "YieldBasis",
+  },
 ];
