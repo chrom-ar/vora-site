@@ -462,7 +462,7 @@ export const protocols: Protocol[] = [
     docs: "https://docs.sushi.com/",
     github: "https://github.com/sushi-labs",
     category: "DeFi",
-    groupId: "Sushi",
+    groupId: "SushiSwap",
   },
   {
     name: "Symbiotic",
