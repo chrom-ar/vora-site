@@ -449,6 +449,14 @@ export const protocols: Protocol[] = [
     groupId: "StreamProtocol",
   },
   {
+    name: "Sushi",
+    description: "Multi-chain decentralized exchange with automated market maker, concentrated liquidity pools, and cross-chain swap routing",
+    docs: "https://docs.sushi.com/",
+    github: "https://github.com/sushi-labs",
+    category: "DeFi",
+    groupId: "Sushi",
+  },
+  {
     name: "Symbiotic",
     description: "Shared security marketplace enabling flexible restaking across multiple networks",
     docs: "https://docs.symbiotic.fi/",
