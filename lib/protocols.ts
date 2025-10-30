@@ -449,6 +449,14 @@ export const protocols: Protocol[] = [
     groupId: "StreamProtocol",
   },
   {
+    name: "Superlend",
+    description: "Cross-chain lending aggregator optimizing yields across multiple DeFi protocols with automated position management",
+    docs: "https://docs.superlend.xyz/",
+    github: "https://github.com/Superlend",
+    category: "DeFi",
+    groupId: "SuperLend",
+  },
+  {
     name: "Sushi",
     description: "Multi-chain decentralized exchange with automated market maker, concentrated liquidity pools, and cross-chain swap routing",
     docs: "https://docs.sushi.com/",
