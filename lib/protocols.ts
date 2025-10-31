@@ -497,6 +497,14 @@ export const protocols: Protocol[] = [
     groupId: "TheGraph",
   },
   {
+    name: "Tornado Cash",
+    description: "Non-custodial privacy protocol enabling permissionless shielded transactions using zero-knowledge proofs and anonymity pools",
+    docs: "https://docs.tornado.ws/",
+    github: "https://github.com/tornadocash/",
+    category: "Privacy",
+    groupId: "TornadoCash",
+  },
+  {
     name: "Uniswap v4",
     description: "Next generation automated market maker with customizable pools through hooks and improved capital efficiency",
     docs: "https://docs.uniswap.org/contracts/v4/overview",
