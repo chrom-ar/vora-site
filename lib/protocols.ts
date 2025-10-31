@@ -353,6 +353,14 @@ export const protocols: Protocol[] = [
     groupId: "PancakeSwap",
   },
   {
+    name: "Peapods",
+    description: "Modular DeFi protocol transforming ERC-20 assets into yield-generating pods through volatility farming and lending markets",
+    docs: "https://docs.peapods.finance/",
+    github: "https://github.com/peapodsfinance/",
+    category: "DeFi",
+    groupId: "Peapods",
+  },
+  {
     name: "Pendle Finance",
     description: "Yield trading protocol enabling users to trade, hedge, and leverage yields with capital efficiency",
     docs: "https://docs.pendle.finance/",
