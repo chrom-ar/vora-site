@@ -241,6 +241,14 @@ export const protocols: Protocol[] = [
     groupId: "HyperLend",
   },
   {
+    name: "Hypurr",
+    description: "Leveraged lending marketplace on Hyperliquid with clean leverage loops and USDXL synthetic dollar",
+    docs: "https://docs.hypurr.fi/",
+    github: "https://github.com/lastdotnet/",
+    category: "DeFi",
+    groupId: "Hypurr",
+  },
+  {
     name: "JustLend",
     description: "Decentralized lending and borrowing protocol on TRON blockchain with staked TRX and energy rental features",
     docs: "https://docs.justlend.org/developers/contracts_overview/",
