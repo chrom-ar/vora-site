@@ -79,7 +79,7 @@ const SparkA1Page = () => {
     setSearchQuery(value);
     setCurrentPage(1);
 
-    const params = new URLSearchParams(searchParams.toString());
+    const params = new window.URLSearchParams(searchParams.toString());
     if (value) {
       params.set("search", value);
     } else {
