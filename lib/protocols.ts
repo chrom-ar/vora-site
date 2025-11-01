@@ -17,6 +17,14 @@ export const protocols: Protocol[] = [
     groupId: "Aave",
   },
   {
+    name: "Alchemy",
+    description: "Web3 development platform with node APIs, data APIs, smart wallets, and multi-chain infrastructure across 80+ networks",
+    docs: "https://www.alchemy.com/docs",
+    github: "https://github.com/alchemyplatform",
+    category: "Infrastructure",
+    groupId: "Alchemy",
+  },
+  {
     name: "Aster",
     description: "Decentralized perpetual exchange combining high-leverage trading with yield products and stablecoin offerings",
     docs: "https://docs.asterdex.com/",
