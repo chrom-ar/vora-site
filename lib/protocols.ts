@@ -401,6 +401,14 @@ export const protocols: Protocol[] = [
     groupId: "Quickswap",
   },
   {
+    name: "Raac",
+    description: "Real-world asset protocol with lending pools, NFT-based collateral, and oracle-based price discovery for tokenized assets",
+    docs: "https://docs.raac.io/",
+    github: "https://github.com/RegnumAurumAcquisitionCorp",
+    category: "DeFi",
+    groupId: "Raac",
+  },
+  {
     name: "Renzo",
     description: "Liquid restaking protocol simplifying AVS strategies across EigenLayer, Symbiotic, and Jito networks",
     docs: "https://docs.renzoprotocol.com/docs/",
