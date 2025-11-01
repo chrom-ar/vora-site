@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useMemo, useEffect } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
 
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
@@ -16,7 +17,9 @@ interface ProtocolStats {
 }
 
 const SparkA1Page = () => {
-  const [searchQuery, setSearchQuery] = useState("");
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const [searchQuery, setSearchQuery] = useState(searchParams.get("search") || "");
   const [currentPage, setCurrentPage] = useState(1);
   const [stats, setStats] = useState<Record<string, ProtocolStats>>({});
   const [loadingStats, setLoadingStats] = useState(true);
@@ -72,8 +75,17 @@ const SparkA1Page = () => {
   const currentProtocols = filteredProtocols.slice(startIndex, endIndex);
 
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchQuery(e.target.value);
+    const value = e.target.value;
+    setSearchQuery(value);
     setCurrentPage(1);
+
+    const params = new URLSearchParams(searchParams.toString());
+    if (value) {
+      params.set("search", value);
+    } else {
+      params.delete("search");
+    }
+    router.replace(`?${params.toString()}`, { scroll: false });
   };
 
   return (
