@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo, useEffect } from "react";
+import { useState, useMemo, useEffect, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 
 import { Footer } from "@/components/footer";
@@ -16,7 +16,7 @@ interface ProtocolStats {
   last_updated: string;
 }
 
-const SparkA1Page = () => {
+const SparkA1Content = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [searchQuery, setSearchQuery] = useState(searchParams.get("search") || "");
@@ -278,6 +278,14 @@ const SparkA1Page = () => {
 
       <Footer />
     </div>
+  );
+};
+
+const SparkA1Page = () => {
+  return (
+    <Suspense fallback={<div className="min-h-screen flex items-center justify-center">Loading...</div>}>
+      <SparkA1Content />
+    </Suspense>
   );
 };
 
