@@ -2,7 +2,7 @@ export interface Protocol {
   name: string;
   description: string;
   docs: string;
-  github: string;
+  github: string | null;
   category: string;
   groupId: string;
 }
