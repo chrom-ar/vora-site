@@ -377,6 +377,14 @@ export const protocols: Protocol[] = [
     groupId: "Pendle-Finance",
   },
   {
+    name: "Penpie",
+    description: "Yield optimizer for Pendle Finance enabling enhanced yields through mPENDLE staking and boosted liquidity provision without vePENDLE locking",
+    docs: "https://docs.penpiexyz.io/",
+    github: "https://github.com/magpiexyz/",
+    category: "DeFi",
+    groupId: "Penpie",
+  },
+  {
     name: "Plasma",
     description: "Blockchain optimized for stablecoin payments with zero-fee USDT transfers, custom gas tokens, and confidential payment support",
     docs: "https://docs.plasma.to/",
