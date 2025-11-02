@@ -377,6 +377,14 @@ export const protocols: Protocol[] = [
     groupId: "Pendle-Finance",
   },
   {
+    name: "Plasma",
+    description: "Blockchain optimized for stablecoin payments with zero-fee USDT transfers, custom gas tokens, and confidential payment support",
+    docs: "https://docs.plasma.to/",
+    github: null,
+    category: "Infrastructure",
+    groupId: "Plasma",
+  },
+  {
     name: "Polymarket",
     description: "Decentralized information markets platform enabling users to trade on the outcomes of real-world events",
     docs: "https://docs.polymarket.com/",
