@@ -609,6 +609,14 @@ export const protocols: Protocol[] = [
     groupId: "YieldBasis",
   },
   {
+    name: "Zircuit",
+    description: "EVM-compatible zero-knowledge rollup with sequencer-level security for proactive protection and fast finality",
+    docs: "https://docs.zircuit.com/",
+    github: "https://github.com/zircuit-labs",
+    category: "Infrastructure",
+    groupId: "Zircuit",
+  },
+  {
     name: "ZeroDev",
     description: "Smart account platform supporting ERC-4337 and EIP-7702 with passkey authentication, gas sponsorship, and cross-chain functionality",
     docs: "https://docs.zerodev.app/",
