@@ -353,6 +353,14 @@ export const protocols: Protocol[] = [
     groupId: "OpenZeppelin",
   },
   {
+    name: "Ostium",
+    description: "Decentralized perpetual exchange on Arbitrum for trading real-world assets including forex, commodities, and stocks",
+    docs: "https://ostium-labs.gitbook.io/",
+    github: "https://github.com/0xOstium",
+    category: "DeFi",
+    groupId: "Ostium",
+  },
+  {
     name: "PancakeSwap",
     description: "Multi-chain decentralized exchange with automated market maker, liquidity pools, and gas-efficient trading infrastructure",
     docs: "https://developer.pancakeswap.finance/",
