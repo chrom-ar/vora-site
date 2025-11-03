@@ -193,6 +193,14 @@ export const protocols: Protocol[] = [
     groupId: "Etherfi",
   },
   {
+    name: "Falcon",
+    description: "Universal collateralization protocol unlocking yield from cryptocurrencies and tokenized real-world assets",
+    docs: "https://docs.falcon.finance/",
+    github: "https://github.com/falconfinance/",
+    category: "DeFi",
+    groupId: "Falcon",
+  },
+  {
     name: "Flaunch",
     description: "Permissionless tokenization protocol with fair launch mechanics and builder-focused revenue sharing",
     docs: "https://docs.flaunch.gg/",
