@@ -545,6 +545,14 @@ export const protocols: Protocol[] = [
     groupId: "Symbiotic",
   },
   {
+    name: "TermMax",
+    description: "Next-generation loan AMM offering one-click looping, range orders, and fixed/variable rates with customizable pricing curves",
+    docs: "https://docs.ts.finance/",
+    github: "https://github.com/term-structure/termmax-contract",
+    category: "DeFi",
+    groupId: "TermMax",
+  },
+  {
     name: "The Graph",
     description: "Decentralized protocol for indexing and querying blockchain data with GraphQL",
     docs: "https://thegraph.com/docs/",
