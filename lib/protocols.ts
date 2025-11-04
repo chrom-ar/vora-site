@@ -33,6 +33,14 @@ export const protocols: Protocol[] = [
     groupId: "Aster",
   },
   {
+    name: "Axelar",
+    description: "Cross-chain communication protocol enabling secure interoperability and token transfers across blockchains",
+    docs: "https://docs.axelar.dev/",
+    github: "https://github.com/axelarnetwork",
+    category: "Infrastructure",
+    groupId: "Axelar",
+  },
+  {
     name: "Aztec",
     description: "Privacy-focused L2 solution with native zero-knowledge proofs for confidential smart contracts",
     docs: "https://docs.aztec.network/",
