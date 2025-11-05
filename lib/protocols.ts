@@ -545,6 +545,14 @@ export const protocols: Protocol[] = [
     groupId: "Symbiotic",
   },
   {
+    name: "Tenderly",
+    description: "Web3 development platform with virtual testnets, transaction simulation, debugging tools, and monitoring across 108+ networks",
+    docs: "https://docs.tenderly.co/",
+    github: "https://github.com/tenderly",
+    category: "Tools",
+    groupId: "Tenderly",
+  },
+  {
     name: "TermMax",
     description: "Next-generation loan AMM offering one-click looping, range orders, and fixed/variable rates with customizable pricing curves",
     docs: "https://docs.ts.finance/",
