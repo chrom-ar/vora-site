@@ -625,6 +625,14 @@ export const protocols: Protocol[] = [
     groupId: "Viem",
   },
   {
+    name: "Wormhole",
+    description: "Cross-chain messaging protocol for verified message passing and token transfers across blockchains",
+    docs: "https://wormhole.com/docs/",
+    github: "https://github.com/wormhole-foundation",
+    category: "Infrastructure",
+    groupId: "Wormhole",
+  },
+  {
     name: "x402",
     description: "Payment protocol for crypto payments over HTTP using the 402 status code with zero fees and instant settlement",
     docs: "https://docs.cdp.coinbase.com/x402/welcome",
