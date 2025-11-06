@@ -641,6 +641,14 @@ export const protocols: Protocol[] = [
     groupId: "x402",
   },
   {
+    name: "Yearn",
+    description: "Yield aggregation protocol with automated vaults deploying capital across DeFi protocols for optimized returns",
+    docs: "https://docs.yearn.fi/developers/building-on-yearn",
+    github: "https://github.com/yearn",
+    category: "DeFi",
+    groupId: "Yearn",
+  },
+  {
     name: "Yield Basis",
     description: "Autoleverage automated market maker protocol providing leveraged liquidity tokens with capital-efficient yield strategies",
     docs: "https://docs.yieldbasis.com/",
