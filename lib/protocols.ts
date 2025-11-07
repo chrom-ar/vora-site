@@ -17,6 +17,14 @@ export const protocols: Protocol[] = [
     groupId: "Aave",
   },
   {
+    name: "Aerodrome",
+    description: "Leading decentralized exchange on Base L2 and fork of Velodrome, combining Uniswap V2/V3 and Curve liquidity models with ve(3,3) tokenomics",
+    docs: "https://aerodrome.finance/docs",
+    github: "https://github.com/aerodrome-finance",
+    category: "DeFi",
+    groupId: "Aerodrome",
+  },
+  {
     name: "Alchemy",
     description: "Web3 development platform with node APIs, data APIs, smart wallets, and multi-chain infrastructure across 80+ networks",
     docs: "https://www.alchemy.com/docs",
