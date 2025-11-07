@@ -569,6 +569,14 @@ export const protocols: Protocol[] = [
     groupId: "TheGraph",
   },
   {
+    name: "ThirdWeb",
+    description: "Full-stack Web3 development platform providing SDKs, APIs, and infrastructure for wallets, payments, smart contracts, and blockchain data across multiple chains",
+    docs: "https://portal.thirdweb.com/",
+    github: "https://github.com/thirdweb-dev",
+    category: "Infrastructure",
+    groupId: "ThirdWeb",
+  },
+  {
     name: "Tornado Cash",
     description: "Non-custodial privacy protocol enabling permissionless shielded transactions using zero-knowledge proofs and anonymity pools",
     docs: "https://docs.tornado.ws/",
