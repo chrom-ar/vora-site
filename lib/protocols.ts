@@ -657,6 +657,14 @@ export const protocols: Protocol[] = [
     groupId: "x402",
   },
   {
+    name: "x402Scan",
+    description: "Explorer and analytics platform for monitoring the x402 payment protocol ecosystem",
+    docs: "https://x402scan.com/",
+    github: "https://github.com/Merit-Systems/x402scan",
+    category: "Tools",
+    groupId: "x402scan",
+  },
+  {
     name: "Yearn",
     description: "Yield aggregation protocol with automated vaults deploying capital across DeFi protocols for optimized returns",
     docs: "https://docs.yearn.fi/developers/building-on-yearn",
