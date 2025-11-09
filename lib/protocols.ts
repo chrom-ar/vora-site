@@ -521,6 +521,14 @@ export const protocols: Protocol[] = [
     groupId: "StakeWise",
   },
   {
+    name: "Stargate",
+    description: "Cross-chain liquidity transport protocol enabling seamless asset transfers between blockchains with composable infrastructure",
+    docs: "https://docs.stargate.finance/",
+    github: "https://github.com/stargate-protocol",
+    category: "Infrastructure",
+    groupId: "Stargate",
+  },
+  {
     name: "Stream",
     description: "Yield-bearing vault protocol with cross-chain token wrapping and staking infrastructure powered by LayerZero",
     docs: "https://docs.streamprotocol.money/",
