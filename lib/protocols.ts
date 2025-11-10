@@ -305,6 +305,14 @@ export const protocols: Protocol[] = [
     groupId: "Kinetiq",
   },
   {
+    name: "LayerZero",
+    description: "Omnichain interoperability protocol enabling cross-chain messaging and token transfers across 120+ blockchains",
+    docs: "https://docs.layerzero.network/v2",
+    github: "https://github.com/LayerZero-Labs",
+    category: "Infrastructure",
+    groupId: "LayerZero",
+  },
+  {
     name: "Lido",
     description: "Leading liquid staking protocol enabling users to earn staking rewards without locking assets or maintaining infrastructure",
     docs: "https://docs.lido.fi/",
