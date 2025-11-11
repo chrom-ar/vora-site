@@ -505,6 +505,14 @@ export const protocols: Protocol[] = [
     groupId: "Solidity",
   },
   {
+    name: "Solv",
+    description: "Bitcoin staking and yield tokenization platform aggregating restaking, DeFi, and trading yields into SolvBTC tokens",
+    docs: "https://docs.solv.finance/",
+    github: "https://github.com/solv-finance",
+    category: "DeFi",
+    groupId: "Solv",
+  },
+  {
     name: "Spark Protocol",
     description: "DAI-centered lending and borrowing platform from Sky Ecosystem with capital-efficient liquidity features",
     docs: "https://docs.spark.fi/",
