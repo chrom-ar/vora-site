@@ -8,7 +8,11 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
   <defs
-     id="defs1" />
+     id="defs1">
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&amp;display=swap');
+    </style>
+  </defs>
   <rect
      id="background"
      width="650"
