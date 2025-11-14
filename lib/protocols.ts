@@ -449,6 +449,14 @@ export const protocols: Protocol[] = [
     groupId: "Pounder",
   },
   {
+    name: "Pump.fun",
+    description: "Solana-based token creation and trading platform using bonding curve mechanisms with Token2022 support",
+    docs: "https://github.com/pump-fun/pump-public-docs",
+    github: "https://github.com/pump-fun",
+    category: "DeFi",
+    groupId: "Pump-Fun",
+  },
+  {
     name: "Quickswap",
     description: "Multi-chain decentralized exchange offering token swaps, liquidity provision, yield farming, and perpetual trading with low fees",
     docs: "https://docs.quickswap.exchange/",
