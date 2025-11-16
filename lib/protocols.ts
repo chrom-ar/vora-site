@@ -561,6 +561,14 @@ export const protocols: Protocol[] = [
     groupId: "StreamProtocol",
   },
   {
+    name: "Summer.fi",
+    description: "DeFi platform providing passive yield optimization and advanced lending/borrowing strategies",
+    docs: "https://docs.summer.fi/",
+    github: "https://github.com/OasisDEX",
+    category: "DeFi",
+    groupId: "Summer-fi",
+  },
+  {
     name: "Superlend",
     description: "Cross-chain lending aggregator optimizing yields across multiple DeFi protocols with automated position management",
     docs: "https://docs.superlend.xyz/",
