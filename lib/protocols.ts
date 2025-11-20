@@ -361,6 +361,14 @@ export const protocols: Protocol[] = [
     groupId: "mETH",
   },
   {
+    name: "Mimic",
+    description: "Programmable execution protocol for blockchain automation enabling developers to define onchain logic without writing or deploying smart contracts",
+    docs: "https://docs.mimic.fi/",
+    github: "https://github.com/mimic-fi",
+    category: "Infrastructure",
+    groupId: "Mimic",
+  },
+  {
     name: "Morpho",
     description: "Open decentralized lending network connecting lenders and borrowers with optimized rates and capital efficiency",
     docs: "https://docs.morpho.org/",
