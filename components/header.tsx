@@ -20,6 +20,7 @@ export const Header = () => {
               alt="SPARK-A1"
               width={160}
               height={73}
+              className="w-32 md:w-40"
             />
           </Link>
 
