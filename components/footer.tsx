@@ -6,9 +6,15 @@ export const Footer = () => {
   return (
     <footer className="border-t border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950 mt-auto">
       <div className="max-w-7xl mx-auto px-6 py-8">
-        <div className="flex items-center justify-between">
-          <div className="text-gray-500 dark:text-gray-400 text-sm">
-            © 2025 Chroma Labs
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 text-gray-500 dark:text-gray-400 text-sm">
+            <span>© 2025 Chroma Labs</span>
+            <a
+              href="mailto:devs@chrom.ar"
+              className="hover:text-gray-900 dark:hover:text-gray-100 transition-colors"
+            >
+              devs@chrom.ar
+            </a>
           </div>
 
           <div className="flex items-center gap-6">
