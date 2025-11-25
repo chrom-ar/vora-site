@@ -37,7 +37,7 @@ export const Header = () => {
         <div className="flex items-center justify-between">
           <Link href="/" className="flex items-center z-50 relative">
             <Image
-              src={resolvedTheme === "dark" ? "/images/logo_dark.svg" : "/images/logo_light.svg"}
+              src={resolvedTheme === "dark" ? "/images/logo_dark_v2.svg" : "/images/logo_light_v2.svg"}
               alt="SPARK-A1"
               width={160}
               height={73}
