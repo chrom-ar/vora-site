@@ -1,295 +1,75 @@
 "use client";
 
-import { useState, useMemo, useEffect, Suspense } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
-
+import Link from "next/link";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
-import { protocols } from "@/lib/protocols";
-import { humanizeTokens, timeAgo } from "@/lib/utils";
 
-const ITEMS_PER_PAGE = 10;
-
-interface ProtocolStats {
-  group_id: string;
-  approximate_tokens: number;
-  last_updated: string;
-}
-
-const SparkA1Content = () => {
-  const router = useRouter();
-  const searchParams = useSearchParams();
-  const [searchQuery, setSearchQuery] = useState(searchParams.get("search") || "");
-  const [currentPage, setCurrentPage] = useState(1);
-  const [stats, setStats] = useState<Record<string, ProtocolStats>>({});
-  const [loadingStats, setLoadingStats] = useState(true);
-
-  useEffect(() => {
-    const fetchStats = async () => {
-      try {
-        const response = await fetch("https://mcp-router.chrom.ar/stats");
-        const data = await response.json();
-        const statsMap: Record<string, ProtocolStats> = {};
-
-        data["mcp-rag"].protocols.forEach((protocol: ProtocolStats) => {
-          statsMap[protocol.group_id] = protocol;
-        });
-
-        setStats(statsMap);
-      } catch (error: unknown) {
-        console.error("Failed to fetch stats:", error);
-      } finally {
-        setLoadingStats(false);
-      }
-    };
-
-    fetchStats();
-  }, []);
-
-  const totalTokens = useMemo(() => {
-    const listedGroupIds = new Set(protocols.map(p => p.groupId));
-    return Object.values(stats).reduce((sum, protocolStats) => {
-      if (listedGroupIds.has(protocolStats.group_id)) {
-        return sum + protocolStats.approximate_tokens;
-      }
-      return sum;
-    }, 0);
-  }, [stats]);
-
-  const filteredProtocols = useMemo(() => {
-    if (!searchQuery) {
-      return protocols;
-    }
-
-    const query = searchQuery.toLowerCase();
-    return protocols.filter(protocol =>
-      protocol.name.toLowerCase().includes(query) ||
-      protocol.category.toLowerCase().includes(query) ||
-      protocol.description.toLowerCase().includes(query),
-    );
-  }, [searchQuery]);
-
-  const totalPages = Math.ceil(filteredProtocols.length / ITEMS_PER_PAGE);
-  const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
-  const endIndex = startIndex + ITEMS_PER_PAGE;
-  const currentProtocols = filteredProtocols.slice(startIndex, endIndex);
-
-  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value;
-    setSearchQuery(value);
-    setCurrentPage(1);
-
-    const params = new window.URLSearchParams(searchParams.toString());
-    if (value) {
-      params.set("search", value);
-    } else {
-      params.delete("search");
-    }
-    router.replace(`?${params.toString()}`, { scroll: false });
-  };
-
+const SparkA1Page = () => {
   return (
     <div className="min-h-screen flex flex-col bg-white dark:bg-gray-950">
       <Header />
 
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12 flex-1 w-full">
-        <div className="mb-6 sm:mb-8">
-          <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4 lg:gap-6">
-            <div className="flex-1">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-black dark:text-white mb-2 sm:mb-3">
-                Web3 MCP Server
-              </h1>
-              <h2 className="text-lg sm:text-xl md:text-2xl text-gray-700 dark:text-gray-300">
-                IDE integration, knowledge base, debugging and onchain simulation.
-              </h2>
+      <main className="flex-1 flex flex-col items-center justify-center px-4 sm:px-6 py-12 sm:py-24 text-center">
+        <div className="max-w-4xl mx-auto space-y-8">
+          <div className="space-y-4">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-black dark:text-white">
+              Web3 Developer <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-violet-600 dark:from-blue-400 dark:to-violet-400">Infrastructure</span>
+            </h1>
+            <p className="text-xl sm:text-2xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+              Supercharge your development with our advanced MCP Server.
+              IDE integration, knowledge base, debugging, and onchain simulation.
+            </p>
+          </div>
+
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Link
+              href="/get-started"
+              className="px-8 py-4 bg-black dark:bg-white text-white dark:text-black text-lg font-medium rounded-xl hover:bg-gray-800 dark:hover:bg-gray-200 transition-all transform hover:scale-105"
+            >
+              Get Started
+            </Link>
+            <Link
+              href="/indexed-protocols"
+              className="px-8 py-4 border border-gray-200 dark:border-gray-800 text-gray-900 dark:text-gray-100 text-lg font-medium rounded-xl hover:bg-gray-50 dark:hover:bg-gray-900 transition-all"
+            >
+              View Indexed Protocols
+            </Link>
+          </div>
+
+          <div className="pt-12 grid grid-cols-1 sm:grid-cols-3 gap-8 text-left">
+            <div className="p-6 border border-gray-200 dark:border-gray-800 rounded-2xl bg-gray-50 dark:bg-gray-900/50">
+              <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center mb-4 text-blue-600 dark:text-blue-400">
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Lightning Fast</h3>
+              <p className="text-gray-600 dark:text-gray-400">Optimized for speed and reliability, ensuring your development flow never stops.</p>
             </div>
-            <div className="flex justify-start lg:justify-end lg:flex-shrink-0">
-              {loadingStats ? (
-                <div className="inline-flex flex-col items-center lg:items-end px-5 py-3 lg:px-6 lg:py-4 border border-gray-200 dark:border-gray-800 rounded-lg bg-gray-50 dark:bg-gray-900">
-                  <span className="text-xs uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">Total Indexed</span>
-                  <div className="h-7 lg:h-8 w-20 lg:w-24 bg-gray-200 dark:bg-gray-800 rounded animate-pulse"></div>
-                </div>
-              ) : (
-                <div className="inline-flex flex-col items-center lg:items-end px-5 py-3 lg:px-6 lg:py-4 border border-gray-200 dark:border-gray-800 rounded-lg bg-gray-50 dark:bg-gray-900">
-                  <span className="text-xs uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-1">Total Indexed</span>
-                  <span className="text-2xl lg:text-3xl font-bold text-black dark:text-white">
-                    {humanizeTokens(totalTokens)}
-                  </span>
-                  <span className="text-xs text-gray-500 dark:text-gray-400 mt-1">tokens</span>
-                </div>
-              )}
+            <div className="p-6 border border-gray-200 dark:border-gray-800 rounded-2xl bg-gray-50 dark:bg-gray-900/50">
+              <div className="w-12 h-12 bg-violet-100 dark:bg-violet-900/30 rounded-lg flex items-center justify-center mb-4 text-violet-600 dark:text-violet-400">
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Verified Data</h3>
+              <p className="text-gray-600 dark:text-gray-400">Access verified protocol data directly in your IDE with zero configuration.</p>
+            </div>
+            <div className="p-6 border border-gray-200 dark:border-gray-800 rounded-2xl bg-gray-50 dark:bg-gray-900/50">
+              <div className="w-12 h-12 bg-emerald-100 dark:bg-emerald-900/30 rounded-lg flex items-center justify-center mb-4 text-emerald-600 dark:text-emerald-400">
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                </svg>
+              </div>
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Developer First</h3>
+              <p className="text-gray-600 dark:text-gray-400">Built by developers, for developers. Seamless integration with your favorite tools.</p>
             </div>
           </div>
         </div>
-
-        <div className="mb-6">
-          <input
-            type="text"
-            placeholder="Search protocols..."
-            value={searchQuery}
-            onChange={handleSearchChange}
-            className="w-full max-w-md px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white focus:border-transparent"
-          />
-        </div>
-
-        {filteredProtocols.length === 0 ? (
-          <div className="border border-gray-200 dark:border-gray-800 rounded-lg p-12 text-center">
-            <p className="text-gray-500 dark:text-gray-400 text-lg">No protocols found matching &quot;{searchQuery}&quot;</p>
-            <p className="text-gray-400 dark:text-gray-500 text-sm mt-2">Try adjusting your search terms</p>
-          </div>
-        ) : (
-          <div className="border border-gray-200 dark:border-gray-800 rounded-lg overflow-x-auto">
-            <table className="w-full">
-              <thead className="bg-gray-50 dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800">
-                <tr>
-                  <th className="px-3 md:px-6 py-3 text-left text-sm font-semibold text-gray-900 dark:text-gray-100">
-                    Name
-                  </th>
-                  <th className="px-6 py-3 text-left text-sm font-semibold text-gray-900 dark:text-gray-100 hidden md:table-cell">
-                    Category
-                  </th>
-                  <th className="px-3 md:px-6 py-3 text-center text-sm font-semibold text-gray-900 dark:text-gray-100 hidden sm:table-cell">
-                    Tokens
-                  </th>
-                  <th className="px-3 md:px-6 py-3 text-center text-sm font-semibold text-gray-900 dark:text-gray-100 hidden sm:table-cell">
-                    Updated
-                  </th>
-                  <th className="px-3 md:px-6 py-3 text-center text-sm font-semibold text-gray-900 dark:text-gray-100">
-                    Docs
-                  </th>
-                  <th className="px-6 py-3 text-center text-sm font-semibold text-gray-900 dark:text-gray-100 hidden md:table-cell">
-                    GitHub
-                  </th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-gray-200 dark:divide-gray-800">
-                {currentProtocols.map(protocol => {
-                  const protocolStats = protocol.groupId ? stats[protocol.groupId] : null;
-
-                  return (
-                    <tr key={protocol.name} className="hover:bg-gray-50 dark:hover:bg-gray-900">
-                      <td className="px-3 md:px-6 py-4">
-                        <div className="font-medium text-gray-900 dark:text-gray-100">{protocol.name}</div>
-                        <div className="text-sm text-gray-500 dark:text-gray-400 mt-1 hidden md:block">{protocol.description}</div>
-                      </td>
-                      <td className="px-6 py-4 hidden md:table-cell">
-                        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200">
-                          {protocol.category}
-                        </span>
-                      </td>
-                      <td className="px-3 md:px-6 py-4 text-center hidden sm:table-cell">
-                        {loadingStats ? (
-                          <div className="h-4 w-12 bg-gray-200 dark:bg-gray-800 rounded animate-pulse mx-auto"></div>
-                        ) : protocolStats ? (
-                          <span className="text-sm text-gray-900 dark:text-gray-100">
-                            {humanizeTokens(protocolStats.approximate_tokens)}
-                          </span>
-                        ) : (
-                          <span className="text-sm text-gray-400 dark:text-gray-500">-</span>
-                        )}
-                      </td>
-                      <td className="px-3 md:px-6 py-4 text-center hidden sm:table-cell whitespace-nowrap">
-                        {loadingStats ? (
-                          <div className="h-4 w-20 bg-gray-200 dark:bg-gray-800 rounded animate-pulse mx-auto"></div>
-                        ) : protocolStats ? (
-                          <span className="text-sm text-gray-900 dark:text-gray-100">
-                            {timeAgo(protocolStats.last_updated)}
-                          </span>
-                        ) : (
-                          <span className="text-sm text-gray-400 dark:text-gray-500">-</span>
-                        )}
-                      </td>
-                      <td className="px-3 md:px-6 py-4 text-center">
-                        <a
-                          href={protocol.docs}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center justify-center text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors"
-                          title="View documentation"
-                        >
-                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                          </svg>
-                        </a>
-                      </td>
-                      <td className="px-6 py-4 text-center hidden md:table-cell">
-                        {protocol.github ? (
-                          <a
-                            href={protocol.github}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center justify-center text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors"
-                            title="View GitHub repository"
-                          >
-                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                            </svg>
-                          </a>
-                        ) : (
-                          <span className="text-sm text-gray-400 dark:text-gray-500">-</span>
-                        )}
-                      </td>
-                    </tr>
-                  );
-                })}
-              </tbody>
-            </table>
-          </div>
-        )}
-
-        {totalPages > 1 && (
-          <div className="mt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div className="text-sm text-gray-600 dark:text-gray-400">
-              Showing {startIndex + 1}-{Math.min(endIndex, filteredProtocols.length)} of {filteredProtocols.length}
-            </div>
-            <div className="flex gap-2">
-              <button
-                onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
-                disabled={currentPage === 1}
-                className="px-3 sm:px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-900 disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                Previous
-              </button>
-              <div className="hidden sm:flex items-center gap-1">
-                {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
-                  <button
-                    key={page}
-                    onClick={() => setCurrentPage(page)}
-                    className={`px-4 py-2 rounded-lg text-sm font-medium ${
-                      currentPage === page
-                        ? "bg-black dark:bg-white text-white dark:text-black"
-                        : "text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-900"
-                    }`}
-                  >
-                    {page}
-                  </button>
-                ))}
-              </div>
-              <div className="sm:hidden text-sm text-gray-600 dark:text-gray-400 px-3 py-2">
-                Page {currentPage} of {totalPages}
-              </div>
-              <button
-                onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
-                disabled={currentPage === totalPages}
-                className="px-3 sm:px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-900 disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                Next
-              </button>
-            </div>
-          </div>
-        )}
       </main>
 
       <Footer />
     </div>
-  );
-};
-
-const SparkA1Page = () => {
-  return (
-    <Suspense fallback={<div className="min-h-screen flex items-center justify-center">Loading...</div>}>
-      <SparkA1Content />
-    </Suspense>
   );
 };
 
