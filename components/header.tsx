@@ -99,11 +99,11 @@ export const Header = () => {
 
       {/* Mobile Navigation Overlay */}
       {isMenuOpen && (
-        <div className="fixed inset-0 bg-white dark:bg-gray-950 z-40 flex flex-col pt-24 px-6 md:hidden">
-          <nav className="flex flex-col gap-6 text-lg">
+        <div className="fixed inset-0 bg-white/95 dark:bg-gray-950/95 backdrop-blur-sm z-40 flex flex-col pt-32 px-8 md:hidden transition-all duration-300 ease-in-out animate-in fade-in slide-in-from-top-5">
+          <nav className="flex flex-col gap-8 text-2xl font-semibold">
             <Link
               href="/indexed-protocols"
-              className="text-gray-900 dark:text-gray-100 font-medium py-2 border-b border-gray-100 dark:border-gray-800"
+              className="text-gray-900 dark:text-gray-100 hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
             >
               Indexed Protocols
             </Link>
@@ -111,21 +111,21 @@ export const Header = () => {
               href="https://docs.chrom.ar"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-900 dark:text-gray-100 font-medium py-2 border-b border-gray-100 dark:border-gray-800"
+              className="text-gray-900 dark:text-gray-100 hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
             >
               Docs
             </a>
             {isGetStartedPage ? (
               <Link
                 href="/"
-                className="text-gray-900 dark:text-gray-100 font-medium py-2 border-b border-gray-100 dark:border-gray-800"
+                className="text-gray-900 dark:text-gray-100 hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
               >
                 Back to Home
               </Link>
             ) : (
               <Link
                 href="/get-started"
-                className="text-gray-900 dark:text-gray-100 font-medium py-2 border-b border-gray-100 dark:border-gray-800"
+                className="text-gray-900 dark:text-gray-100 hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
               >
                 Get Started
               </Link>
