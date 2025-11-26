@@ -17,7 +17,7 @@ const SparkA1Page = () => {
             </h1>
             <p className="text-xl sm:text-2xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
               Supercharge your development with our advanced MCP Server.
-              IDE integration, knowledge base, debugging, and onchain simulation.
+              IDE integration, knowledge base, debugging, onchain simulation, and AI auditing.
             </p>
           </div>
 
@@ -36,7 +36,7 @@ const SparkA1Page = () => {
             </Link>
           </div>
 
-          <div className="pt-12 grid grid-cols-1 sm:grid-cols-3 gap-8 text-left">
+          <div className="pt-12 grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
             <div className="p-6 border border-gray-200 dark:border-gray-800 rounded-2xl bg-gray-50 dark:bg-gray-900/50">
               <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center mb-4 text-blue-600 dark:text-blue-400">
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
