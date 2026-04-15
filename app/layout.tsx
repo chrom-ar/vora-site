@@ -8,8 +8,8 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Chrom.ar - Web3 Developer Infrastructure",
-  description: "Supercharge your development with our advanced MCP Server. IDE integration, knowledge base, debugging and onchain simulation.",
+  title: "Chrom.ar - AI-Powered Security Audits",
+  description: "Multi-agent AI that analyzes your codebase, finds vulnerabilities, and generates proof-of-concept exploits.",
   generator: "Chrom.ar",
 };
 
@@ -23,15 +23,15 @@ const RootLayout = ({
       <head>
         <meta property="og:url" content="https://chrom.ar/" />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Chrom.ar - Web3 Developer Infrastructure" />
-        <meta property="og:description" content="Supercharge your development with our advanced MCP Server. IDE integration, knowledge base, debugging and onchain simulation." />
+        <meta property="og:title" content="Chrom.ar - AI-Powered Security Audits" />
+        <meta property="og:description" content="Multi-agent AI that analyzes your codebase, finds vulnerabilities, and generates proof-of-concept exploits." />
         <meta property="og:image" content="https://chrom.ar/images/logo.png" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta property="twitter:domain" content="chrom.ar" />
         <meta property="twitter:url" content="https://chrom.ar/" />
-        <meta name="twitter:title" content="Chrom.ar - Web3 Developer Infrastructure" />
-        <meta name="twitter:description" content="Supercharge your development with our advanced MCP Server. IDE integration, knowledge base, debugging and onchain simulation." />
+        <meta name="twitter:title" content="Chrom.ar - AI-Powered Security Audits" />
+        <meta name="twitter:description" content="Multi-agent AI that analyzes your codebase, finds vulnerabilities, and generates proof-of-concept exploits." />
         <meta name="twitter:image" content="https://chrom.ar/images/logo_square.png" />
 
         <link rel="icon" href="/images/favicon.svg" type="image/svg+xml" />
