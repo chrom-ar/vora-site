@@ -1,74 +1,26 @@
+import nextConfig from "eslint-config-next";
 import js from "@eslint/js";
-import nextPlugin from "@next/eslint-plugin-next";
-import reactPlugin from "eslint-plugin-react";
-import reactHooksPlugin from "eslint-plugin-react-hooks";
-import tseslint from "@typescript-eslint/eslint-plugin";
-import tsParser from "@typescript-eslint/parser";
+import tseslint from "typescript-eslint";
 
 const eslintConfig = [
   js.configs.recommended,
+  ...nextConfig,
   {
-    ignores: ["node_modules/**", ".next/**", "out/**", "build/**", "next-env.d.ts"],
-  },
-  {
-    files: ["**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx"],
+    files: ["**/*.ts", "**/*.tsx"],
     plugins: {
-      "@next/next": nextPlugin,
-      "react": reactPlugin,
-      "react-hooks": reactHooksPlugin,
-      "@typescript-eslint": tseslint,
-    },
-    languageOptions: {
-      parser: tsParser,
-      ecmaVersion: 2022,
-      sourceType: "module",
-      globals: {
-        React: "readonly",
-        JSX: "readonly",
-        console: "readonly",
-        window: "readonly",
-        document: "readonly",
-        localStorage: "readonly",
-        sessionStorage: "readonly",
-        navigator: "readonly",
-        fetch: "readonly",
-        btoa: "readonly",
-        atob: "readonly",
-        setTimeout: "readonly",
-        clearTimeout: "readonly",
-        setInterval: "readonly",
-        clearInterval: "readonly",
-        HTMLElement: "readonly",
-        HTMLInputElement: "readonly",
-        HTMLDivElement: "readonly",
-        Element: "readonly",
-        Node: "readonly",
-      },
-      parserOptions: {
-        ecmaFeatures: {
-          jsx: true,
-        },
-      },
-    },
-    settings: {
-      react: {
-        version: "detect",
-      },
+      "@typescript-eslint": tseslint.plugin,
     },
     rules: {
-      ...nextPlugin.configs.recommended.rules,
-      ...nextPlugin.configs["core-web-vitals"].rules,
-      ...reactPlugin.configs.recommended.rules,
-      ...reactHooksPlugin.configs.recommended.rules,
-
-      "react/react-in-jsx-scope": "off",
-      "react/prop-types": "off",
-
+      // TypeScript handles this natively, no-undef causes false positives
+      "no-undef": "off",
       "@typescript-eslint/naming-convention": ["error", {
         selector: "import",
         format: ["camelCase", "PascalCase"],
       }],
-
+    },
+  },
+  {
+    rules: {
       "arrow-parens": ["error", "as-needed"],
       "comma-dangle": ["error", "always-multiline"],
       "curly": "error",
