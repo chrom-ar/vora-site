@@ -30,3 +30,7 @@ npm install
   ```bash
   npm run build
   ```
+
+## Support
+
+If you'd like to support Chroma Labs, consider donating through [Giveth](https://giveth.io/project/chroma-labs).
