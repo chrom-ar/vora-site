@@ -445,6 +445,9 @@ body::after {
   .headline h1 { font-size: clamp(28px, 9vw, 54px); max-width: calc(100vw - 32px); padding: 0 8px; }
   .headline .sub { font-size: 9px; letter-spacing: 0.22em; margin-top: 12px; padding: 0 8px; }
   .stage .tick { font-size: 7.5px; letter-spacing: 0.15em; }
+  /* Boost in-SVG label/dot sizes so they survive the ~30% rasterization on phones */
+  .chain-label { font-size: 22px; letter-spacing: 0.05em; }
+  .chain-dot { r: 2.8; }
   .terminal { grid-template-columns: 1fr 1fr; grid-template-rows: auto auto; min-height: 0; }
   .term-col { border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 8px 12px; }
   .term-col:nth-child(1) { border-right: 1px solid var(--line); }
@@ -483,7 +486,7 @@ body::after {
 }
 
 @media (max-width: 480px) {
-  .frame { padding: 12px; }
+  .frame { padding: 12px; gap: 6px; }
   .headline { max-width: 100%; width: 100%; padding: 0 8px; box-sizing: border-box; }
   .headline h1 {
     font-size: clamp(24px, 8.5vw, 38px);
@@ -491,9 +494,19 @@ body::after {
     max-width: calc(100vw - 24px);
     padding: 0 4px;
   }
-  .top { grid-template-columns: 1fr; grid-template-areas: "brand" "status" "session"; }
-  .session { justify-self: start; }
+  /* Keep brand+session on row 1, status on row 2 — fully stacking eats too much vertical space */
+  .top { row-gap: 6px; font-size: 8.5px; }
+  .brand { font-size: 13px; gap: 6px; }
+  .brand .corp { font-size: 7.5px; padding-left: 6px; }
+  .status, .session { font-size: 8.5px; }
+  .session { justify-self: end; }
+  .session .blockid { display: none; } /* "0x7F31A…c0de UTC" is the cuttable half */
   .terminal { grid-template-columns: 1fr 1fr; }
   .stage { min-height: 48vh; min-height: 48dvh; }
-  .tick.tr, .tick.bl { display: none; }
+  /* All 4 corner ticks visible — just smaller and tighter */
+  .stage .tick { font-size: 6.5px; letter-spacing: 0.1em; }
+  .tick.tl, .tick.bl { left: 6px; }
+  .tick.tr, .tick.br { right: 6px; }
+  .tick.tl, .tick.tr { top: 6px; }
+  .tick.bl, .tick.br { bottom: 6px; }
 }
