@@ -1,0 +1,5 @@
+<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+  <rect width="32" height="32" rx="6" fill="#06070a"/>
+  <circle cx="16" cy="16" r="13" fill="none" stroke="#9dff6b" stroke-width="0.7" opacity="0.55"/>
+  <text x="16" y="23" font-family="'Instrument Serif', Georgia, serif" font-style="italic" font-size="20" fill="#e8e6df" text-anchor="middle">V</text>
+</svg>
