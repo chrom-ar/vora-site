@@ -1,21 +1,16 @@
-import { TopBar } from "@/components/vora/top-bar";
-import { WorldMap } from "@/components/vora/world-map";
-import { Headline } from "@/components/vora/headline";
-import { Terminal } from "@/components/vora/terminal";
-import { Ticker } from "@/components/vora/ticker";
+import type { Metadata } from "next";
+import { Landing } from "@/components/landing/landing";
+import { en } from "@/lib/messages";
 
-const Page = () => (
-  <div className="frame">
-    <TopBar />
-    <section className="stage">
-      <WorldMap />
-      <Headline />
-    </section>
-    <footer className="bottom">
-      <Terminal />
-      <Ticker />
-    </footer>
-  </div>
-);
+export const metadata: Metadata = {
+  metadataBase: new URL("https://chrom.ar"),
+  title: en.meta.title,
+  description: en.meta.description,
+  alternates: { canonical: "/", languages: { en: "/", es: "/es/" } },
+  openGraph: { title: en.meta.title, description: en.meta.description, type: "website", url: "https://chrom.ar/", locale: "en_US" },
+  twitter: { card: "summary_large_image", title: en.meta.title, description: en.meta.description },
+};
+
+const Page = () => <Landing messages={en} locale="en" />;
 
 export default Page;
