@@ -254,7 +254,7 @@ export const en: Messages = {
     copy: "VORA · CONTINUOUS APPSEC FOR BANKING AND FINTECH · 2026",
     privacy: "Privacy",
     security: "Security",
-    contact: "hola@vora.app",
+    contact: "contact@chrom.ar",
   },
 };
 
@@ -410,6 +410,6 @@ export const es: Messages = {
     copy: "VORA · CIBERSEGURIDAD CONTINUA PARA BANCA Y FINTECH · 2026",
     privacy: "Privacidad",
     security: "Seguridad",
-    contact: "hola@vora.app",
+    contact: "contact@chrom.ar",
   },
 };
