@@ -9,8 +9,8 @@ and Spanish.
 
 ## Pages
 
-- [Vora — Vulnerabilities caught before merge](https://chrom.ar/): English landing page — the problem, the product, how a review appears in a pull request, and the pilot programme.
-- [Vora — Vulnerabilidades detectadas antes del merge](https://chrom.ar/es/): Spanish landing page, for banks and fintechs in Latin America.
+- [Vora — Vulnerabilities caught before merge](https://vora.chrom.ar/): English landing page — the problem, the product, how a review appears in a pull request, and the pilot programme.
+- [Vora — Vulnerabilidades detectadas antes del merge](https://vora.chrom.ar/es/): Spanish landing page, for banks and fintechs in Latin America.
 
 ## Contact
 

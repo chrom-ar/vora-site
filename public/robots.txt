@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://chrom.ar/sitemap.xml
+Sitemap: https://vora.chrom.ar/sitemap.xml

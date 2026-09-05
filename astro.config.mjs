@@ -1,7 +1,7 @@
 import { defineConfig } from "astro/config";
 
 export default defineConfig({
-  site: "https://chrom.ar",
+  site: "https://vora.chrom.ar",
   build: { format: "directory" },
   i18n: {
     defaultLocale: "en",
