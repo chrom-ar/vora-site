@@ -16,7 +16,7 @@
   --ink: #0a1a2c;
   --ink-2: #1d2b3d;
   --ink-dim: #5b6878;
-  --ink-faint: #97a2b1;
+  --ink-faint: #5d6a7b;
   --line: #e3e6ea;
   --line-2: #d3d8df;
   --accent: #0b3d2e;
@@ -106,7 +106,7 @@ h1 em { font-style: italic; font-weight: 400; color: var(--accent); }
 .how-steps { margin-top: 56px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
 .how-step { border-top: 2px solid var(--accent); padding-top: 22px; }
 .how-step .n { font-family: var(--mono); font-size: 11px; letter-spacing: 0.2em; color: var(--accent); margin-bottom: 12px; }
-.how-step h4 { font-family: var(--serif); font-weight: 500; font-size: 19px; margin: 0 0 8px; color: var(--ink); letter-spacing: -0.01em; }
+.how-step h3 { font-family: var(--serif); font-weight: 500; font-size: 19px; margin: 0 0 8px; color: var(--ink); letter-spacing: -0.01em; }
 .how-step p { color: var(--ink-dim); font-size: 13px; line-height: 1.55; margin: 0; }
 
 .pr-mock { margin-top: 64px; border: 1px solid var(--line); background: var(--bg); }
@@ -235,7 +235,7 @@ h1 em { font-style: italic; font-weight: 400; color: var(--accent); }
   .value-item h3 { font-size: 19px; }
   .how-steps { grid-template-columns: 1fr; gap: 20px; }
   .how-step { padding-top: 18px; }
-  .how-step h4 { font-size: 17px; }
+  .how-step h3 { font-size: 17px; }
   .pr-mock { margin-top: 28px; }
   .pr-mock .chrome { padding: 10px 14px; gap: 10px; font-size: 10.5px; }
   .pr-mock .chrome .url { display: none; }

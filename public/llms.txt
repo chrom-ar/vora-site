@@ -1,0 +1,17 @@
+# Vora
+
+> AppSec for banking and fintech. Every pull request reviewed inline, before it ships.
+
+Vora reviews pull requests for security defects inside the development flow, so
+vulnerabilities are caught before merge rather than in a quarterly audit. It is
+built for regulated financial institutions, and the site is published in English
+and Spanish.
+
+## Pages
+
+- [Vora — Vulnerabilities caught before merge](https://chrom.ar/): English landing page — the problem, the product, how a review appears in a pull request, and the pilot programme.
+- [Vora — Vulnerabilidades detectadas antes del merge](https://chrom.ar/es/): Spanish landing page, for banks and fintechs in Latin America.
+
+## Contact
+
+- [Pilot and security enquiries](mailto:contact@chrom.ar): Contact address for pilot programmes and security questionnaires.

@@ -16,12 +16,14 @@ const { messages, locale } = Astro.props;
 ---
 <div lang={locale}>
   <TopBar t={messages.topBar} />
-  <Hero t={messages.hero} />
-  <Problem t={messages.problem} />
-  <Value t={messages.value} />
-  <HowItWorks t={messages.how} />
-  <Pilot t={messages.pilot} />
-  <WhyNow t={messages.whyNow} />
-  <Closer t={messages.closer} contact={messages.footer.contact} />
+  <main>
+    <Hero t={messages.hero} />
+    <Problem t={messages.problem} />
+    <Value t={messages.value} />
+    <HowItWorks t={messages.how} />
+    <Pilot t={messages.pilot} />
+    <WhyNow t={messages.whyNow} />
+    <Closer t={messages.closer} contact={messages.footer.contact} />
+  </main>
   <Footer t={messages.footer} />
 </div>
