@@ -1,0 +1,8 @@
+---
+import Base from "@/layouts/Base.astro";
+import Landing from "@/components/Landing.astro";
+import { es } from "@/i18n/messages";
+---
+<Base locale="es" title={es.meta.title} description={es.meta.description} canonical="/es/" ogLocale="es_AR">
+  <Landing messages={es} locale="es" />
+</Base>

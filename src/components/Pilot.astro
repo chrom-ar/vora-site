@@ -1,0 +1,33 @@
+---
+import type { Messages } from "@/i18n/messages";
+import Tokens from "./Tokens.astro";
+
+type Props = { t: Messages["pilot"] };
+
+const { t } = Astro.props;
+---
+<section id="pilot" class="pilot">
+  <div class="wrap">
+    <div class="pilot-grid">
+      <div>
+        <div class="sec-eye">{t.eyebrow}</div>
+        <h2 class="sec-h"><Tokens value={t.h} /></h2>
+        <p class="sec-sub" style="max-width: 440px">{t.sub}</p>
+      </div>
+      <div class="pilot-card">
+        <h3>{t.cardTitle}</h3>
+        {t.timeline.map(row => (
+          <div class="tl">
+            <div class="when">{row.when}</div>
+            <div class="what"><b>{row.b}</b> {row.rest}</div>
+          </div>
+        ))}
+        <div class="pilot-promises">
+          {t.promises.map(p => (
+            <div class="p"><span class="ic">✓</span><span>{p}</span></div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

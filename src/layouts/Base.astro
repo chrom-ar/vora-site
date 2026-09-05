@@ -1,0 +1,66 @@
+---
+import "@/styles/globals.css";
+
+type Props = {
+  locale: "en" | "es";
+  title: string;
+  description: string;
+  canonical: string;
+  ogLocale: string;
+};
+
+const { locale, title, description, canonical, ogLocale } = Astro.props;
+const abs = (path: string) => new URL(path, Astro.site).href;
+---
+<html lang={locale}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={abs(canonical)} />
+    <link rel="alternate" hreflang="en" href={abs("/")} />
+    <link rel="alternate" hreflang="es" href={abs("/es/")} />
+    <link rel="icon" href="/icon.svg" type="image/svg+xml" sizes="any" />
+    <link rel="icon" href="/icon.png" type="image/png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="/apple-icon.png" type="image/png" sizes="180x180" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={abs(canonical)} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:locale" content={ogLocale} />
+    <meta property="og:image" content={abs("/opengraph-image.png")} />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={abs("/twitter-image.png")} />
+    <meta name="twitter:image:type" content="image/png" />
+    <meta name="twitter:image:width" content="1200" />
+    <meta name="twitter:image:height" content="630" />
+    <script is:inline>
+      (function () {
+        try {
+          if (location.pathname !== "/") return;
+          var stored = localStorage.getItem("vora-lang");
+          if (stored === "en") return;
+          if (stored === "es") { location.replace("/es/"); return; }
+          var lang = (navigator.language || "").toLowerCase();
+          if (lang.indexOf("es") === 0) location.replace("/es/");
+        } catch (_) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <slot />
+    <script is:inline>
+      document.querySelectorAll(".lang-toggle").forEach(function (el) {
+        el.addEventListener("click", function () {
+          try { localStorage.setItem("vora-lang", el.dataset.lang); } catch (_) {}
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+---
+import type { Messages } from "@/i18n/messages";
+import TopBar from "./TopBar.astro";
+import Hero from "./Hero.astro";
+import Problem from "./Problem.astro";
+import Value from "./Value.astro";
+import HowItWorks from "./HowItWorks.astro";
+import Pilot from "./Pilot.astro";
+import WhyNow from "./WhyNow.astro";
+import Closer from "./Closer.astro";
+import Footer from "./Footer.astro";
+
+type Props = { messages: Messages; locale: "en" | "es" };
+
+const { messages, locale } = Astro.props;
+---
+<div lang={locale}>
+  <TopBar t={messages.topBar} />
+  <Hero t={messages.hero} />
+  <Problem t={messages.problem} />
+  <Value t={messages.value} />
+  <HowItWorks t={messages.how} />
+  <Pilot t={messages.pilot} />
+  <WhyNow t={messages.whyNow} />
+  <Closer t={messages.closer} contact={messages.footer.contact} />
+  <Footer t={messages.footer} />
+</div>

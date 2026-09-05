@@ -1,0 +1,24 @@
+---
+import type { Messages } from "@/i18n/messages";
+import Tokens from "./Tokens.astro";
+
+type Props = { t: Messages["whyNow"] };
+
+const { t } = Astro.props;
+---
+<section id="why-now" class="why-now">
+  <div class="wrap">
+    <div class="sec-eye">{t.eyebrow}</div>
+    <h2 class="sec-h"><Tokens value={t.h} /></h2>
+    <p class="sec-sub">{t.sub}</p>
+    <div class="why-grid">
+      {t.tiles.map(tile => (
+        <div>
+          <div class="num">{tile.num}{tile.numUnit && <small>{tile.numUnit}</small>}</div>
+          <div class="lb">{tile.lb}</div>
+          <p>{tile.p}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

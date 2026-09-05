@@ -1,0 +1,13 @@
+---
+import type { Messages } from "@/i18n/messages";
+
+type Props = { t: Messages["footer"] };
+
+const { t } = Astro.props;
+---
+<footer class="foot">
+  <div class="foot-inner">
+    <span>{t.copy}</span>
+    <span><a href={`mailto:${t.contact}`}>{t.privacy}</a>{" · "}<a href={`mailto:${t.contact}`}>{t.security}</a>{" · "}<a href={`mailto:${t.contact}`}>{t.contact}</a></span>
+  </div>
+</footer>

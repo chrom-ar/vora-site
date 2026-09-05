@@ -20,13 +20,13 @@ const renderPng = (svg, width) => new Resvg(svg, {
   font: { fontFiles: FONT_FILES, loadSystemFonts: true, defaultFontFamily: "Instrument Serif" },
 }).render().asPng();
 
-mkdirSync(join(ROOT, "app"), { recursive: true });
+mkdirSync(join(ROOT, "public"), { recursive: true });
 
-writeFileSync(join(ROOT, "app/icon.png"),              renderPng(FAVICON, 32));
-writeFileSync(join(ROOT, "app/apple-icon.png"),        renderPng(FAVICON, 180));
-writeFileSync(join(ROOT, "app/opengraph-image.png"),   renderPng(OG, 1200));
-writeFileSync(join(ROOT, "app/twitter-image.png"),     renderPng(OG, 1200));
+writeFileSync(join(ROOT, "public/icon.png"),            renderPng(FAVICON, 32));
+writeFileSync(join(ROOT, "public/apple-icon.png"),      renderPng(FAVICON, 180));
+writeFileSync(join(ROOT, "public/opengraph-image.png"), renderPng(OG, 1200));
+writeFileSync(join(ROOT, "public/twitter-image.png"),   renderPng(OG, 1200));
 
-copyFileSync(join(ROOT, "assets/vora-favicon.svg"), join(ROOT, "app/icon.svg"));
+copyFileSync(join(ROOT, "assets/vora-favicon.svg"), join(ROOT, "public/icon.svg"));
 
-console.log("Generated app/icon.{svg,png}, app/apple-icon.png, app/opengraph-image.png, app/twitter-image.png");
+console.log("Generated public/icon.{svg,png}, public/apple-icon.png, public/opengraph-image.png, public/twitter-image.png");

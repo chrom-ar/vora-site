@@ -1,0 +1,18 @@
+---
+import type { Messages } from "@/i18n/messages";
+import Tokens from "./Tokens.astro";
+
+type Props = { t: Messages["closer"]; contact: string };
+
+const { t, contact } = Astro.props;
+---
+<section class="closer">
+  <div class="wrap">
+    <h2><Tokens value={t.h} /></h2>
+    <p>{t.p}</p>
+    <div class="hero-cta" style="justify-content: center">
+      <a class="btn primary lg" href={`mailto:${contact}`}>{t.cta.primary}</a>
+      <a class="btn lg" href={`mailto:${contact}?subject=DDQ`}>{t.cta.secondary}</a>
+    </div>
+  </div>
+</section>

@@ -1,12 +1,12 @@
 # Chrom.ar site
 
-A modern web application built with Next.js 15, React 19, and TypeScript.
+A statically built site made with Astro and TypeScript, no UI framework.
 
 ## Getting Started
 
 ### Prerequisites
 
-- Node.js (version 18 or higher)
+- Node.js (version 22.12.0 or higher)
 - npm or yarn package manager
 
 ### Installation
@@ -24,11 +24,26 @@ npm install
   ```bash
   npm run dev
   ```
-  Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+  Open [http://localhost:4321](http://localhost:4321) to view it in the browser.
 
 - **Build**: Create a production build
   ```bash
   npm run build
+  ```
+
+- **Start**: Preview the production build
+  ```bash
+  npm run start
+  ```
+
+- **Lint**: Run ESLint
+  ```bash
+  npm run lint
+  ```
+
+- **Generate images**: Regenerate the favicon and OG images from `assets/*.svg`
+  ```bash
+  npm run gen-images
   ```
 
 ## Support

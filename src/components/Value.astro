@@ -1,0 +1,30 @@
+---
+import type { Messages } from "@/i18n/messages";
+import Tokens from "./Tokens.astro";
+
+type Props = { t: Messages["value"] };
+
+const { t } = Astro.props;
+---
+<section id="product" class="value">
+  <div class="wrap">
+    <div class="value-grid">
+      <div>
+        <div class="sec-eye">{t.eyebrow}</div>
+        <h2 class="sec-h"><Tokens value={t.h} /></h2>
+        <p class="sec-sub" style="max-width: 480px">{t.sub}</p>
+      </div>
+      <div class="value-list">
+        {t.items.map(i => (
+          <div class="value-item">
+            <div class="vk">{i.k}</div>
+            <div>
+              <h3>{i.h}</h3>
+              <p>{i.p}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

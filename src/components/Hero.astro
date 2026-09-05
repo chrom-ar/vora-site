@@ -1,0 +1,51 @@
+---
+import type { Messages } from "@/i18n/messages";
+import Tokens from "./Tokens.astro";
+
+type Props = { t: Messages["hero"] };
+
+const { t } = Astro.props;
+const cells = t.stats.cells;
+---
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow"><span class="dot"></span>{t.eyebrow}</div>
+        <h1><Tokens value={t.h1} /></h1>
+        <p class="lede">{t.lede}</p>
+        <div class="hero-cta">
+          <a class="btn primary lg" href="#pilot">{t.cta.primary}</a>
+          <a class="btn lg" href="#product">{t.cta.secondary}</a>
+        </div>
+      </div>
+      <aside class="hero-stats">
+        <div class="head">
+          <span><b>{t.stats.head.left}</b></span>
+          <span>{t.stats.head.right}</span>
+        </div>
+        <div class="stat-row">
+          <div class="stat-cell">
+            <div class="stat-num">{cells[0].value}{cells[0].unit && <small>{cells[0].unit}</small>}</div>
+            <div class="stat-lbl">{cells[0].label}</div>
+          </div>
+          <div class="stat-cell">
+            <div class="stat-num">{cells[1].value}{cells[1].unit && <small>{cells[1].unit}</small>}</div>
+            <div class="stat-lbl">{cells[1].label}</div>
+          </div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-cell">
+            <div class="stat-num">{cells[2].value}{cells[2].unit && <small>{cells[2].unit}</small>}</div>
+            <div class="stat-lbl">{cells[2].label}</div>
+          </div>
+          <div class="stat-cell">
+            <div class="stat-num">{cells[3].value}{cells[3].unit && <small>{cells[3].unit}</small>}</div>
+            <div class="stat-lbl">{cells[3].label}</div>
+          </div>
+        </div>
+        <div class="src">{t.stats.src}</div>
+      </aside>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,25 @@
+---
+import type { Messages } from "@/i18n/messages";
+import Tokens from "./Tokens.astro";
+import PrMock from "./PrMock.astro";
+
+type Props = { t: Messages["how"] };
+
+const { t } = Astro.props;
+---
+<section class="how">
+  <div class="wrap">
+    <div class="sec-eye">{t.eyebrow}</div>
+    <h2 class="sec-h"><Tokens value={t.h} /></h2>
+    <div class="how-steps">
+      {t.steps.map(s => (
+        <div class="how-step">
+          <div class="n">{s.n}</div>
+          <h4>{s.h}</h4>
+          <p>{s.p}</p>
+        </div>
+      ))}
+    </div>
+    <PrMock t={t.mock} />
+  </div>
+</section>

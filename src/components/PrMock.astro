@@ -1,0 +1,52 @@
+---
+import type { PrMockMessages } from "@/i18n/messages";
+
+type Props = { t: PrMockMessages };
+
+const { t } = Astro.props;
+
+type Sign = "add" | "rem" | undefined;
+
+const signFor = (sign: Sign) => sign === "add" ? "+" : sign === "rem" ? "−" : "";
+const classFor = (sign: Sign) => sign === "add" ? "line add" : sign === "rem" ? "line rem" : "line";
+---
+<div class="pr-mock">
+  <div class="chrome">
+    <div class="dots"><i></i><i></i><i></i></div>
+    <div class="url">{t.url}</div>
+    <div>{t.open}</div>
+  </div>
+  <div class="body">
+    <div class="pr-meta">
+      <span class="pill">{t.pillOpen}</span>
+      <h3>{t.titleLead}<small>{t.titleSmall}</small></h3>
+      <span class="n">{t.range}</span>
+    </div>
+    <div class="filebar">
+      <span class="file">{t.file}</span>
+      <span style="color: var(--accent)">{t.add}</span>
+      <span style="color: var(--danger)">{t.rem}</span>
+      <span class="ai">{t.aiMarker}</span>
+    </div>
+    <div class="diff">
+      {t.codeLines.map(l => (
+        <div class={classFor(l.sign)}>
+          <span class="ln">{l.ln}</span>
+          <span class="sign">{signFor(l.sign)}</span>
+          <span class="code">{l.code}</span>
+        </div>
+      ))}
+    </div>
+    <div class="review">
+      <div class="rh">
+        <span class="av">V</span>
+        <span class="who"><b>{t.reviewer}</b> · {t.reviewLine}</span>
+      </div>
+      <div class="body">
+        <p><span class="sev">{t.sevLabel}</span><span class="swc">{t.cweTag}</span></p>
+        <p>{t.main.lead}<code>{t.main.codeA}</code>{t.main.mid}<code>{t.main.codeB}</code>{t.main.tail}</p>
+        <p class="dim">{t.suggestion.lead}<code>{t.suggestion.codeA}</code>{t.suggestion.mid}<code>{t.suggestion.codeB}</code>{t.suggestion.tail}</p>
+      </div>
+    </div>
+  </div>
+</div>

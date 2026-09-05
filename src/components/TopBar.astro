@@ -1,0 +1,23 @@
+---
+import type { Messages } from "@/i18n/messages";
+
+type Props = { t: Messages["topBar"] };
+
+const { t } = Astro.props;
+---
+<header class="top">
+  <div class="top-inner">
+    <div class="brand">Vora<span class="corp">{t.brandSubline}</span></div>
+    <nav class="nav">
+      <a href="#problem">{t.nav.problem}</a>
+      <a href="#product">{t.nav.product}</a>
+      <a href="#pilot">{t.nav.pilot}</a>
+      <a href="#why-now">{t.nav.whyNow}</a>
+    </nav>
+    <div class="top-cta">
+      <a class="btn" href="#pilot">{t.cta.pilot}</a>
+      <a class="btn primary" href="#product">{t.cta.product}</a>
+      <a class="lang-toggle" href={t.languageToggleHref} data-lang={t.languageToggleHref === "/" ? "en" : "es"}>{t.languageToggleLabel}</a>
+    </div>
+  </div>
+</header>

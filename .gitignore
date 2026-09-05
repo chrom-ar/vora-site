@@ -3,9 +3,9 @@
 # dependencies
 /node_modules
 
-# next.js
-/.next/
-/out/
+# astro
+dist/
+.astro/
 
 # production
 /build
@@ -24,4 +24,6 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
-next-env.d.ts
+
+# scratch workspace
+.superpowers/

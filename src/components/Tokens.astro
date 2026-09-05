@@ -1,0 +1,8 @@
+---
+import type { Tokens as TokensT } from "@/i18n/messages";
+
+type Props = { value: TokensT };
+
+const { value } = Astro.props;
+---
+{value.lead}<em>{value.em}</em>{value.tail ?? ""}
