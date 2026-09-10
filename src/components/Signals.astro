@@ -1,0 +1,13 @@
+---
+import type { Stat } from "@/i18n/messages";
+
+type Props = { stats: Stat[]; src: string; aria: string };
+
+const { stats, src, aria } = Astro.props;
+---
+<div class="stats" aria-label={aria}>
+  {stats.map(s => (
+    <div class="stat" data-reveal="up"><span class="stat-n"><span data-decode>{s.n}</span></span><span class="stat-l">{s.l}</span></div>
+  ))}
+  <p class="stat-src">{src}</p>
+</div>

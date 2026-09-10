@@ -1,0 +1,23 @@
+---
+import type { Messages } from "@/i18n/messages";
+import Cta from "./Cta.astro";
+
+type Props = { t: Messages["trust"] };
+
+const { t } = Astro.props;
+---
+<section id="trust" class="sec trust" aria-labelledby="trust-title">
+  <div class="wrap">
+    <h2 id="trust-title" class="eyebrow" data-reveal="words"><span class="mask-word">{t.h}</span></h2>
+    <div class="facts compact wide">
+      {t.facts.map(f => (
+        <div class="fact" data-reveal="up"><h3>{f.h}</h3><p>{f.p}</p></div>
+      ))}
+    </div>
+    <p class="proof" data-reveal="up">{t.proof}</p>
+    <div class="cta-row" data-reveal="up">
+      <Cta cta={t.ctaPrimary} variant="primary" />
+      <Cta cta={t.ctaGhost} variant="ghost" />
+    </div>
+  </div>
+</section>

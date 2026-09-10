@@ -41,9 +41,14 @@ npm install
   npm run lint
   ```
 
-- **Generate images**: Regenerate the favicon and OG images from `assets/*.svg`
+- **Check**: Type-check with `astro check`
   ```bash
-  npm run gen-images
+  npm run check
+  ```
+
+- **Verify**: Build, then run the post-build content/asset checks
+  ```bash
+  npm run verify
   ```
 
 ## Support

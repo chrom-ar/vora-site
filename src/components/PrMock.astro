@@ -4,49 +4,22 @@ import type { PrMockMessages } from "@/i18n/messages";
 type Props = { t: PrMockMessages };
 
 const { t } = Astro.props;
-
-type Sign = "add" | "rem" | undefined;
-
-const signFor = (sign: Sign) => sign === "add" ? "+" : sign === "rem" ? "−" : "";
-const classFor = (sign: Sign) => sign === "add" ? "line add" : sign === "rem" ? "line rem" : "line";
 ---
-<div class="pr-mock">
-  <div class="chrome">
-    <div class="dots"><i></i><i></i><i></i></div>
-    <div class="url">{t.url}</div>
-    <div>{t.open}</div>
-  </div>
-  <div class="body">
-    <div class="pr-meta">
-      <span class="pill">{t.pillOpen}</span>
-      <h3>{t.titleLead}<small>{t.titleSmall}</small></h3>
-      <span class="n">{t.range}</span>
-    </div>
-    <div class="filebar">
-      <span class="file">{t.file}</span>
-      <span style="color: var(--accent)">{t.add}</span>
-      <span style="color: var(--danger)">{t.rem}</span>
-      <span class="ai">{t.aiMarker}</span>
-    </div>
-    <div class="diff">
+<figure class="pr-mock" data-reveal="up">
+  <figcaption class="sr-only">{t.caption}</figcaption>
+  <div class="chrome" aria-hidden="true"><span class="dots"><i></i><i></i><i></i></span><span class="url">{t.chromeUrl}</span><span class="state">{t.chromeState}</span></div>
+  <div class="pr-body">
+    <div class="pr-meta" lang="en"><span class="pill">{t.pill}</span><p class="pr-title"><strong>{t.titleStrong}</strong> <small>{t.titleSmall}</small></p><span class="n">{t.n}</span></div>
+    <div class="filebar"><span class="file" lang="en">{t.file}</span><span class="delta">{t.delta}</span><span class="ai">{t.ai}</span></div>
+    <div class="diff" lang="en" role="img" aria-label={t.diffAria}>
       {t.codeLines.map(l => (
-        <div class={classFor(l.sign)}>
-          <span class="ln">{l.ln}</span>
-          <span class="sign">{signFor(l.sign)}</span>
-          <span class="code">{l.code}</span>
-        </div>
+        <div class="line add"><span class="ln">{l.ln}</span><span class="sign">+</span><span class="code">{l.code}</span></div>
       ))}
     </div>
     <div class="review">
-      <div class="rh">
-        <span class="av">V</span>
-        <span class="who"><b>{t.reviewer}</b> · {t.reviewLine}</span>
-      </div>
-      <div class="body">
-        <p><span class="sev">{t.sevLabel}</span><span class="swc">{t.cweTag}</span></p>
-        <p>{t.main.lead}<code>{t.main.codeA}</code>{t.main.mid}<code>{t.main.codeB}</code>{t.main.tail}</p>
-        <p class="dim">{t.suggestion.lead}<code>{t.suggestion.codeA}</code>{t.suggestion.mid}<code>{t.suggestion.codeB}</code>{t.suggestion.tail}</p>
-      </div>
+      <div class="rh"><span class="av" aria-hidden="true">V</span><span class="who"><b>{t.reviewer}</b> {t.reviewLine}</span></div>
+      <div class="tags"><span class="sev">{t.sev}</span><span class="tag">{t.tag}</span></div>
+      <p>{t.review.map(p => ("code" in p ? <code>{p.code}</code> : p.text))}</p>
     </div>
   </div>
-</div>
+</figure>

@@ -52,7 +52,8 @@ jobs:
             --exclude "icon.svg" \
             --exclude "apple-icon.png" \
             --exclude "opengraph-image.png" \
-            --exclude "twitter-image.png"
+            --exclude "assets/*" \
+            --exclude "LICENSES.md"
 
           aws s3 sync ./${{ env.OUTPUT_DIR }}/ s3://www.chrom.ar/ \
             --delete \

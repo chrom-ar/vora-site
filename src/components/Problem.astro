@@ -1,25 +1,24 @@
 ---
 import type { Messages } from "@/i18n/messages";
-import Tokens from "./Tokens.astro";
+import Signals from "./Signals.astro";
 
 type Props = { t: Messages["problem"] };
 
 const { t } = Astro.props;
 ---
-<section id="problem" class="problem">
+<section id="problem" class="sec screen why" aria-labelledby="problem-title">
   <div class="wrap">
-    <div class="sec-eye">{t.eyebrow}</div>
-    <h2 class="sec-h"><Tokens value={t.h} /></h2>
-    <p class="sec-sub">{t.sub}</p>
-    <div class="problem-grid">
-      {t.cards.map(c => (
-        <div class="problem-card">
-          <div class="num">{c.num}</div>
-          <h3>{c.h}</h3>
-          <p>{c.p}</p>
-          <div class="stat"><b>{c.stat.b}</b> {c.stat.rest}</div>
-        </div>
-      ))}
+    <div class="why-grid">
+      <div>
+        <p class="eyebrow" data-reveal="words"><span class="mask-word">{t.eyebrow}</span></p>
+        <h2 id="problem-title" class="h2 big" data-reveal="words"><span class="mask-word">{t.h}</span></h2>
+      </div>
+      <ul class="lines">
+        {t.lines.map(l => (
+          <li data-reveal="up"><strong>{l.b}</strong>{l.rest}</li>
+        ))}
+      </ul>
     </div>
+    <Signals stats={t.stats} src={t.statSrc} aria={t.signalsAria} />
   </div>
 </section>

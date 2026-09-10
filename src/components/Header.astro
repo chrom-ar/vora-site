@@ -1,0 +1,18 @@
+---
+import type { Messages } from "@/i18n/messages";
+import Cta from "./Cta.astro";
+
+type Props = { t: Messages["header"] };
+
+const { t } = Astro.props;
+---
+<header class="top" data-enter>
+  <div class="top-left">
+    <a class="brand" href={t.brandHref} aria-label={t.brandAria}><span class="mark" aria-hidden="true">V</span><span class="wordmark">Vora</span></a>
+    <a class="parent" href={t.parentHref}>{t.parent}</a>
+  </div>
+  <div class="top-actions">
+    <Cta cta={t.cta} variant="ghost" sm />
+    <nav class="lang" aria-label={t.langNavAria}><a href={t.langHref} hreflang={t.langHreflang} lang={t.langHreflang} data-lang={t.langHreflang}>{t.langLabel}</a></nav>
+  </div>
+</header>
