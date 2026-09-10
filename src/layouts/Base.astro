@@ -51,7 +51,7 @@ const abs = (path: string) => new URL(path, Astro.site).href;
     <link rel="preload" href="/fonts/dm-mono-400.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/fonts/dm-mono-300.woff2" as="font" type="font/woff2" crossorigin />
     <script type="importmap" is:inline>{"imports":{"three":"/vendor/three/three.module.min.js","three/addons/":"/vendor/three/addons/"}}</script>
-    <script is:inline>(function(){var d=document.documentElement,c=document.createElement("canvas"),g=null;try{g=window.WebGL2RenderingContext&&c.getContext("webgl2")}catch(_){}if(g){var x=g.getExtension("WEBGL_lose_context");if(x)x.loseContext();var s=document.createElement("script");s.type="module";s.src="/assets/scene.js";document.head.appendChild(s)}else{d.className+=" no-webgl";d.setAttribute("data-scene","unsupported")}})();</script>
+    <script is:inline>(function(){var d=document.documentElement,c=document.createElement("canvas"),g=null;try{g=window.WebGL2RenderingContext&&c.getContext("webgl2")}catch(_){}if(!g){d.className+=" no-webgl";d.setAttribute("data-scene","unsupported");return}var x=g.getExtension("WEBGL_lose_context");if(x)x.loseContext();var load=function(){var s=document.createElement("script");s.type="module";s.src="/assets/scene.js";document.head.appendChild(s)};var idle=function(){"requestIdleCallback"in window?requestIdleCallback(load,{timeout: 2000}):setTimeout(load,200)};document.readyState==="complete"?idle():addEventListener("load",idle,{once: true})})();</script>
     <script>import "@/scripts/site.ts";</script>
   </head>
   <body>
