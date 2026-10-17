@@ -152,7 +152,7 @@ export const en: Messages = {
     steps: [
       { key: "01 · GitHub", h: "Pull request opened", p: "Webhook in. Nothing to install." },
       { key: "02 · Review", h: "Inline comments", p: "Exact lines. New · inherited · resolved." },
-      { key: "03 · Slack", h: "“@vora fix H-1”", p: "Rewrites, builds, opens a fix PR." },
+      { key: "03 · Slack", h: "“@vora show H-1”", p: "Reads your findings. Writes nothing." },
       { key: "04 · Merge", h: "Your team decides", p: "Vora never merges." },
     ],
     mock: {
@@ -186,9 +186,9 @@ export const en: Messages = {
   trust: {
     h: "Security posture",
     facts: [
-      { h: "Read-only", p: "Minimum GitHub scopes. Never merges." },
+      { h: "Never writes your code", p: "Minimum GitHub scopes. Never merges." },
       { h: "No production access", p: "Pull requests only." },
-      { h: "Data stays in your VPC", p: "Nothing leaves your environment." },
+      { h: "Encrypted and audited", p: "Encryption at rest. Hash-chain audit ledger." },
       { h: "Nothing to install", p: "Connect the org. Done." },
     ],
     proof: "Built first for regulated finance, where every finding needs evidence an auditor will accept. That standard now ships to every team.",
@@ -258,7 +258,7 @@ export const es: Messages = {
     steps: [
       { key: "01 · GitHub", h: "Pull request abierto", p: "Webhook. Nada que instalar." },
       { key: "02 · Revisión", h: "Comentarios inline", p: "Líneas exactas. Nuevos · heredados · resueltos." },
-      { key: "03 · Slack", h: "“@vora arreglá H-1”", p: "Reescribe, prueba la build, abre un PR de fix." },
+      { key: "03 · Slack", h: "“@vora mostrá H-1”", p: "Lee sus hallazgos. No escribe nada." },
       { key: "04 · Merge", h: "Decide su equipo", p: "Vora nunca integra." },
     ],
     mock: {
@@ -292,9 +292,9 @@ export const es: Messages = {
   trust: {
     h: "Postura de seguridad",
     facts: [
-      { h: "Solo lectura", p: "Permisos mínimos. Nunca integra." },
+      { h: "Nunca escribe su código", p: "Permisos mínimos. Nunca integra." },
       { h: "Sin acceso a producción", p: "Solo pull requests." },
-      { h: "Los datos quedan en su VPC", p: "Nada sale de su entorno." },
+      { h: "Cifrado y auditado", p: "Cifrado en reposo. Auditoría encadenada por hash." },
       { h: "Nada que instalar", p: "Conecte la organización. Listo." },
     ],
     proof: "Nacido en finanzas reguladas, donde cada hallazgo necesita evidencia que un auditor acepte. Ese estándar hoy llega a todos los equipos.",
