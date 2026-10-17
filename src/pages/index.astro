@@ -3,6 +3,6 @@ import Base from "@/layouts/Base.astro";
 import Landing from "@/components/Landing.astro";
 import { en } from "@/i18n/messages";
 ---
-<Base locale="en" messages={en} canonical="/" isDefaultLocale>
+<Base locale="en" meta={en.meta} skip={en.skip} canonical="/" alternates={{ en: "/", es: "/es/" }} isDefaultLocale scene={{ loader: en.loader }}>
   <Landing messages={en} />
 </Base>

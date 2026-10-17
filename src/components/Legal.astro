@@ -1,0 +1,34 @@
+---
+import type { Messages } from "@/i18n/messages";
+import type { LegalDoc } from "@/i18n/legal";
+import DocParts from "./DocParts.astro";
+import Header from "./Header.astro";
+import Footer from "./Footer.astro";
+
+type Props = { messages: Messages; doc: LegalDoc; altHref: string };
+
+const { messages, doc, altHref } = Astro.props;
+---
+<Header t={{ ...messages.header, langHref: altHref }} />
+<main id="main" class="doc">
+  <div class="wrap">
+    <div class="doc-head">
+      <h1>{doc.h1}</h1>
+      <p class="doc-updated">{doc.updatedLabel} · {doc.updated}</p>
+      <p class="doc-lede">{doc.lede}</p>
+    </div>
+    {doc.sections.map((s, i) => (
+      <section class="doc-sec">
+        <h2><span class="doc-n" aria-hidden="true">{String(i + 1).padStart(2, "0")}</span>{s.h}</h2>
+        <div class="doc-body">
+          {s.blocks.map(b => ("ul" in b ? (
+            <ul class="doc-ul">{b.ul.map(items => <li><DocParts parts={items} /></li>)}</ul>
+          ) : (
+            <p><DocParts parts={b.p} /></p>
+          )))}
+        </div>
+      </section>
+    ))}
+  </div>
+</main>
+<Footer t={messages.footer} />

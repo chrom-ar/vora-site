@@ -88,6 +88,7 @@ export type Messages = {
     line: string;
     navAria: string;
     contact: string;
+    links: { label: string; href: string }[];
   };
 };
 
@@ -198,6 +199,10 @@ export const en: Messages = {
     line: "Vora · Continuous AppSec · A Chroma Labs product · 2026",
     navAria: "Footer",
     contact: "contact@chrom.ar",
+    links: [
+      { label: "Privacy", href: "/privacy/" },
+      { label: "Terms", href: "/terms/" },
+    ],
   },
 };
 
@@ -300,5 +305,9 @@ export const es: Messages = {
     line: "Vora · AppSec continua · Un producto de Chroma Labs · 2026",
     navAria: "Pie de página",
     contact: "contact@chrom.ar",
+    links: [
+      { label: "Privacidad", href: "/es/privacy/" },
+      { label: "Términos", href: "/es/terms/" },
+    ],
   },
 };

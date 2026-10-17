@@ -1,0 +1,8 @@
+---
+import type { DocPart } from "@/i18n/legal";
+
+type Props = { parts: DocPart[] };
+
+const { parts } = Astro.props;
+---
+{parts.map(x => ("strong" in x ? <strong>{x.strong}</strong> : "code" in x ? <code>{x.code}</code> : "mail" in x ? <a href={`mailto:${x.mail}`}>{x.mail}</a> : x.text))}

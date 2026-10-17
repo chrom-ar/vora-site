@@ -4,16 +4,22 @@ import type { Messages } from "@/i18n/messages";
 
 type Props = {
   locale: "en" | "es";
-  messages: Messages;
+  meta: Messages["meta"];
+  skip: string;
   canonical: string;
-  isDefaultLocale: boolean;
+  alternates: { en: string; es: string };
+  /* The Accept-Language redirect only ever runs on "/", so only that page passes it. */
+  isDefaultLocale?: boolean;
+  /* Present → this page carries the WebGL scene and its loader chrome. The
+     legal pages deliberately do not: a fixed vortex behind long-form text is
+     cost without purpose, and nothing on those pages waits for a first frame. */
+  scene?: { loader: string };
 };
 
-const { locale, messages, canonical, isDefaultLocale } = Astro.props;
-const t = messages;
+const { locale, meta, skip, canonical, alternates, isDefaultLocale = false, scene } = Astro.props;
 const abs = (path: string) => new URL(path, Astro.site).href;
 ---
-<html lang={locale} class="no-js">
+<html lang={locale} class="no-js" data-scene={scene ? undefined : "off"}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
@@ -21,28 +27,28 @@ const abs = (path: string) => new URL(path, Astro.site).href;
       <script is:inline>(function(){try{if(location.pathname!=="/")return;var s=localStorage.getItem("vora-lang");if(s==="en")return;if(s==="es"){location.replace("/es/");return;}var l=(navigator.language||"").toLowerCase();if(l.indexOf("es")===0)location.replace("/es/");}catch(_){}})();</script>
     )}
     <script is:inline>document.documentElement.className=document.documentElement.className.replace("no-js","js");</script>
-    <title>{t.meta.title}</title>
-    <meta name="description" content={t.meta.description} />
+    <title>{meta.title}</title>
+    <meta name="description" content={meta.description} />
     <meta name="theme-color" content="#050505" />
     <link rel="canonical" href={abs(canonical)} />
-    <link rel="alternate" hreflang="en" href={abs("/")} />
-    <link rel="alternate" hreflang="es" href={abs("/es/")} />
-    <link rel="alternate" hreflang="x-default" href={abs("/")} />
+    <link rel="alternate" hreflang="en" href={abs(alternates.en)} />
+    <link rel="alternate" hreflang="es" href={abs(alternates.es)} />
+    <link rel="alternate" hreflang="x-default" href={abs(alternates.en)} />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Vora" />
     <meta property="og:url" content={abs(canonical)} />
-    <meta property="og:title" content={t.meta.title} />
-    <meta property="og:description" content={t.meta.description} />
-    <meta property="og:locale" content={t.meta.ogLocale} />
-    <meta property="og:locale:alternate" content={t.meta.ogLocaleAlternate} />
+    <meta property="og:title" content={meta.title} />
+    <meta property="og:description" content={meta.description} />
+    <meta property="og:locale" content={meta.ogLocale} />
+    <meta property="og:locale:alternate" content={meta.ogLocaleAlternate} />
     <meta property="og:image" content={abs("/opengraph-image.png")} />
     <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content={t.meta.ogImageAlt} />
+    <meta property="og:image:alt" content={meta.ogImageAlt} />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={t.meta.title} />
-    <meta name="twitter:description" content={t.meta.description} />
+    <meta name="twitter:title" content={meta.title} />
+    <meta name="twitter:description" content={meta.description} />
     <meta name="twitter:image" content={abs("/opengraph-image.png")} />
     <link rel="icon" href="/icon.svg" type="image/svg+xml" sizes="any" />
     <link rel="icon" href="/icon.png" type="image/png" sizes="32x32" />
@@ -50,17 +56,23 @@ const abs = (path: string) => new URL(path, Astro.site).href;
     <link rel="preload" href="/fonts/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/fonts/dm-mono-400.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/fonts/dm-mono-300.woff2" as="font" type="font/woff2" crossorigin />
-    <script type="importmap" is:inline>{"imports":{"three":"/vendor/three/three.module.min.js","three/addons/":"/vendor/three/addons/"}}</script>
-    <script is:inline>(function(){var d=document.documentElement,c=document.createElement("canvas"),g=null;try{g=window.WebGL2RenderingContext&&c.getContext("webgl2")}catch(_){}if(!g){d.className+=" no-webgl";d.setAttribute("data-scene","unsupported");return}var x=g.getExtension("WEBGL_lose_context");if(x)x.loseContext();var load=function(){var s=document.createElement("script");s.type="module";s.src="/assets/scene.js";document.head.appendChild(s)};var idle=function(){"requestIdleCallback"in window?requestIdleCallback(load,{timeout: 2000}):setTimeout(load,200)};document.readyState==="complete"?idle():addEventListener("load",idle,{once: true})})();</script>
+    {scene && (
+      <script type="importmap" is:inline>{"imports":{"three":"/vendor/three/three.module.min.js","three/addons/":"/vendor/three/addons/"}}</script>
+    )}
+    {scene && (
+      <script is:inline>(function(){var d=document.documentElement,c=document.createElement("canvas"),g=null;try{g=window.WebGL2RenderingContext&&c.getContext("webgl2")}catch(_){}if(!g){d.className+=" no-webgl";d.setAttribute("data-scene","unsupported");return}var x=g.getExtension("WEBGL_lose_context");if(x)x.loseContext();var load=function(){var s=document.createElement("script");s.type="module";s.src="/assets/scene.js";document.head.appendChild(s)};var idle=function(){"requestIdleCallback"in window?requestIdleCallback(load,{timeout: 2000}):setTimeout(load,200)};document.readyState==="complete"?idle():addEventListener("load",idle,{once: true})})();</script>
+    )}
     <script>import "@/scripts/site.ts";</script>
   </head>
   <body>
-    <a class="skip" href="#main">{t.skip}</a>
-    <div id="loader" class="loader" aria-hidden="true">
-      <div class="loader-bar"><span class="loader-shimmer"></span></div>
-      <p class="loader-label">{t.loader}</p>
-    </div>
-    <div class="scene-wrap" aria-hidden="true"><canvas id="scene"></canvas></div>
+    <a class="skip" href="#main">{skip}</a>
+    {scene && (
+      <div id="loader" class="loader" aria-hidden="true">
+        <div class="loader-bar"><span class="loader-shimmer"></span></div>
+        <p class="loader-label">{scene.loader}</p>
+      </div>
+    )}
+    {scene && <div class="scene-wrap" aria-hidden="true"><canvas id="scene"></canvas></div>}
     <div class="frame" aria-hidden="true"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></div>
     <slot />
   </body>

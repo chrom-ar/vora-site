@@ -10,6 +10,7 @@ const { t } = Astro.props;
     <p class="foot-line">{t.line}</p>
     <nav class="foot-links" aria-label={t.navAria}>
       <a href={`mailto:${t.contact}`}>{t.contact}</a>
+      {t.links.map(l => <a href={l.href}>{l.label}</a>)}
     </nav>
   </div>
 </footer>

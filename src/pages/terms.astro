@@ -1,0 +1,12 @@
+---
+import Base from "@/layouts/Base.astro";
+import Legal from "@/components/Legal.astro";
+import { en } from "@/i18n/messages";
+import { legalEn } from "@/i18n/legal";
+
+const doc = legalEn.terms;
+const alternates = { en: "/terms/", es: "/es/terms/" };
+---
+<Base locale="en" meta={{ ...en.meta, title: doc.metaTitle, description: doc.metaDescription }} skip={en.skip} canonical={alternates.en} alternates={alternates}>
+  <Legal messages={en} doc={doc} altHref={alternates.es} />
+</Base>

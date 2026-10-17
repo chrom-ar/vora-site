@@ -12,6 +12,11 @@ Spanish.
 - [Vora — Vulnerabilities caught before merge](https://vora.chrom.ar/): English landing page — the problem, the product, how a review appears in a pull request, and the pilot programme.
 - [Vora — Vulnerabilidades detectadas antes del merge](https://vora.chrom.ar/es/): Spanish landing page — AppSec continua para todo equipo que publica código.
 
+## Legal
+
+- [Privacy](https://vora.chrom.ar/privacy/): What data Vora handles when it reviews code; what the GitHub, Slack and Microsoft Teams integrations receive; the 90-day retention on Teams message bodies; access and erasure requests. Spanish: https://vora.chrom.ar/es/privacy/
+- [Terms of service](https://vora.chrom.ar/terms/): What the service does and does not do — reviews are advisory, Vora never merges, the Teams app performs no write actions. Spanish: https://vora.chrom.ar/es/terms/
+
 ## Contact
 
 - [Pilot and security enquiries](mailto:contact@chrom.ar): Contact address for pilot programmes and security questionnaires.

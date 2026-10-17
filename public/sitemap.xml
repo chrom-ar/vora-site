@@ -10,4 +10,24 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://vora.chrom.ar/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://vora.chrom.ar/es/"/>
   </url>
+  <url>
+    <loc>https://vora.chrom.ar/privacy/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vora.chrom.ar/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://vora.chrom.ar/es/privacy/"/>
+  </url>
+  <url>
+    <loc>https://vora.chrom.ar/es/privacy/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vora.chrom.ar/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://vora.chrom.ar/es/privacy/"/>
+  </url>
+  <url>
+    <loc>https://vora.chrom.ar/terms/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vora.chrom.ar/terms/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://vora.chrom.ar/es/terms/"/>
+  </url>
+  <url>
+    <loc>https://vora.chrom.ar/es/terms/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vora.chrom.ar/terms/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://vora.chrom.ar/es/terms/"/>
+  </url>
 </urlset>
